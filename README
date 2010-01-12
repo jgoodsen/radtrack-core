@@ -1,3 +1,14 @@
+Setup
+-----
+1. from from http://github.com/jgoodsen/radtrack-core
+	* follow directions on forking: http://help.github.com/forking/
+2. cp config/database.yml.template config/database.yml
+3. cp config/smtp_config_template.rb config/smtp_config.rb
+4. rake db:create:all
+5. rake db:migrate (also creates an admin user by default)
+6. rake spec
+
+
 Running tests
 -----------------
 TODO: Still need to run all the tests at once with a single rake task..
