@@ -1,0 +1,8 @@
+<div id="user_profile_private">
+  <% render :layout => 'shared/rounded_box' do %>
+    <p>Login: <%= @user.login %></p>
+    <p>Email: <%= @user.email %></p>
+    <p>Admin: <%= @user.admin? %></p>
+    <p><%= link_to 'Change Password...', ''%></p>
+  <%end %>
+</div>

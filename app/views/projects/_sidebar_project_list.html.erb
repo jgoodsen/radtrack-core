@@ -1,0 +1,16 @@
+<% if current_user %>
+<ul class="menu">
+	<li class="title">
+		<%= link_to 'My Projects',  '#'%>
+	</li>
+	<% current_user.projects.each do |project| %>
+	<li>
+		<%= link_to project.name, project_current_iteration_path(project) %>
+	</li>
+	<% end %>
+	<li class="title">
+		<%= link_to 'Create a New Project...', new_project_path %>
+	</li>
+</ul>
+<% end %>
+

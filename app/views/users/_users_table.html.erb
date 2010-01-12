@@ -1,0 +1,49 @@
+<div id="users_list">
+
+	<% unless users.empty? %>
+	
+		<table class="admin_users">
+			<thead>
+				<tr>
+				  <td>Actions</td>
+                    <td>Username</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Logins</td>
+                    <td>Failed</td>
+                    <td>Current Login</td>
+                    <td>Current Login IP</td>
+                    <td>Last Login</td>
+                    <td>Last Login IP</td>
+				</tr>
+			</thead>      
+
+			<tbody>
+			<% users.each do |u| %>
+			<tr>
+			  <td>
+				<%= link_to image_tag('icons/edit.png', :title => 'Edit user details.'), admin_user_path(u) + "/edit" if current_user.admin? %>
+				<%= link_to image_tag('icons/cog_delete.png', :title => 'Delete this user.'), admin_user_path(u), :method => :delete, :confirm => 'Are you sure you want to delete this user?' if current_user.admin? %>
+			  </td>
+				<td><%= link_to(u.login, admin_user_path(u)) %></td>
+				<td><%=h u.name %></td>
+				<td><%=h u.email %></td>
+  			<td><%=h u.login_count %></td>
+  			<td><%=h u.failed_login_count %></td>
+  			<td><%=h u.current_login_at %></td>
+  			<td><%=h u.current_login_ip %></td>
+  			<td><%=h u.last_login_at %></td>
+  			<td><%=h u.last_login_ip %></td>
+			</tr>
+			<% end %>
+			</tbody>
+
+		</table>
+		<%= will_paginate users %>
+
+	<% else %>
+		 No users ???
+	<% end %>
+
+</div>
+

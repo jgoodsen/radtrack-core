@@ -1,0 +1,18 @@
+<p class="header"><%= title %></p>
+
+<% unless tasks.empty? %>
+<ul class="active_tasks">
+
+	<% tasks.collect(&:card).uniq.each do |card| %>
+	<li class="task_group">
+		<ul class="active_tasks">
+			<li class="header"><%= card.title %></li>
+			<% tasks.select{|t| card.tasks.include?(t)}.each do |task| %>
+			<li project_id="<%= task.card.project.id %>" card_id="<%= task.card.id %>"><%= link_to task.name, '', :class => "popup_card_link" %></li>
+			<% end %>
+		</ul>
+	</li>
+	<% end %>
+
+</ul>
+<% end %>

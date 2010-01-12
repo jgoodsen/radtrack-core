@@ -1,0 +1,26 @@
+Running tests
+-----------------
+TODO: Still need to run all the tests at once with a single rake task..
+
+We don't have rspec tests for controllers or views - although they should probably be skinnier
+
+We currently have rspec tests for our models.  Run this with rake spec
+
+We've started to us ScrewUnit for java script unit tests.  Run these with rake spec:javascript
+
+We have Cucumber/Selenium tests.  
+
+Cucumber/Selenium Configuration
+-------------------------------
+We have a small suite of cucumber tests that are more like smoke tests than exhaustive acceptance tests.  
+They use Selenium to test drive the full application and simulate some basic user interactions like signing, creating/moving cards, etc.
+
+Follow the Cucumber/Selenium installation instructions at http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium
+
+Run cucumber tests, you need to do the following:
+
+  1. run the command "selenium" in it's own window to start the selenium server.
+  2. run the rails server in a cucumber environment: script/server -e cucumber
+  3. run "rake cucumber".  Use "rake cucumber:wip" to run @wip tagged cucumber features
+
+For a good overview of available selenium RC commands, check out http://selenium-client.rubyforge.org/classes/Selenium/Client/Idiomatic.html

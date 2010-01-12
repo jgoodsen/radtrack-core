@@ -1,0 +1,21 @@
+<div id="personal_kanban_board">
+	<div class="control_panel">
+		<%= check_box_tag 'show_tasks', 'all_tasks'%><label for="show_tasks"> Show Tasks From All Projects (not yet implemented)</label>
+	</div>
+	<div class="unfinished_column">
+		<div class="dashboard_tasklist">
+		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "My Active Tasks", :tasks => current_user.active_tasks} %>
+		</div>
+		<%= image_tag "vertical_arrow_up.gif", :class => "vertical_arrow_up" %>
+		<div class="dashboard_tasklist">
+		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "My Unstarted Tasks", :tasks => current_user.unstarted_tasks} %>
+		</div>
+	</div
+	<%= image_tag "horizontal_arrow_right.gif", :class => "unfinished_finish_arrow" %>
+	<div class="finished_column">
+		<div class="dashboard_tasklist">
+		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "My Finished Tasks", :tasks => current_user.finished_tasks} %>
+		</div>
+	</div
+</div>
+

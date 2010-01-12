@@ -1,0 +1,29 @@
+<%= render :partial => 'shared/breadcrumbs' %>
+<%= render :partial => 'kanban/new_card'%>
+
+<div id="project_settings_tabs" style="float: left; width: 100%;">
+	
+     <ul>
+         <li><a href="#members"><span>Team Members</span></a></li>
+         <li><a href="#value_stream"><span>Workflow</span></a></li>
+
+     </ul>
+
+    <div id="members">
+		<%= render :partial => 'users/index', :locals => {:users => @project.users} %>
+    </div>
+
+    <div id="value_stream">
+		<%= render :partial => 'card_states/index' %>
+    </div>
+
+</div>
+
+<% content_for :tail_javascript do %>
+<script type="text/javascript">
+    $(function() {
+        $('#project_settings_tabs').tabs();
+        $('#project-tools-tabs').tabs();
+    });
+</script>
+<% end %>

@@ -1,0 +1,4 @@
+Simplified Domain Model:
+http://yuml.me/diagram/scruffy/class/%5BActivityLogEntry%5D,%5BCard%5D,%5BValueStreamActivity%5D,%5BClassOfService%5D,%5BProject%5D,%5BProjectAssignment%5D,%5BTask%5D,%5BTaskState%5D,%5BUser%5D,%5BCard%5D1-*%5BTask%5D,%5BValueStreamActivity%5D1-*%5BCard%5D,%5BProject%5D1-*%5BCard%5D,%5BProject%5D1-*%5BTaskState%5D,%5BProject%5D*-*%5BUser%5D,%5BProject%5D1-*%5BActivityLogEntry%5D,%5BProject%5D1-*%5BProjectAssignment%5D,%5BProject%5D1-*%5BValueStreamActivity%5D,%5BUser%5D1-*%5BTask%5D,%5BUser%5D1-*%5BProjectAssignment%5D,%5BCard%5D1-1%5BClassOfService%5D,%5BTask%5D1-1%5BTaskState%5D,%5BProject%5D1-*%5BClassOfService%5D
+
+

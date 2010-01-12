@@ -1,0 +1,15 @@
+log/*.log
+database.yml
+.DS_Store
+**/.DS_Store
+db/*.sqlite3
+db/backup
+public/javascripts/base_packaged.js
+public/javascripts/tail_packaged.js
+public/stylesheets/base_packaged.css
+public/stylesheets/images/ui-*
+.generators
+.rakeTasks
+radtrack.iws
+config/smtp_config.rb
+db/schema.rb

@@ -1,0 +1,10 @@
+<% if flash %>
+	 <% flash.each do |key, msg| %>
+    <%= content_tag :div, msg, :class => [key, " message"], :id => "notice_#{key}" %>
+  	<script type="text/javascript">
+		$(function() {
+			 $('#notice_<%=key-%>').fadeOut(10000);
+		});
+  	</script>	
+	<% end %>	
+<% end %>

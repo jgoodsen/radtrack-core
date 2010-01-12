@@ -1,0 +1,34 @@
+<%= render :partial => 'shared/breadcrumbs' %>
+<%= render :partial => 'kanban/new_card'%>
+
+<% if current_user.projects.empty? %>
+	<%= render :partial => 'projects/create_your_first_project' %>
+<% else %>
+		<div id="project-tools-tabs" style="float: left; width: 100%; height: 800px; display: none;">
+			<ul>
+				<li><a href="#myprojects"><span>My Projects</span></a></li>
+			</ul>
+			<div id="myprojects">
+		        <% current_user.projects.each do |project| %>
+		            <div class="project">
+		                <h1><%= link_to project.name,  project_path(project.id) %></h1>
+						        <%= image_tag("icons/cog_delete.png", :id => "project_#{project	.id}", :class => "project_delete", :style => "cursor: pointer; float: right; ", :title => 'Delete this project? All associated cards and tasks will be destroyed.  This cannot be undone.') %>
+		                <h2>(<%= project.users.size %> Users, <%= project.cards.size %> Cards)</h2>
+		            </div>
+		        <% end %>
+		        <div class="buttons">
+		            <%= link_to image_tag("icons/add.png") + "Create a New Project", new_project_path, :id => 'new_project_button', :class => 'button' %>
+		        </div>
+			</div>
+		</div>
+
+	<% content_for :tail_javascript do %>
+	<script type="text/javascript">
+	    $(function() {
+	        $('#project-tools-tabs').tabs().fadeIn("slow");
+	    });
+	</script>
+	<% end %>
+
+<% end %>
+

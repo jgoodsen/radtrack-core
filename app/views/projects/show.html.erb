@@ -1,0 +1,92 @@
+<%= render :partial => 'shared/breadcrumbs' %>
+<%= render :partial => 'kanban/new_card'%>
+
+<div id="project_detail_tabs" style="float: left; width: 100%; display: none;">
+  
+  <ul>
+    <li><a href="<%= project_backlog_tab_path(@project)%>" class="backlog_tab"><span><%= spinner %>&nbsp;Backlog / Horizon Planning</span></a></li>
+    <li><a href="<%= project_kanban_tab_path(@project) %>" class="kanban_tab"><span><%= spinner %>&nbsp;Project Kanban</span></a></li>
+    <li><a href="<%= project_mytasks_tab_path(@project) %>"><span><%= spinner %>&nbsp;My Tasks</span></a></li>
+    <li><a href="#members"><span>Team Members</span></a></li>
+    <% beta_user? do %>
+      <li><a href="#project-tools"><span>3rd Party Tools</span></a></li>
+    <% end %>
+  </ul>
+
+  <div id="members" class="tab_content">
+    <%= render :partial => 'users/index', :locals => {:users => @project.users} %>
+  </div>
+
+  <% beta_user? do %>
+  <div id="project-tools">
+    <div id="project-tools-tabs" style="float: left; width: 100%; height: 800px;">
+      <ul>
+      <li><a href="#project-tools-fitnesse"><span>Fitnesse</span></a></li>
+      </ul>
+      <div id="project-tools-fitnesse" width="100%;" height="100%;"><iframe src="http://localhost:4444" width="98%" height="760px;"></iframe></div>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+
+<% content_for :tail_javascript do %>
+<script type="text/javascript">
+$(function() {
+  
+  function reload_cards(event, ui) {
+    $(ui.panel).hide();
+    $('.spinner', ui.tab).show();
+    $.ajax({
+      type: "GET",
+      url: "<%= project_cards_path(@project) %>",
+      dataType: "json",
+      cache: false,
+      success: function(json){
+        // TOOD: Could optimize by only loading the tab panel that we're looking at
+        $('#kanban', ui.panel).kanban({cards:json});
+        $('#backlog', ui.panel).backlog({cards:json});
+        $('.spinner', ui.tab).hide();
+        $(ui.panel).fadeIn(1000);
+      }
+    });
+  }
+
+  $('#project-tools-tabs').tabs({
+    ajaxOptions:{success: function() {}}
+  });
+  $('#project_detail_tabs').tabs({
+    load: reload_cards,
+    spinner: '',
+    ajaxOptions: {success: function() {}}
+  }).fadeIn(1000);
+
+});
+</script>
+<script type="text/javascript" src="/javascripts/jquery.livesearch.js"></script>
+<script type="text/javascript">
+(function($) {
+ $(document).ready(function() {
+    var backlog_cards = '.kanban_backlog li'
+   
+    $('input[name="f"]').search(backlog_cards, function(on) {
+      on.reset(function() {
+        $('#none').hide();
+        $(backlog_cards).show();
+      });
+
+      on.empty(function() {
+        $('#none').show();
+        $(backlog_cards).hide();
+      });
+
+      on.results(function(results) {
+        $('#none').hide();
+        $(backlog_cards).hide(); //hide all
+        results.show(); //show only resulting elements
+      });
+    });
+  });
+})(jQuery);
+</script>
+<% end %>

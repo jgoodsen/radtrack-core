@@ -1,0 +1,15 @@
+<div id="card_<%= card.id %>" class="tasklist">
+<fieldset><legend>Tasks</legend>
+	<table id="tasklist"><thead><tr><td></td><td>Owner</td><td>State</td><td>Name <i>(click to edit in-place)</i></td></tr></thead>
+		<tbody>
+		<% card.tasks.each do |task| -%>
+		   <%= render :partial => 'tasks/tasklist_row', :locals => {:task => task} %>
+		<% end -%>
+		</tbody>
+	</table>
+	<br/>
+  
+  <%= render :partial => 'tasks/new_task_form', :locals => {:card => card} %>
+
+</fieldset>
+</div>

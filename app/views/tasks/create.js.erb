@@ -1,0 +1,8 @@
+$('table#tasklist tbody').append("<%= escape_javascript(render :partial => 'tasks/tasklist_row', :locals => {:task => @task}) %>");
+$('input.task_name').val('');
+$('td.taskname').editable(task_name_changed, {
+  indicator : '<img src="/images/spinner.gif"/>',
+  tooltip   : 'Click to edit the task name...',
+  placeholder: 'Click to edit the task name...',
+  height: '1em'
+});

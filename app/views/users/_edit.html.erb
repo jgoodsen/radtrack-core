@@ -1,0 +1,41 @@
+<%= error_messages_for :user %>
+
+<div id="user_details">
+	
+	<h1>Edit User Details</h1>
+
+  <% @user.password = @user.password_confirmation = nil if @user %>
+	
+	<% form_for @user do |f| -%>
+	
+		<p><label for="email">Email Address</label><br/>
+		<%= f.text_field :email %></p>
+	  <br/>
+
+  	<p><label for="name">Full Name</label><br/>
+  	<%= f.text_field :name %></p>
+	<br/>
+	<p><%= submit_tag 'Save Changes' %></p>
+	
+	<% end -%>
+	  <br/>
+</div>
+
+<div id="user_change_password">
+	<h1>Change Password</h1>
+
+	<% form_for @user do |f| -%>
+	
+	<p><label for="password">New Password (optional)</label><br/>
+	<%= f.password_field :password %></p>
+  <br/>
+
+	<p><label for="password_confirmation">Confirm New Password</label><br/>
+	<%= f.password_field :password_confirmation %></p>
+
+  <br/>
+	<p><%= submit_tag 'Update Password' %></p>
+	
+	<% end -%>
+
+</div>

@@ -1,0 +1,14 @@
+<div id="login_form">
+	<h3 class="as_h1">Reset Your Password</h3>
+	<%= link_to image_tag('graffle/radtrack_logo_beta.png', :border => '0'), 'http://radtrack.com' %><br/>
+
+	Fill out the form below and instructions to reset your password will be emailed to you:<br />
+	<br />
+
+	<% form_tag password_resets_path do %>
+	  <label>Email:</label><br />
+	  <%= text_field_tag "email" %><br />
+	  <br />
+	  <%= submit_tag "Reset my password" %>
+	<% end %>
+</div>

@@ -1,0 +1,163 @@
+div.padded {
+	padding: 3px;
+}
+
+a img {
+	border-width: 0px;
+}
+
+div#navbar {
+	width: 99%;
+	height: 18px;
+	background: lightyellow;
+	float: top;
+	border: 1px solid #999;
+  font-family:"Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;
+  font-size:.7em;
+}
+
+/* the subnav on each dashboard tab */
+div.dashboard_tabnav {
+	width: 99%;
+	height: 18px;
+	background: lightyellow;
+	float: top;
+	border: 1px solid #999;
+  font-family:"Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;
+}
+
+#user-bar-greeting {
+	margin-top: 3px;
+	float: right;
+}
+#user-bar-action {
+	margin-top: 3px;
+	float: right;
+}
+
+#navbar #page_specific_navbar_content {
+	float: right;
+	padding-right: 10px;
+}
+
+#project_selector #project_id {
+  font-family:"Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;
+}
+#project_selector #project_selected {
+  font-family:"Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;	
+  font-size:1em;
+}
+
+#dashboard {
+	width: 100%;
+	height: 500px;
+	margin-top: 5px;
+}
+
+.dashboard_tab_description {
+	background: #e2e0ea;
+	border: 1px solid #999;
+}
+
+.dashboard_tab_content {
+	background: #e2e0ea;
+	border: 1px solid #999;
+	margin-top: 10px;
+	height: 400px;
+}
+
+#features_list {
+	background: #eee;
+	border: 1px solid #999;
+	width: 200px;
+	float: left;
+}
+
+.header_title {
+	float: left;
+	font-size: 1.1em;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.header_actions {
+	float: right;
+}
+
+#feature_details {
+	background: #eee;
+	border: 1px solid #999;
+	width: 550px;
+	float: left;
+	margin-left: 10px;
+}
+
+#feature_list_content {
+	clear: both;
+	background: #fff;
+	font-variant: small-caps;
+}
+#feature_details_content {
+	clear: both;
+	background: #fff;
+	height: 100%;
+}
+
+#feature_details .feature_name {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+	font-variant: small-caps;
+}
+#feature_details .show_feature .feature_description {
+	margin-top: 10px;
+	clear: both;
+	float: left;
+}
+#feature_details .edit_feature .feature_description {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+	font-variant: small-caps;
+	background: #fff;
+}
+
+.selected_feature {
+	background: #bbb;
+}
+
+.header {
+	background: lightyellow;
+	border: 1px solid #999;
+	height: 15px;
+	margin-left: -4px;
+	margin-right: -4px;
+	margin-top: -4px;
+	padding: 3px;
+}
+
+#feature_cardlist {
+	clear: both;
+}
+
+#feature_cardlist .card {
+	clear: both;
+}
+
+div.thumbnail {
+	border: 1px solid #999;
+	height: 80px;
+	width: 130px;
+	background: lightyellow;
+	float: left;
+	margin: 5px;
+	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+.ui-selected { background: #727EA3; color: #FFF; }
+.ui-selecting { border: 1px solid #AAA; }
+

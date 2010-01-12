@@ -1,0 +1,14 @@
+<ul id="login_bar">
+	<% if current_user -%>
+		<li><%= current_user.login %> </li>
+		<%= content_tag(:li, "&nbsp;" + link_to("| Project Settings", project_settings_path(@project))) if @project %>
+		<li>&nbsp; | <%= link_to "Account Settings", edit_user_path(:current) %></li>
+		<% if current_user.admin? %>
+	  	  <li>&nbsp; | <%= link_to 'Administrators Console', '/admin' %></li>
+	    <% end %>
+		<li>&nbsp; | <%= link_to "Logout", logout_path %></li>
+	<% else -%>
+      <li><%= link_to "Register for a Free Beta Account", new_user_path %></li>
+	  <li>&nbsp; | <%= link_to "Log in",  login_path,  { :title => "Log in" } %> </li>
+	<% end -%>
+</ul>

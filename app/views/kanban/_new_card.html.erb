@@ -1,0 +1,15 @@
+<% if @project %>
+<%= image_tag 'icons/tasklist-32x32.png', :class => "toolbar_icon" %>
+
+<form id="new_card_form" action="<%= project_cards_url(@project) %>" method="post">    
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<%# hidden_field_tag :description, '', :name => 'card[description]' %>
+	<div id="cardtypeDropdown"></div>
+	<select name="card[card_type_id]">
+		<% @project.card_types.each do |card_type| %>
+		<option value="<%= card_type.id %>" <%= card_type == @project.default_card_type ? "selected=\"selected\"" : "" %> ><%= card_type.name %></option>
+		<% end %>
+	</select>
+	<input id="quickcard" class="title" name="card[title]" size="50" value="QuickCard: Enter a card title to create a new card"/>
+</form>
+<% end %>

@@ -1,0 +1,24 @@
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="icon" type="image/gif" href="/images/animated_favicon.gif" />
+
+<%= stylesheet_link_merged :base %>
+
+<script type="text/javascript" charset="utf-8">
+// TODO: Should probably just dump this in the page layout template instead
+var DOMAIN_AND_PORT = "<%= DOMAIN_AND_PORT %>";
+<% if @project %>
+  var card_states = <%= @project.card_states.to_json %>;
+  var users = <%= @project.users.to_json %>;
+  var task_states = <%= @project.task_states.to_json %>;
+  var project_id = <%= @project.id %>;
+  	
+<% end %>	
+
+</script>	
+
+<%= javascript_include_merged :base %>
+<meta name="description" content="RAD/Track is a simple, powerful lean project collaboration tool."/>
+<meta name="keywords" content="kanban, lean, agile, project management, project management software, radtrack"/>
+<title>radtrack <%=h @project ? ": #{@project.name}" : ""%></title>
+<%= yield_authenticity_token %>
+<%= yield :head %>

@@ -1,0 +1,6 @@
+<form id="card_<%= card.id %>" class="new_task" action="<%= project_card_tasks_url(@project, card) %>" method="post">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <p>Add a new task:</p>
+  <input name="task[name]" class="task_name"/>
+  <input type="submit" id="submit"/>  
+</form>

@@ -1,0 +1,24 @@
+<div id="admin_user_show">
+
+	<div id="users_projects">
+		<h2>Click to Remove <%= @user.name %> from these projects</h2>
+		<hr/>
+		<%def make_entry(p)
+		   "[#{p.cards.size} cards] " + p.name
+		  end 
+		  @user.projects.each do |p| %>
+			<%= link_to make_entry(p), admin_remove_user_from_project_path(p, @user) %><br/>
+		<% end %>
+	</div>
+
+	<div id="other_projects">
+		<h2>Click to Add <%= @user.name %> to one of these projects</h2>
+		<hr/>
+		<% Project.all.each do |p| %>
+			<% unless @user.projects.include?(p) %>
+				<%= link_to make_entry(p), admin_add_user_to_project_path(p, @user)%><br/>
+			<% end %>
+		<% end %>
+	</div>
+
+</div>

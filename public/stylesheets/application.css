@@ -1,0 +1,909 @@
+
+#hd {
+	width: 99%;
+}
+
+#bd {
+	min-height: 600px;
+	width: 99%;
+}
+
+#ft {
+	position: absolute;
+	margin-bottom: 0px;
+}
+
+
+.subtitle {
+	color: #999;
+	font-size: .9em;
+}
+
+.header {
+	font: normal normal bold 1em/1.5em Arial, sans-serif;
+	text-align: center;
+	border: 1px solid #999;
+	background-color: #F2BC8F;
+}
+
+div#user_profile_private {
+	padding-top: 10px;
+	padding-left: 60px;
+	height: 400px;
+	width: 400px;	
+}
+
+/********** ADMIN New User form ********/
+div#new_user_session {
+	padding-top: 10px;
+	padding-left: 60px;
+	height: 360px;
+	width: 350px;
+}
+
+#new_user_session label {
+	color: #999;
+}
+
+/*********** ADMIN: Show User / Add/Remove a User to/from projects ******************/
+div#users_projects {
+	float: left;
+	padding-top: 10px;
+	padding-left: 60px;
+	width: 300px;
+}
+
+div#other_projects {
+	float: left;
+	padding-top: 10px;
+	padding-left: 60px;
+	height: 360px;
+	width: 350px;
+}
+
+
+/*********  Card Popup *************/
+
+.ui-dialog-titlebar {
+	background: #FFFFCC url(/images/gradient-header.png) repeat-x scroll 0 2em;
+}
+
+input.card_title {
+	margin-right: 80px;
+}
+.ui-dialog .ui-dialog-content {
+	padding: 0px;
+}
+.ui-dialog {
+	border: 8px solid #999;
+	background: #F4D7B6;
+}
+.ui-dialog-titlebar {
+	background: #F2BC8F;
+}
+	
+.ui-dialog .ui-dialog-title {
+	float:left;
+	margin: 0 0 0 0;
+	width:  90%;
+	text-align: left;
+}
+
+#jquery_dialog_card .card_details {
+	text-align: left;
+	font-size: .8em;
+}
+#jquery_dialog_card .card_details .description {
+	min-height: 60px;
+	margin: 4px 2px 2px 2px;
+	padding: 2px;
+	background: #FFF;
+	border: 1px solid #999;
+}
+
+table#tasklist {
+	padding: 0px;
+}
+
+#jquery_dialog_card .card_details .tasklist {
+	margin: 4px 2px 12px 2px;
+	background: #FFFFCC ;
+	padding: 2px;
+	background: #FFF;
+	border: 1px solid #999;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+}
+#jquery_dialog_card .card_details .tasklist tr {
+}
+#jquery_dialog_card .card_details .tasklist td {
+	vertical-align: text-top;
+	padding-left: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 2px;
+}
+#jquery_dialog_card .card_details .tasklist thead {
+	font: normal small-caps bold;
+}
+#jquery_dialog_card .card_details fieldset {
+	float: left;
+	border: solid black 1px; padding: 5px;
+}
+#jquery_dialog_card .card_details form.new_task {
+	margin-top: 3px;
+	padding: 3px;
+	text-align: left;
+}
+#jquery_dialog_card .card_details form.new_task p {
+	margin-left: 5px;
+}
+#jquery_dialog_card .card_details form.new_task input.task_name {
+	width: 98%;
+	margin-bottom: 8px;
+}
+#jquery_dialog_card .card_details form.new_task input#submit {
+	clear: both;
+	margin-top: 10px;
+}
+
+#jquery_dialog_card .card_details span.taskname {
+	min-width: 300px;
+}
+
+
+/************************ UL MENUS *****************************/
+ul.menu {
+ margin-bottom: 0;
+ list-style: none;
+ padding: 0px;
+ margin: 0px;
+}
+
+ul.menu li {
+  font: normal normal bold 8pt/1.5em Arial, sans-serif;
+	width: 100%;
+}
+
+ul.menu li.title {
+	margin: 0px;
+	background: #eee;
+	color:#444444;
+	text-align: center;
+}
+
+/*********** LOGIN BAR LINKS IN THE HEADER ************/
+ul#login_bar {
+	float: right;
+	margin-right: 10px;
+	float: right;
+	font-size: 8pt;
+	margin-top: 10px;
+  list-style-type:none;
+}
+ul#login_bar li {
+	float: left;
+}
+
+
+#project_show {
+  height: 200px;
+	width: 200px;
+	margin-left: 20px;	
+}
+#project_show ul.mytasks {
+	border: 1px solid #999;
+	margin-bottom: 8px;
+	padding: 2px;
+	background: #FFF;
+	font-size: .9em;
+}
+
+.project_dashboard_component {
+	font: normal normal bold 1.2em/1.5em Arial, sans-serif;
+	border: 1px solid #999;	
+}
+.project_dashboard_component ul {
+	background: white;
+}
+.project_dashboard_component_tasks {
+	float: left;
+	width: 200px;
+	margin-left: 20px;
+}
+.project_dashboard_component_class_of_service {
+	float: left;
+	width: 200px;
+	margin-left: 10px;
+}
+.project_dashboard_component_myteam {
+	float: left;
+	width: 200px;
+	margin-left: 10px;
+}
+
+form.new_project #project_name {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	width: 450px;
+}
+
+#project_show .header_mytasks {
+	width: 204px;
+	margin-left: 20px;
+}
+
+.team_member_indicator {
+	margin-top: 3px;
+	margin-left: 3px;
+	margin-right: 3px;
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+
+.team_member_status_has_capacity {
+	background: lightgreen;
+}
+.team_member_status_maximum_capacity {
+	background: red;
+}
+.team_member_status_unavailable {
+	background: black;
+}
+
+#new_card_form {
+	float: right;
+	margin-top: 8px;
+}
+
+#dashboard {
+}
+
+#myprojects {
+	margin-left: 20px;
+	float: left;
+}
+#myprojects .project {
+    width: 400px;
+    border: #666 dashed thin;
+    padding: 6px;
+    margin-top: 6px;
+	margin-bottom: 10px;
+	background: #FFF7BB;
+}
+
+ul li.header .actions {
+	float: right;
+}
+ul li.header .title {
+	float: left;
+}
+li.menu_item {
+	clear: left;
+}
+
+/*********  ADMIN User List ************/
+
+#users_list {
+	float: left;
+	width: 97%;
+	margin: 8px;
+	border: 1px solid #999;
+	padding: 4px;
+}
+
+table.admin_users {
+	background: #EEE;
+	border: 1px solid #999;
+	width: 95%;
+	font-size: .9em;
+	margin-top: 10px;
+}
+table.admin_users thead td {
+	background: white;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+#admin_users_panel #users_table {
+	width: 98%;
+	clear:both;
+	margin-top: 10px;
+}
+
+#admin_users_panel #users_table {
+	width: 100%;
+	clear:both;
+	margin-top: 10px;
+}
+
+#admin_console #users_list {
+	width: 500px;
+}
+#admin_console #admin_users_panel {
+	width: 500px;
+}
+#admin_console table#users_table {
+	width: 100%;
+	background: #FFF;
+	float: left;
+	margin-top: 12px;
+}
+
+#admin_console #users_list .dataTables_wrapper {
+	font-size: 1em;
+	width: 500px;
+}
+
+#admin_users_panel #users_table thead  {
+	background: #DDD;
+	width: 250px;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.card_type_icon {
+	float: left;
+	margin: 0 4px 0 0;
+	width: 18px;
+	height: 18px;
+	background: no-repeat;
+}
+
+.card_type_icon_0 {
+	background-image: url(/images/icons/page_text.gif);
+}
+
+.card_type_icon_1 {
+	background-image: url(/images/icons/icon_package_open.gif);
+}
+.card_type_icon_2 {
+	background-image: url(/images/icons/card.gif);
+}
+.card_type_icon_3 {
+	background-image: url(/images/icons/bug.gif);
+}
+.card_type_icon_4 {
+	background-image: url(/images/icons/icon_wand.gif);
+}
+
+
+.welcome_column {
+	float: left;
+	width: 35%;
+}
+
+div#signup_form {
+	padding-top: 20px;
+	padding-left: 20px;
+	height: 360px;
+	width: 100%;
+}
+div#signup_form h3 {
+  color:#444444;
+  font-size:1.5em;
+  margin-bottom: 14px;
+}
+div#signup_form .registration_code {
+	float: left;
+	width: 300px;
+	height: 260px;
+	border: 1px solid #999;
+	padding: 10px;
+	margin-right: 30px;
+}
+div#signup_form .registration_details {
+	float: left;
+	height: 260px;
+	border: 1px solid #999;
+	padding: 10px;
+}
+
+div#login_form {
+	padding: 12px;
+	height: 360px;
+    margin: 10px;
+}
+
+div#login_form h3 {
+  color:#444444;
+  font-size:1.5em;
+  margin-bottom: 14px;
+}
+
+div#user_details {
+  clear: both;
+	float: left;
+	padding: 12px;
+	height: 200px;
+    border: #666 dashed thin;
+    margin: 10px;
+	width: 200px;
+}
+
+div#user_details h1 {
+  color:#444444;
+  font-size:1.5em;
+  margin-bottom: 14px;
+}
+
+#user_details label, #user_change_password label {
+	color: #999;
+}
+
+#user_change_password {
+	float: left;
+	padding: 12px;
+	height: 200px;
+    border: #666 dashed thin;
+    margin: 10px;
+	width: 200px;
+}
+
+div#user_change_password h1 {
+  color:#444444;
+  font-size:1.5em;
+  margin-bottom: 14px;
+}
+
+#page_message {
+	font: italic small-caps bold 1.3em/1.5em Arial, sans-serif;
+}
+
+.flash_notice, .flash_error {
+  padding: 5px 8px;
+  margin: 10px 0;
+	float:left;
+	width:100%;
+}
+
+.flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+.flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+#project_users .buttons {
+    border:1px solid #CCCCCC;
+    padding:2px;
+    border: 0px;
+    width: 400px;
+    margin-top: 8px;
+}
+#project_users .user .actions {
+    background-color:#FEFEFE;
+    border:1px solid #CCCCCC;
+    padding:2px;
+}
+
+#project_users .user {
+    width: 400px;
+    border: #666 dashed thin;
+    padding: 6px;
+    margin-top: 6px;
+	background: #FFF7BB;
+
+}
+
+#project_users .user h1, #value_strea, h1 {
+    font-size: 1.3em;
+}
+
+#project_users .user h2, #value_stream h2 {
+    font-size: .9em;
+    font-style: italic;
+    color: #666;
+}
+
+
+form.new_project {
+    width: 500px;
+    border: #666 dashed thin;
+    padding: 6px;
+    margin: 10px;
+	background: #FFF7BB;
+	float: left;
+
+}
+
+ul#card_states {
+	list-style-type: none;
+}
+
+li.activity_state {
+    width: 400px;
+    border: #666 dashed thin;
+    padding: 6px;
+    margin-top: 6px;
+	background: #FFF7BB;
+
+}
+
+.tasklist_expand_collapse {
+	background: #F2BC8F;
+	font-weight: bold;
+	font-size: 1.1em;
+	padding: 3px;
+}
+
+
+.card_comments_tooltip_content {
+	display: none;        /* required */
+	position: absolute;   /* required */
+	border: 3px solid black;
+	padding: 2px;
+	background-color: white;
+	width: 300px;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+}
+.card_comments_tooltip_content .header {
+  margin: 2px 2px 0px 2px;
+}
+.card_comments_tooltip_content .task {
+	clear: both;
+}
+.card_comments_tooltip_content .task_state {
+	display: block;
+	width: 10px;
+	height: 10px;
+}
+.card_comments_tooltip_content .task_not_started { /* Completed */
+	background-color: lightgreen;
+	border: 3px solid #999;
+}
+.card_comments_tooltip_content .task_started { /* Not Started */
+	background-image:url('/images/icons/checkmark.jpg');
+	border: 3px solid #999;
+}
+.card_comments_tooltip_content .task_completed { /* Started */
+	background: white;
+	border: 3px solid #999;
+}
+.card_comments_tooltip_content .task_name {
+	display: block;
+	margin-left: 35px;
+}
+
+
+.user p.header {
+	margin-top: 8px;
+	background-color: lightblue;
+}
+ul.active_tasks {
+	list-style-type: none;
+	margin-bottom: 8px;
+}
+ul.active_tasks li ul li {
+	border: 1px solid #999;
+	padding-left: 4px;
+}
+
+.toolbar_icon {
+	float: right;
+}
+
+.dashboard_tasklist {
+	width: 300px;
+}
+
+.vertical_arrow {
+	margin: -10px 0 -20px 110px;
+}
+.vertical_arrow_up {
+	margin: -5px 0 -10px 60px;
+}
+.unfinished_column {
+	float: left;
+	padding: 10px;
+}
+.unfinished_finish_arrow {
+	float: left;
+	padding: 10px;
+}
+.finished_column {
+	float: left;
+	padding: 10px;
+}
+.dashboard_tasklist {
+	background-color: white;
+	border: 4px solid #999;
+	min-height: 100px;
+}
+
+#personal_kanban_board .control_panel {
+	width: 800px;
+	height: 20px;
+	border: 1px solid #999;
+	background-color: white;
+	padding: 8px;
+}
+
+#kanban_board  {
+	float: left;
+	border: .5px solid #999;
+	width: 95%;
+}
+
+#kanban {
+	float: left;
+	width: 100%;
+}
+
+.kanban_card {
+	float: left;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	border: 2px solid #999;
+	font-size: .9em;
+	width: 98%;
+	margin:0 0 2px -2px;
+	padding-right: 6px;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+}
+
+#backlog {
+  float: left;
+  width: 99%;
+}
+
+#backlog .kanban_backlog {
+	background: #FFF7BB;
+	margin: 2px;
+	border: 4px solid #CCCCCC;
+  list-style-type:none;
+	min-height: 710px;
+  width: 72%;
+  float: left;
+  min-width: 450px;
+}
+
+.kanban_backlog .kanban_card {
+	width: 200px;
+  margin:4px;
+  background: #F4D7B6;
+  float: left;
+}
+
+#kanban_queue {
+	background: #FFF7BB;
+	margin: 2px;
+	border: 4px solid #CCCCCC;
+	padding: 8px;
+  list-style-type:none;
+	min-height: 200px;
+	border-color: green;
+  width: 200px;
+  float: left;
+}
+#kanban_queue .kanban_card {
+  margin:4px 0 0 -2px;
+  float: left;
+}
+
+
+.kanban_card .card_header {
+  padding: 3px;
+  float: left; 
+  background-color: #F2BC8F; 
+  width: 100%;
+}
+.kanban_card .card_body {
+  padding: 3px;
+  float: left; 
+  background-color: #F4D7B6; 
+  width: 100%;
+  padding-bottom: 2px;
+  font-size: .9em;
+}
+div.kanban_staging_arrow {
+  -moz-background-clip:border;
+  -moz-background-inline-policy:continuous;
+  -moz-background-origin:padding;
+  background:#FFF7BB none repeat scroll 0 0;
+  border-bottom:4px solid #CCCCCC;
+  border-right:4px solid #CCCCCC;
+  border-top:4px solid #CCCCCC;
+  float:left;
+  width:227px;
+  margin-left:-6px;
+  margin-top:2px;  
+}
+div.kanban_staging_arrow img {
+  margin-left: 33px;
+}
+
+
+.kanban_card a {
+  float: left;
+  margin-right: 2px;
+}
+.kanban_card img {
+	float: left;
+  margin-right: 2px;
+}
+
+.kanban_card .description {
+	float: left;
+}
+
+.kanban_card .tasklist {
+	clear: both;
+	float: left;
+	font-size: .8em;
+	width: 98%;
+	text-align: left;
+	padding: 4px;
+	margin-top: 2px;
+	margin-left: -1px;
+	margin-right: 5px;
+	padding-bottom: 2px;
+	background: lightyellow;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+}
+
+.kanban_swimlane {
+	background: #FFF7BB;
+	margin: 2px;
+	border: 4px solid #CCCCCC;
+	padding: 4px;
+  list-style-type:none;
+	min-height: 710px;
+}
+.kanban_swimlane .header {
+	font-weight: bold;
+	font-variant: small-caps;
+	text-align: center;
+	margin-left:-4px;
+	margin-right:-4px;
+	margin-top:-4px;
+	margin-bottom: 8px;
+	border: 1px solid white;
+	padding-top: 4px;
+	background: lightyellow;
+}
+.kanban_swimlane .header2 {
+  font-style: italic;
+  font-size: .6em;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-align: center;
+	margin-left:-4px;
+	margin-right:-4px;
+	margin-top:-8px;
+	margin-bottom: 8px;
+	border: 1px solid white;
+	padding-top: 4px;
+	background: lightyellow;
+	color: #999;
+}
+
+
+.kanban_vertical_lane {
+	min-width: 99%;
+	float: left;
+	background: white;
+	margin-right: 10px;
+	border: 4px solid #999;
+	margin-bottom: 6px;
+}
+
+.kanban_vertical_lane .header {
+	float: left;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-align: left;
+	background: lightyellow;
+	color: black;
+	padding: 2px;
+
+}	
+.dashboard_tasklist .task_group {
+	margin: 6px;
+	border: 1px solid #999;
+	background-color: #F4D7B6;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+}
+.dashboard_tasklist p.header {
+	font-size: 1.1em;
+	background-color: lightblue;
+}
+button.done_button {
+	padding: .2em;
+  margin-left: .5em;
+}
+#breadcrumbs {
+	font-size: .8em;
+	float: left;
+	margin-left:6px;
+	margin-top:16px;
+}
+
+.ui-tabs .ui-widget-header {
+background: none;
+border:0px solid #D4D1BF;
+color:#453821;
+font-weight:bold;
+}
+.ui-tabs .ui-tabs-nav li a {
+float:left;
+padding:0.2em 0.4em 0.2em 0.4em;
+text-decoration:none;
+}
+
+#project_detail_tabs .ui-tabs-panel {
+  border:1px solid #999999;
+  float:left;
+  padding:8px;
+  min-width: 900px;
+  width: 97%;
+}
+#project_detail_tabs #project-tools-tabs .ui-tabs-panel {
+  border:0px solid #999999;
+  float:left;
+  padding:8px;
+  width:100%;
+}
+
+#project_settings_tabs .ui-tabs-panel {
+  border: 1px solid #999;
+  float: left;
+}
+
+.kanban_backlog_card .owner_name {
+  color: #999;
+}

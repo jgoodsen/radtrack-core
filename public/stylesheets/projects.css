@@ -1,0 +1,40 @@
+#project_show #project_state {
+	float: left;
+}
+
+#project_show fieldset {
+	border: 1px solid #999;
+	padding: 4px;
+	background: #EDF5FF;
+}
+
+#project_show fieldset fieldset {
+	float: left;
+	background: #EFEFEF;
+	margin-bottom: 12px;
+	width: 240px;
+}
+
+#project_show .page_component {
+	float: left;
+	margin-right: 20px;
+	margin-top: 12px;
+	width: 250px;
+	height: 450px;
+	border: 1px solid #999;
+}
+
+#iteration_success_indicator {
+}
+#iteration_success_indicator #success_bar {
+	float: left;
+	height: 16px;
+	width: 60px;
+	background: green;
+}
+#iteration_success_indicator #filler_bar {
+	float: left;
+	background: yellow;
+	height: 16px;
+	width: 30px;
+}

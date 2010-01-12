@@ -1,0 +1,4 @@
+aws_access_key:        'xx'
+aws_secret_access_key: 'xxx'
+options:
+use_ssl: false

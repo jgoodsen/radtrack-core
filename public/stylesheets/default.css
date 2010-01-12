@@ -1,0 +1,147 @@
+* {
+	font-family: "Helvetica Neue", Calibri, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+pre, code {
+	font-family: Monaco, "Andale Mono", Courier, "Courier New", monospace;
+}
+
+#toolbar .amp { font-weight: bold; }
+
+span.amp {
+	position: relative;
+	font-family: "Hoefler Text", "Palatino", "Palatino Linotype", serif !important;
+	font-style: italic;
+	line-height: .5em;
+	vertical-align: -2px;
+}
+
+body {
+	background-color: #C4C3BE;
+	color: #262524;
+	margin: 0;
+	padding: 0 0 0 0;
+}
+
+h1, h2, h3, h4, h5, h6, form {
+	font-size: 1em;
+  margin: 0;
+}
+
+img { border: 0; }
+
+
+#doc3 {
+font-size: .9em;
+}
+
+a:link, a:visited {
+	color: #225793;
+	text-decoration: none;
+}
+
+.main a:hover, .footer a:hover {
+	color: #022755;
+}
+
+.footer { padding: 1em; }
+
+.footer p {
+	font-size: .6667em;
+	text-align: center;
+	padding: 0 90px;
+	color: #878683;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.small {
+  font-size: .7778em;
+}
+
+ul.radio { padding-left: 2em; }
+ul.radio li {
+	list-style-type: none;
+	text-indent: -1.5em;
+	padding-bottom: .3333em;
+}
+
+a.newWindow {
+	background-image: url(../images/new-window.gif);
+	background-repeat: no-repeat;
+	background-position: 0 60%;
+	padding-left: 18px;
+}
+
+#toolbar {
+	position: relative;
+	background-color: #B8B6B3;
+	z-index: 20;
+	line-height: 1.2222em;
+}
+
+#toolbar ul {
+	padding: 0 1.7em;
+	list-style-type: none;
+	height: 2em;
+	font-weight: bold;
+}
+#toolbar li { float: left; }
+#toolbar a {
+	background-color: #B8B6B3;
+	display: block;
+	font-size: 1em;
+	padding: .2222em .6em .2222em .6em;
+	margin: .35em .25em 0 0;
+}
+#toolbar a:link, #toolbar a:visited { color: white; }
+#login a:link, #login a:visited,
+#signup a:link, #signup a:visited { color: #FFED8D; }
+#toolbar a:hover {
+	background-color: #E2E2DD;
+	color: #ABA9A6;
+	text-decoration: none;
+}
+#login a:hover, #signup a:hover {
+	color: #ABA9A6;
+	background-color: #F9E576;
+	text-decoration: none;
+}
+#toolbar .active a {
+	background-color: #EDEDE8 !important;
+	color: #767673 !important;
+}
+#toolbar #login,
+#toolbar #signup { float: right; }
+
+.salesPromoBox {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #DADAD5;
+	z-index: 11;
+}
+
+
+.main a:hover, .footer a:hover {
+	color: #022755;
+}
+
+a:hover .footerLogo {
+	width: 0;
+	padding-left: 91px;
+	overflow: hidden;
+}
+
+.footerLogo {
+	background-image: url(../images/home/clean/logo-footer-color.gif);
+	background-repeat: no-repeat;
+}

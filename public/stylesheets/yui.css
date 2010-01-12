@@ -1,0 +1,19 @@
+#hd {
+	float: left;
+}
+
+#bd {
+	margin-top: 10px;
+}
+
+#ft {
+	margin-top: 10px;
+	height: 10px;
+	font-size: 70%;
+	font-style: italic;
+}
+
+.yui-g {
+	float: left;
+	width: 98%;
+}

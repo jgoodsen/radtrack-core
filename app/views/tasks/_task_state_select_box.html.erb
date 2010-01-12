@@ -1,0 +1,5 @@
+<select id="task_state_<%= task.id %>" class="task_state">
+	<% task.card.project.task_states.each do |task_state| %>
+  <option value="<%= task_state.id %>" <%= task.task_state == task_state ? "selected=\"selected\"" : "" %> ><%= task_state.name %></option>
+  <% end %>
+</select>

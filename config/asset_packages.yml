@@ -1,0 +1,27 @@
+--- 
+javascripts: 
+- base: 
+  - ../jquery-ui-1.7.2.custom/js/jquery-1.3.2.min
+  - ../jquery-ui-1.7.2.custom/js/jquery-ui-1.7.2.custom.min
+  - ../multidraggable/js/ui.multidraggable
+  - jquery.livequery
+  - jquery.wresize
+  - jquery.jeditable
+  - jquery.ezpz_tooltip
+- tail:
+  - application
+  - kanban_card
+  - card_owner
+  - card
+  - kanban
+  - backlog
+  - project
+stylesheets: 
+- base: 
+  - ../jquery-ui-1.7.2.custom/css/default/jquery-ui-1.7.2.custom
+  - application
+  - projects
+  - yui
+  - default
+  - buttons
+  

@@ -1,0 +1,89 @@
+button, a.button, input[type=button] {
+	display: inline-block;
+	vertical-align: baseline;
+	margin-right: 0.3em;
+	background-color: #FFF7BB;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	line-height: 14px;
+	text-decoration: none;
+	font-size: 14px;
+	color: #565656;
+	padding: 0.65em;
+	width: auto;
+	overflow: visible;
+	cursor: pointer;
+}
+
+a.button:link, a.button:visited {
+	color: #565656;
+	padding: 0.30em;
+}
+
+.gecko button, .gecko input[type=button] {
+	padding: 0.3em;
+}
+
+.ie7 button, .ie7 input[type=button] {
+	display: inline;
+}
+
+.ie7 a.button {
+	display: inline;
+}
+
+.ie8 button {
+	padding: 0.68em;
+}
+
+button[disabled] {
+	color: #bbb;
+	cursor: inherit !important;
+}
+
+button[disabled] img {
+	opacity: 0.4;
+}
+
+button img, a.button img, input[type=button] img {
+	margin: 0 3px -3px 0 !important;
+	padding: 0;
+	border: none;
+	width: 16px;
+}
+
+.ie7 button img, .ie7 a.button img, .ie7 input[type=button] img {
+	vertical-align: text-top;
+}
+
+button:hover, a.button:hover, input[type=button]:hover {
+	background-color: #FFDD88;
+	color: #333;
+	border: 1px solid #999;
+}
+
+.smallButton {
+	font-size: 11px;
+	padding: 4px !important;
+}
+
+.buttonSeparator {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+	width: 1px;
+	height: 2.6em;
+	margin-right: 0.25em;
+	border-left: 1px solid #ddd;
+}
+
+.ie7 .buttonSeparator {
+	display: inline;
+	margin-right: 0.4em;
+}

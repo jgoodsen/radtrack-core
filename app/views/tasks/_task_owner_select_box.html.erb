@@ -1,0 +1,7 @@
+<select id="task_owner_<%= task.id %>" class="task_owner">
+	<option value="" <%= task.user.nil? ? "selected=\"selected\"" : "" %> ></option>
+	<%#  raise task.card.project.users.inspect %>
+	<% task.card.project.users.each do |user| %>
+  <option value="<%= user.id %>" <%= user == task.user ? "selected=\"selected\"" : "" %> ><%= user.name.empty? ? user.login : user.name %></option>
+  <% end %>
+</select>

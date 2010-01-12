@@ -1,0 +1,11 @@
+<tr id="task_<%= task.id %>"> <%#  TODO: Not Dry, task_id is repeated in this html %>
+	<td task_id="<%= task.id %>">
+	<%= image_tag('icons/cog_delete.png', :alt => 'Delete this task', :width => 15, :height => 15, :class => "task_delete", :title => "Delete this task") %></td>
+	<td>
+    <%= render :partial => 'tasks/task_owner_select_box', :locals => {:task => task} %>
+	</td>
+	<td>
+		<%= render :partial => 'tasks/task_state_select_box', :locals => {:task => task} %>
+	</td>
+	<td><span id='<%= "task_name_#{task.id}" %>' class="taskname"><%= task.name %></span></td>
+</tr>
