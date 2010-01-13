@@ -1,6 +1,6 @@
 Setup
 -----
-1. from from http://github.com/jgoodsen/radtrack-core
+1. fork from http://github.com/jgoodsen/radtrack-core
 	* follow directions on forking: http://help.github.com/forking/
 2. cp config/database.yml.template config/database.yml
 3. cp config/smtp_config_template.rb config/smtp_config.rb
