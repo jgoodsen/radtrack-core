@@ -12,7 +12,6 @@ javascripts:
   - application
   - kanban_card
   - card_owner
-  - card
   - kanban
   - backlog
   - project

@@ -45,8 +45,7 @@ Screw.Unit(function(){
 
   });
 
-  describe("Card", function(){
-    
+  describe("Card", function() {
     
 	  before(function(){
       fixture($('<div id="myswimlane"></div>'));
@@ -63,7 +62,7 @@ Screw.Unit(function(){
       describe("it is wrapped in an element that", function(){
 
         before(function(){
-          $('#myswimlane').addCard({card: card_json});
+          $('#myswimlane').addCardd({card: card_json});
         });
 
         it("should append a top level div with the class 'kanban_card'", function(){
