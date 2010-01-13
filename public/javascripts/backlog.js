@@ -49,7 +49,7 @@ $(function() {
     };
 
     board.append(ul);
-    $('.kanban_card', ul).multidraggable({
+    $('.kanban_card', ul).draggable({
       items: '.kanban_card',
       stop: function(data, ui) { 
         var card_id = $(this).attr("card_id");
