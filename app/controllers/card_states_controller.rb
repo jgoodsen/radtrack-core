@@ -3,7 +3,7 @@ class CardStatesController < AuthenticatedController
   def create
     
     if params[:card_state]
-      @x ||= @project.card_states.new(params[:card_state].merge(:key => 'need_to_delete_keys_from_card_states'))
+      @x ||= @project.card_states.new(params[:card_state])
       @x.save!
       respond_to do |format|
         format.html { render :partial => 'card_states/card_state', :locals => {:card_state => @x} }
