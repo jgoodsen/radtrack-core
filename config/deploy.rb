@@ -1,6 +1,6 @@
 default_run_options[:pty] = true
 set :scm, "git"
-set :repository,  "git@github.com:jgoodsen/radtrack.git"
+set :repository,  "git@github.com:jgoodsen/radtrack-core.git"
 
 ssh_options[:forward_agent] = true
 set :branch, "master"
