@@ -7,4 +7,6 @@ class CardState < ActiveRecord::Base
   
   acts_as_list :scope => :project
   
+  validates_format_of :name, :with => /^[\-\d\w\s\&]+$/i, :on => :create
+  validates_length_of :name, :maximum => 255
 end

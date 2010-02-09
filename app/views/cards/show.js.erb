@@ -109,16 +109,16 @@ function new_task_form() {
 }
 
 function popup_card_html() {
-	var html = '<div id="card_details_<%= @card.id %>" class="popup_card card_fancy_zoom card_details">';
-
-	html += '<div class="description"><%=escape_javascript(h(@card.description).gsub("\n", "<br/>")) if @card.description %></div>'; // TODO: Convert this erb to js
+	var html = '<div id="card_details_<%= @card.id %>" class="popup_card card_details">';
+	html += '<div class="card_title"><%=escape_javascript(h @card.title) %></div>';
+	html += '<div class="card_description"><%=escape_javascript(h(@card.description).gsub("\n", "<br/>")) if @card.description %></div>'; // TODO: Convert this erb to js
   html += tasklist_table(tasks);
-	html += '</div>';
+	html += '</div>';;
 	return html;
 }
 
 function update_card_title(card) {
-	var card_selector = make_card_id(card.id, 'kanban_card_');
+	var card_selector = "#" + make_card_id(card.id, 'kanban_card_');
 	$(card_selector).update_kanban_card({card: card});
 }
 
@@ -145,21 +145,6 @@ function card_description_changed(value, settings) {
 	return(value);
 };
 
-// Create and popup the card
-popup = $('#jquery_dialog_card');
-popup.dialog('destroy');
-popup.html(popup_card_html());
-
-popup.dialog({
-	minWidth: 460,
-	width: 460,
-	title: '<%=escape_javascript(h @card.title) %>',
-	close: function(event, ui) { $('#jquery_dialog_card').dialog('destroy'); }
-}).dialog('open').fadeIn("slow");
-
-$('.spinner').hide();	
-$('.delete_card').show();
-
 function delete_task_callback_success(data, textStatus) {
 	$("table#tasklist tr#"+data.taskid).fadeOut();
 }
@@ -170,6 +155,20 @@ function do_delete_task() {
   };
   return true;
 };
+
+// Create and popup the card
+popup = $('#jquery_dialog_card');
+popup.dialog('destroy');
+popup.html(popup_card_html());
+
+popup.dialog({
+	minWidth: 460,
+	width: 460,
+	close: function(event, ui) { $('#jquery_dialog_card').dialog('destroy'); }
+}).dialog('open').fadeIn("slow");
+
+$('.spinner').hide();	
+$('.delete_card').show();
 
 $('img.task_delete', popup).click(do_delete_task);
 
@@ -188,12 +187,12 @@ $('form.new_task').submit(function() {
 });
 
 
-$('span.ui-dialog-title').editable(card_title_changed, {
+$('#jquery_dialog_card .card_title').editable(card_title_changed, {
   tooltip    : 'Click to edit the card title ...',
   placeholder: 'Click to edit the card title ...',
   onblur     : 'submit'
 });
-$('#jquery_dialog_card .description').editable(card_description_changed, { 
+$('#jquery_dialog_card .card_description').editable(card_description_changed, { 
     type       : 'textarea',
     cancel     : 'Cancel',
     submit     : 'OK',

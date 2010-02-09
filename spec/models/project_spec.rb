@@ -11,7 +11,6 @@ describe Project do
   describe 'saving a project' do
   
     it 'should require a non-blank name' do
-      pending "fixme"
       project = Project.new({:name => ''})
       project.save.should be_false
       project.name = "X"
@@ -36,11 +35,10 @@ describe Project do
   describe "card_states" do
     
     it 'a new project should setup a default set of card_states' do
-      pending "remove cardstate from the system, after we have Workflow and Activities in the system"
-      # project = Project.new(:name x=> 'Test Project')
-      # project.card_states.should be_empty
-      # project.save!
-      # project.card_states.size.should == 4
+      project = Project.new(:name => 'Test Project')
+      project.card_states.should be_empty
+      project.save!
+      project.card_states.size.should > 0
     end
 
     it 'should acts_as_list' do
