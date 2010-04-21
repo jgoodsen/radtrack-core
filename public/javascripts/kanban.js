@@ -33,9 +33,10 @@ $(function() {
 		
 		for (var j=0; j < options.card_states.length; j++) {
 			card_state = options.card_states[j].card_state;
+			wip_limit_indicator = card_state.wip_limit == 0 ? "" : ' (' + card_state.wip_limit + ')';
 			ul = $('<ul id="card_state_' + card_state.id + '" class="kanban_swimlane" style="float: left; width:' + (85/(options.card_states.length)) + '%;"/>');
-			ul.append('<li class="header">' + card_state.name + '</li>');
-      for(var i=0; i < options.cards.length; i++) {
+			ul.append('<li class="header">' + card_state.name + wip_limit_indicator + '</li>');
+      	for(var i=0; i < options.cards.length; i++) {
 
         var card = options.cards[i].card;
         if (card.card_state_id == card_state.id) {
@@ -62,9 +63,6 @@ $(function() {
 			
 		};
 		
-		// TODO: Remove thisk once we migrate to using the kanban_card jQuery plugin that I'm building
-		$('img.tooltip').ezpz_tooltip();	
-
 		$(this).fadeIn(2000);
   
 	function CardDragged(x, ui) {

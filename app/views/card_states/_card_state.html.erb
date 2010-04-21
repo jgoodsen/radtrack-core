@@ -1,6 +1,6 @@
 <li class="activity_state card_state" id="card_state_<%= card_state.id %>">
 <%# image_tag "vertical_arrow.gif", :class=> "vertical_arrow" unless @project.card_states.first == card_state %>
-	<h1>Activity / State: <%= card_state.name%>
+	<h1><%= card_state.name %>
 	<%= image_tag("icons/cog_delete.png", :card_state_id => card_state.id, :class => "project_card_state_delete", :style => "cursor: pointer; float: right; ", :title => 'Remove this Activity from the project?') %></h1>
-  	<h2>This is where the short description will go ... coming soon ...</h2>
+  	<h2><%= card_state.wip_limit == 0 ? "No WIP Limit" : "WIP Limit: " + card_state.wip_limit.to_s %> </h2>
 </li>

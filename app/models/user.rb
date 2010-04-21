@@ -40,6 +40,15 @@ class User < ActiveRecord::Base
 
   has_many :cards
   
+  def self.create_admin_user
+    u = User.create!({:admin => true, :login => 'admin', :email => 'admin@radtrack.com', :password => 'monkey', :password_confirmation => 'monkey', :name => 'Administrator', :admin => 1})
+  end
+  
+  def self.create_guest_user
+    u = User.find_by_login 'guest'
+    u ||= User.create! :login => 'guest', :email => 'guest@radtrack.com', :password => 'password', :password_confirmation => 'password'
+  end
+    
   def deliver_password_reset_instructions!
     reset_perishable_token!
     Notifier.deliver_password_reset_instructions(self)
@@ -53,15 +62,6 @@ class User < ActiveRecord::Base
     read_attribute(:name).empty? ? login : read_attribute(:name)
   end
   
-  def self.create_admin_user
-    u = User.create!({:admin => true, :login => 'admin', :email => 'admin@radtrack.com', :password => 'monkey', :password_confirmation => 'monkey', :name => 'Administrator', :admin => 1})
-  end
-  
-  def self.create_guest_user
-    u = User.find_by_login 'guest'
-    u ||= User.create! :login => 'guest', :email => 'guest@radtrack.com', :password => 'password', :password_confirmation => 'password'
-  end
-    
   def active_tasks
     tasks.select{ |x| x.task_state.name == 'Started' }
   end

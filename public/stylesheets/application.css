@@ -552,6 +552,15 @@ ul#card_states {
 	list-style-type: none;
 }
 
+form#new_card_state {
+	padding: 10px;
+}
+
+form#new_card_state input#card_state_name {
+	margin-top: 4px;
+	margin-bottom: 10px;
+}
+
 li.activity_state {
     width: 400px;
     border: #666 dashed thin;

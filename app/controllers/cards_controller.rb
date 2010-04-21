@@ -37,12 +37,6 @@ class CardsController < AuthenticatedController
         flash.now[:error] << "Card creation failed."
         render :action => 'new'
       end
-    else
-      ## TODO: Is this even necessary?
-      ## This is a hack, but I just want to render the index URL with a get request - but a form won't let me
-      ## So I get routed to here whenever I check a filter button on the index page of a cardtable.
-      @cards ||= @project.cards
-      render :action => 'index'
     end
 
   end

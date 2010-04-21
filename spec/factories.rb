@@ -9,6 +9,7 @@ end
 Factory.sequence :login do |n|
   "username_#{n}"
 end
+
 Factory.sequence :project_name do |n|
   "Project_#{n}"
 end
@@ -16,21 +17,21 @@ Factory.sequence :card_title do |n|
   "Card Title # #{n}"
 end
 
-Factory.define :project do |p|
-	p.name { Factory.next(:project_name) }
-end
-
-Factory.define :user do |f|
-  f.login {Factory.next(:login)}
-  f.email { Factory.next(:email) }
-  f.password 'password'
-  f.password_confirmation 'password'
-end
-
-Factory.define :card do |c|
-  c.title Factory.next(:card_title)
-end
-
+# Factory.define :project do |p|
+#   p.name { Factory.next(:project_name) }
+# end
+# 
+# Factory.define :user do |f|
+#   f.login {Factory.next(:login)}
+#   f.email { Factory.next(:email) }
+#   f.password 'password'
+#   f.password_confirmation 'password'
+# end
+# 
+# Factory.define :card do |c|
+#   c.title Factory.next(:card_title)
+# end
+# 
 def create_user(userid)
 	Factory(:user, :login => userid)
 end

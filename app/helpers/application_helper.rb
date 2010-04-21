@@ -3,6 +3,7 @@ module ApplicationHelper
   
   include ActionView::Helpers::UrlHelper
   
+  ## TODO: I think we can remove all of the css_task_state stuff below...
   def css_task_state_for(task_state)
     task_state.name.downcase.gsub(' ', '_')
   end
@@ -15,7 +16,7 @@ module ApplicationHelper
     (project.kanban_tasks_for(user).select{|t| t.task_state.started?}.size >= 2) ? "team_member_status_maximum_capacity" : "team_member_status_has_capacity"
   end
 
-  ## TODO: probably remove this once we have user definable card type images
+  ## TODO: Remove this once we have user definable card types and associated images
   def card_type_image_icon_tag(card)
     def do_image_tag(type)
       content_tag :span, '', :class => "card_type_icon card_type_icon_#{type}"

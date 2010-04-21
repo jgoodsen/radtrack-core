@@ -9,4 +9,5 @@ class CardState < ActiveRecord::Base
   
   validates_format_of :name, :with => /^[\-\d\w\s\&]+$/i, :on => :create
   validates_length_of :name, :maximum => 255
+  
 end

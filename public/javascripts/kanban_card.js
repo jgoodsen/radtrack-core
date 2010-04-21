@@ -90,7 +90,7 @@ $(function() {
     card_display += '</div>';
 
     card_display += '<div class="card_body">';
-    card_display += '<a href="' + project_card_url(card.project_id, card.id) + '" class="popup_card_link">' + card.id + ': ' + card.title + '</a>';
+    card_display += '<a href="' + '#' + '" class="popup_card_link">' + card.id + ': ' + card.title + '</a>';
     card_display += '</div>';
 
     card_display += tooltip_content(card);
@@ -161,9 +161,11 @@ $(function() {
         };
 
         function remove_from_kanban() {
+
             function remove_card_succss(data, textStatus) {
                 $("#kanban_card_" + data.card.id).fadeOut();
             }
+
             if (confirm('Move this card to the backlog?')) {
                 $.post(project_card_move_to_backlog_url(project_id, ElementId.card_id($(this))), {
                     "authenticity_token": window._auth_token
@@ -176,9 +178,12 @@ $(function() {
 
     }
 
+    // TODO: I'm working here: Need to make popup cards work again!
     $.fn.kanban_card = function(options) {
-        $(this).append(make_card_html(options));
+        $(this).append($(make_card_html(options)));
+        var base = '#' + make_card_id(options.card.id, options.id_prefix);
+        $(base + ' a.popup_card_link', this).click(popup_card_dialog);
+				return $(this);
     };
 
 });
-
