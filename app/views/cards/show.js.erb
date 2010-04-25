@@ -50,10 +50,11 @@ function jquery_tasklist_table(tasks) {
 
 function tasklist_table() {
 	var tasks = <%= @card.tasks.to_json %>;
-    var header = '<div class="tasklist_expand_collapse">Tasks</div>';
+  var header = '<div class="tasklist_expand_collapse">Tasks</div>';
 	header += new_task_form();
 	var table = header + '<table id="tasklist">';
 	var tbody = '<tbody>';
+	
 	for(i =0; i < tasks.length; i++) {
 		task = tasks[i].task;
 		
@@ -200,4 +201,3 @@ $('#jquery_dialog_card .card_description').editable(card_description_changed, {
     placeholder: 'Click to edit the description ...',
     onblur     : 'submit'
 });
-$('input.task_name').clearOnFocus();

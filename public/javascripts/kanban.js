@@ -67,7 +67,7 @@ $(function() {
   
 	function CardDragged(x, ui) {
       var card_id = $(ui.item).attr('id').replace(/[^\d]+/g, '');
-	  var sibling_cards = $(ui.item).siblings('.kanban_card');
+	    var sibling_cards = $(ui.item).siblings('.kanban_card');
       var position = ui.item.prevAll().length;
       var card_state = ui.item.parent().attr("id");
       var to_cards = $('#'+card_state).sortable("serialize");

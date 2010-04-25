@@ -64,6 +64,7 @@ div#other_projects {
 
 /*********  Card Popup *************/
 
+.popup_card_details
 .ui-dialog-titlebar {
 	background: #FFFFCC url(/images/gradient-header.png) repeat-x scroll 0 2em;
 }
@@ -93,12 +94,17 @@ input.card_title {
 	text-align: left;
 	font-size: .8em;
 }
-#jquery_dialog_card .card_details .description {
-	min-height: 60px;
+#jquery_dialog_card .card_details .card_description {
+	min-height: 100px;
 	margin: 4px 2px 2px 2px;
 	padding: 2px;
 	background: #FFF;
 	border: 1px solid #999;
+}
+
+#jquery_dialog_card .card_details .card_title {
+	padding: 5px;
+	font: normal normal bold 1.5em Arial, sans-serif;
 }
 
 table#tasklist {
@@ -536,7 +542,6 @@ div#user_change_password h1 {
     font-style: italic;
     color: #666;
 }
-
 
 form.new_project {
     width: 500px;

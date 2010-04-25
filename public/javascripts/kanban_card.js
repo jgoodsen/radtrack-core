@@ -147,19 +147,6 @@ $(function() {
             })
         }
 
-        function delete_card() {
-            if (confirm('Are you sure you want to delete this card.  All data associated with this card will be lost and cannot be retrieved.  Are you *REALLY* sure?')) {
-                $.post(project_card_url(project_id, ElementId.card_id($(this))), {
-                    "_method": "delete",
-                    "authenticity_token": window._auth_token
-                },
-                function(data, textStatus) {
-                    $('#' + make_card_id(data.card_id, options.id_prefix)).fadeOut();
-                },
-                "json");
-            }
-        };
-
         function remove_from_kanban() {
 
             function remove_card_succss(data, textStatus) {
@@ -178,11 +165,26 @@ $(function() {
 
     }
 
-    // TODO: I'm working here: Need to make popup cards work again!
     $.fn.kanban_card = function(options) {
+
+      function delete_card() {
+          if (confirm('Are you sure you want to delete this card.  All data associated with this card will be lost and cannot be retrieved.  Are you *REALLY* sure?')) {
+              $.post(project_card_url(project_id, ElementId.card_id($(this))), {
+                  "_method": "delete",
+                  "authenticity_token": window._auth_token
+              },
+              function(data, textStatus) {
+                  $('#' + make_card_id(data.card_id, options.id_prefix)).fadeOut();
+              },
+              "json");
+          }
+      };
+
         $(this).append($(make_card_html(options)));
+
         var base = '#' + make_card_id(options.card.id, options.id_prefix);
         $(base + ' a.popup_card_link', this).click(popup_card_dialog);
+        $(base + ' img.delete_card', this).click(delete_card)
 				return $(this);
     };
 
