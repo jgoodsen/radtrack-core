@@ -70,6 +70,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :user_observer
 
   config.gem "authlogic"
+  config.gem 'will_paginate'
 
   # Searches for all gems in the /vendor/gems directory adds them to
   # the load path.  All gems must still be required for them to work.
@@ -79,8 +80,7 @@ Rails::Initializer.run do |config|
   
 end
 
-require 'will_paginate'
-
+## TODO: Remove this bitwise feature exposure experiment
 BETA_USERS=['admin@radtrack.com', 'admin', 'jgoodsen', 'jgoodsen@radsoft.com', 'dudeblak@gmail.com', 'curtis.cooley@gmail.com', 'jhno', 'pdale', 'bschnorf', 'jeff.kondas@gmail.com']
 
 if File.exist?("#{RAILS_ROOT}/config/smtp_config.rb")

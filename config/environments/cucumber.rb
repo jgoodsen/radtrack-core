@@ -15,8 +15,6 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem "factory_girl"
-
 DOMAIN_AND_PORT="localhost:3000"
 def default_url_options(options)
   { :host => 'localhost'}

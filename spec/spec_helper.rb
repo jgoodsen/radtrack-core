@@ -5,7 +5,7 @@ require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_
 require File.dirname(__FILE__) + "/factories"
 require 'spec/rails'
 
-require 'factories'
+# require 'factories'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

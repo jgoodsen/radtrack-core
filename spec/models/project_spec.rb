@@ -1,6 +1,5 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 require 'rubygems'
-require 'factory_girl'
 
 describe Project do
   

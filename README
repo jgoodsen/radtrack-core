@@ -11,7 +11,6 @@ Setup
 8. rake db:migrate (This also creates an admin user by default. Login is as 'admin@radtrack.com' and 'monkey')
 9. rake spec
 
-
 Running tests
 -----------------
 TODO: Still need to run all the tests at once with a single rake task..
