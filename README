@@ -5,10 +5,11 @@ Setup
 2. cp config/database.yml.template config/database.yml
 3. cp config/smtp_config_template.rb config/smtp_config.rb
 4. sudo gem install will_paginate
-5. sudo rake gems:install
-4. rake db:create:all
-5. rake db:migrate (also creates an admin user by default)
-6. rake spec
+5. sudo gem install rspec
+6. sudo rake gems:install
+7. rake db:create:all
+8. rake db:migrate (This also creates an admin user by default. Login is as 'admin@radtrack.com' and 'monkey')
+9. rake spec
 
 
 Running tests
