@@ -44,6 +44,7 @@ $(function() {
             card:card, 
             tasklist_popup: false,
             description_popup: false,
+						display_go_back: true,
             display_cardowner: true,
             card_tag: 'li',
             id_prefix: 'kanban_card_',
