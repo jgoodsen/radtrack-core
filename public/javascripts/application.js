@@ -60,6 +60,11 @@ function remove_user_from_project_url(project_id, user_id) {
   return "http://" + DOMAIN_AND_PORT + "/admin/projects/" + project_id + "/remove_user/" + user_id
 }
 
+function project_invite_user_url(project_id) {
+  return "http://" + DOMAIN_AND_PORT + "/projects/" + project_id + "/invite_user/"
+	
+}
+
 // This function isolates the logic on creating the html id for a card 
 function make_card_id(id, prefix) {
     if (typeof prefix == "undefined") {

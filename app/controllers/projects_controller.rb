@@ -78,6 +78,10 @@ class ProjectsController < AuthenticatedController
     end 
 	end
   
+  def invite_user
+    raise "Not yet implemented."
+  end
+  
   protected
     def get_project_by_id
       @project = @current_user.projects.find(params[:id])

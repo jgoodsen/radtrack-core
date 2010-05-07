@@ -1,7 +1,7 @@
 <div id="project_users">
 	
 <div class="buttons">
-    <%= link_to image_tag("icons/add.png") + "Invite A New Project Member", '#', :id => 'new_user_button', :class => 'button', :confirm => 'Not yet implemented.' %>
+    <%= link_to image_tag("icons/add.png") + "Invite A New Project Member", '#', :id => 'invite_user_button', :class => 'button' %>
 </div>
 
 <% if users.empty? %>
@@ -27,8 +27,26 @@
 			<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "Active Tasks in This Project", :tasks => u.active_tasks.select{|t| t.card.project == @project}} unless u.active_tasks %>
 			
 		</div>
-		
+		<div id="invite_user_dialog" style="display: none;">
+			<% form_for :user, :url => project_invite_user_url(@project) do |f| -%>
+				<p>Enter their email address:</p>
+				<%= f.text_field :email %>
+				<p><input type="submit" value="Send Invite &rarr;"></p>
+			<% end -%>
+		</div>
    <% end %>
 <% end %>
 
 </div>
+
+<script type="text/javascript" charset="utf-8">
+	function popup_invite_user_dialog() {
+		$('#invite_user_dialog').dialog();
+	}
+	
+	$(function() {
+		$('#invite_user_button').click(function() {
+			popup_invite_user_dialog();
+		})
+	})
+</script>
