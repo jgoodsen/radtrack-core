@@ -2,14 +2,21 @@ Setup
 -----
 1. fork from http://github.com/jgoodsen/radtrack-core
 	* follow directions on forking: http://help.github.com/forking/
+
 2. cp config/database.yml.template config/database.yml
 3. cp config/smtp_config_template.rb config/smtp_config.rb
+
+Now Edit the two files you just copied above for your local database and smtp email server configuration	
+
 4. sudo gem install will_paginate
 5. sudo gem install rspec
 6. sudo rake gems:install
 7. rake db:create:all
 8. rake db:migrate (This also creates an admin user by default. Login is as 'admin@radtrack.com' and 'monkey')
 9. rake spec
+
+Edit the Copied Template Files
+------------------------------
 
 Running tests
 -----------------
