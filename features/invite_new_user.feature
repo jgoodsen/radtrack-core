@@ -4,12 +4,12 @@ Feature: Invite User to Project
   As a project administrator
   I want to send a project invitation to that user
 	
-  Background:
-	Given a baseline configuration	
-    And I am logged in as 'john@test.com'
-  
   @wip
   Scenario: An invite is sent to an non-existent user
+	
+	Given a baseline configuration	
+    And I am logged in as 'john@test.com'
+	
 	Given I am using 'Project One'
 	When I send an invitation to 'eric@test.com'
 	Then an email is sent to 'eric@test.com'
