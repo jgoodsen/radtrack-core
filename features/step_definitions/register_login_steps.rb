@@ -19,6 +19,7 @@ Given /^I am logged in as 'john@test\.com'$/ do
 end
 
 Given /^I am using 'Project One'$/ do
+  @browser.link(:text, 'Project One').click
 end
 
 When /^I send an invitation to 'eric@test\.com'$/ do
