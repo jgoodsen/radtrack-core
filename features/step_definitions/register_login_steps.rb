@@ -1,4 +1,7 @@
 Given /^a baseline configuration$/ do
+  project = Factory(:project, :project_name => 'Project One')
+  project.save!
+  Project.all.size.should == 1
 end
 
 Given /^I am logged in as 'john@test\.com'$/ do

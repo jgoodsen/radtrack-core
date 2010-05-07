@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spec/expectations'
+require 'factory_girl'
 
 if ENV['FIREWATIR']
   require 'firewatir'
