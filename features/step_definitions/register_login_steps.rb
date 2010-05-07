@@ -11,9 +11,9 @@ Given /^a baseline configuration$/ do
   Project.first.users.size.should == 1
 end
 
-Given /^I am logged in as 'john@test\.com'$/ do
+Given /^I am logged in as "(.*)"$/ do |email|
   @browser.goto "http://#{DOMAIN_AND_PORT}/"
-  @browser.text_field(:id, 'user_session_login').set "john@test.com"
+  @browser.text_field(:id, 'user_session_login').set email
   @browser.text_field(:id, 'user_session_password').set "password"
   @browser.button(:name, 'commit').click
 end
@@ -23,17 +23,17 @@ Given /^I am using project "(.*)"$/ do |project_name|
   @project = Project.find_by_name project_name
 end
 
-When /^I send an invitation to 'eric@test\.com'$/ do
+When /^I send an invitation to "([^\"]*)"$/ do |email|
   pending "Can't figure out how to activate a jquery tab from cuke"
-  @browser.goto "http://#{DOMAIN_AND_PORT}/projects/#{@project.id}#members"
+  @browser.goto "http://#{DOMAIN_AND_PORT}/projects/#{@project.id}\#members"
 end
 
-Then /^an email is sent to 'eric@test\.com'$/ do
+Then /^an email is sent to "([^\"]*)"$/ do |arg1|
 end
 
-Then /^an account for 'eric@test\.com' exists$/ do
+Then /^an account for "([^\"]*)" exists$/ do |arg1|
 end
 
-Then /^the account for 'eric@test\.com' is marked as pending$/ do
+Then /^the account for "([^\"]*)" is marked as pending$/ do |arg1|
 end
 
