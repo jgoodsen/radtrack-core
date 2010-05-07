@@ -18,11 +18,14 @@ Given /^I am logged in as 'john@test\.com'$/ do
   @browser.button(:name, 'commit').click
 end
 
-Given /^I am using 'Project One'$/ do
-  @browser.link(:text, 'Project One').click
+Given /^I am using project "(.*)"$/ do |project_name|
+  @browser.link(:text, project_name).click
+  @project = Project.find_by_name project_name
 end
 
 When /^I send an invitation to 'eric@test\.com'$/ do
+  pending "Can't figure out how to activate a jquery tab from cuke"
+  @browser.goto "http://#{DOMAIN_AND_PORT}/projects/#{@project.id}#members"
 end
 
 Then /^an email is sent to 'eric@test\.com'$/ do

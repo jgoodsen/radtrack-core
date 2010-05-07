@@ -10,7 +10,7 @@ Feature: Invite User to Project
 	Given a baseline configuration	
     And I am logged in as 'john@test.com'
 	
-	Given I am using 'Project One'
+	Given I am using project "Project One"
 	When I send an invitation to 'eric@test.com'
 	Then an email is sent to 'eric@test.com'
 	And an account for 'eric@test.com' exists
