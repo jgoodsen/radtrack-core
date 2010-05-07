@@ -1,7 +1,6 @@
 As a project memeber, 
 I want to be able to popup a card and view/edit the card details from pretty much wherever the card is displayed or referenced in the tool.
 
-@wip
 Scenario: Popup the card from the My Tasks page
 
   Given Baseline Project "simple_project"
@@ -12,7 +11,6 @@ Scenario: Popup the card from the My Tasks page
   
   Then I should see a the popup dialog for the card
   
-@wip
 Scenario: Edit Title
 
   Given Baseline Project "simple_project"

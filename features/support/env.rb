@@ -1,33 +1,33 @@
+require 'rubygems'
 require 'spec/expectations'
-require 'selenium'
 
-# Sets up the Rails environment for Cucumber
-ENV["RAILS_ENV"] ||= "cucumber"
-require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
-
-# "before all"
-browser = Selenium::SeleniumDriver.new("localhost", 4444, "*chrome", "http://localhost", 15000)
-browser.start
-
-module Selenium
-  class SeleniumDriver
-    def click_and_wait(locator)
-      click locator
-      wait_for_page_to_load
-    end
+if ENV['FIREWATIR']
+  require 'firewatir'
+  Browser = FireWatir::Firefox
+else
+  case RUBY_PLATFORM
+  when /darwin/
+    require 'safariwatir'
+    Browser = Watir::Safari
+  when /win32|mingw/
+    require 'watir'
+    Browser = Watir::IE
+  when /java/
+    require 'celerity'
+    Browser = Celerity::Browser
+  else
+    raise "This platform is not supported (#{PLATFORM})"
   end
 end
-    
-Before do
-  @browser = browser
-  @browser.set_speed 500
-end
 
-After do
+# "before all"
+browser = Browser.new
+
+Before do	
+  @browser = browser
 end
 
 # "after all"
 at_exit do
-  browser.stop
-  browser.close rescue nil
+  #browser.close
 end

@@ -3,28 +3,22 @@ Feature: Invite User to Project
   In order to add a user to a project,
   As a project administrator
   I want to send a project invitation to that user
+	
+  Background:
+	Given a baseline configuration	
+    And I am logged in as 'john@test.com'
   
-  # Scenario: Main Success
-  # 
-  #   Given I'm the user "admin" using project "simple"
-  #   And the user "joe" does not exist
-  #   
-  #   When I send "joe" a project invitation
-  #   
-  #   Then an invitation email is sent with a confirmation link
-  #   And the user "joe" is a member of project "simple" with status "invitation sent"
-  # 
-  #   When "joe" clicks the invitation link
-  #   And enters a valid password
-  #   
-  #   Then the user "joe" is a member of the "simple" project with status "active"
-  # 
-  # Scenario: User already exists - present a dialog to add the user directly to the project
-  # 
-  #   Given I'm the user "admin" using project "simple"
-  #   And the user "joe" exists
-  # 
-  #   When I send "joe" a project invitation
-  #   And I confirm the dialog to add "joe" directly to the project
-  #   
-  #   And the user "joe" is a member of the "simple" project with status "active"
+  @wip
+  Scenario: An invite is sent to an non-existent user
+	Given I am using 'Project One'
+	When I send an invitation to 'eric@test.com'
+	Then an email is sent to 'eric@test.com'
+	And an account for 'eric@test.com' exists
+	And the account for 'eric@test.com' is marked as pending
+
+  Scenario: An invite is sent to an existing user - the user is immediately added to the project
+
+  Scenario: Expire pending accounts after 30 days
+
+  Scenario: Confirmation of project invitation
+

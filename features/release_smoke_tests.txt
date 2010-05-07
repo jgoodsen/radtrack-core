@@ -20,19 +20,19 @@ Feature: Manual Release Smoke/Regression Tests
   Feature: Exercise the popup dialog, tasklist ajax editing, etc.  Check for persistence.  Eventually thick box this instead of jDialog
 
 
-PRODUCT REQUEST BACKLOG: New Product Ideas
+#PRODUCT REQUEST BACKLOG: New Product Ideas
 
   ## Card Clustering
 
   ##  
   ## Card versioning and undo
-  Feature: Undo a card deletion.
-  Feature: Version control card edits, provide ability to view a previous version and roll it forward as the current version
+  #Feature: Undo a card deletion.
+  #Feature: Version control card edits, provide ability to view a previous version and roll it forward as the current version
   
   ## WIP Limits
-  Feature: Enable/Disable WIP limits on a project.
+  #Feature: Enable/Disable WIP limits on a project.
 
   ## Project Administration
-  Feature: Only a ProjectAdmin can edit project settings or even see the menu item.
-  Feature: Assign/revoke project admin rights to another user.
+  #Feature: Only a ProjectAdmin can edit project settings or even see the menu item.
+  #Feature: Assign/revoke project admin rights to another user.
 
