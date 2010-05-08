@@ -13,3 +13,5 @@ public/stylesheets/images/ui-*
 radtrack.iws
 config/smtp_config.rb
 db/schema.rb
+typescript
+tmp
