@@ -23,17 +23,3 @@ Given /^I am using project "(.*)"$/ do |project_name|
   @project = Project.find_by_name project_name
 end
 
-When /^I send an invitation to "([^\"]*)"$/ do |email|
-  pending "Can't figure out how to activate a jquery tab from cuke"
-  @browser.goto "http://#{DOMAIN_AND_PORT}/projects/#{@project.id}\#members"
-end
-
-Then /^an email is sent to "([^\"]*)"$/ do |arg1|
-end
-
-Then /^an account for "([^\"]*)" exists$/ do |arg1|
-end
-
-Then /^the account for "([^\"]*)" is marked as pending$/ do |arg1|
-end
-

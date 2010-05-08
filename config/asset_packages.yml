@@ -8,6 +8,7 @@ javascripts:
   - jquery.wresize
   - jquery.jeditable
   - jquery.ezpz_tooltip
+  - jquery.form
 - tail:
   - application
   - kanban_card

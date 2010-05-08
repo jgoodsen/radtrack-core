@@ -921,3 +921,11 @@ text-decoration:none;
 .kanban_backlog_card .owner_name {
   color: #999;
 }
+
+#invite_user_dialog {
+	padding: 8px;
+}
+#invite_user_dialog form p {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}

@@ -79,7 +79,7 @@ class ProjectsController < AuthenticatedController
 	end
   
   def invite_user
-    raise "Not yet implemented."
+    render :partial => 'users/show', :locals => {:user => @user}
   end
   
   protected

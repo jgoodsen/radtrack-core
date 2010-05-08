@@ -8,45 +8,27 @@
 	<div class="user"><h1>No Users for this project <h1></div>
 <% else %>
    <% users.each do |u| %>
-	   <div id="user_<%= u.id %>" class="user project_user">
-	       <h1>
-	
-			<%= u.email %>
-	
-			<% beta_user? do %>
-				<a href="skype:<%= u.login %>?chat"><img src="http://download.skype.com/share/skypebuttons/buttons/chat_green_white_164x52.png" style="border: none;" width="82px;" height="26px;" alt="Chat with me" title="Skype chat with <%= u.name %>"/></a>
-			<% end %>
-	
-			<% beta_user? do %>
-				<%= image_tag("icons/cog_delete.png", :id => "project_user_#{u.id}", :class => "project_user_delete", :style => "cursor: pointer; float: right; ", :title => 'Remove this user from the project?') %>
-			<% end %>
-			</h1>
-			
-			<h2><%= u.name %></h2>
-	
-			<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "Active Tasks in This Project", :tasks => u.active_tasks.select{|t| t.card.project == @project}} unless u.active_tasks %>
-			
-		</div>
-		<div id="invite_user_dialog" style="display: none;">
-			<% form_for :user, :url => project_invite_user_url(@project) do |f| -%>
-				<p>Enter their email address:</p>
-				<%= f.text_field :email %>
-				<p><input type="submit" value="Send Invite &rarr;"></p>
-			<% end -%>
-		</div>
+		<%= render :partial => 'users/show', :locals => {:user => u}%>
    <% end %>
 <% end %>
 
 </div>
 
 <script type="text/javascript" charset="utf-8">
+
 	function popup_invite_user_dialog() {
-		$('#invite_user_dialog').dialog();
+		$('#invite_user_dialog').dialog({title:"Invite a Person to this Project"});
 	}
 	
 	$(function() {
 		$('#invite_user_button').click(function() {
 			popup_invite_user_dialog();
 		})
-	})
+		$('#invite_user_dialog form').ajaxForm(function() { 
+			$('#invite_user_dialog').dialog("close");
+            alert("Invitation Sent!"); 
+
+        });
+	});
+	
 </script>
