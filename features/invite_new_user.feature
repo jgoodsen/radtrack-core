@@ -12,7 +12,7 @@ Feature: Invite User to Project
 	
 	Given I am using project "Project One"
 	When I send an invitation to "eric@test.com"
-	Then an email is sent to "eric@test.com"
+	Then a confirmation email is sent to "eric@test.com"
 	And an account for "eric@test.com" exists
 	And the account for "eric@test.com" is displayed as a pending member
 
@@ -27,3 +27,5 @@ Feature: Invite User to Project
   Scenario: Attempt to subscribe an invalid looking email address.
 
   Scenario: Handle creation of user errors from the controller and display a message
+
+  Scenario: Bring up the Invite User dialog more than once (a bug keeps it from popping up a second time)

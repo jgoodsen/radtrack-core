@@ -9,8 +9,9 @@ Net::SMTP.class_eval do
     raise IOError, 'SMTP session already started' if @started
     raise "nil user" if user.nil?
     raise "nil secret" if secret.nil?
-    raise "nil authtype" if authtype.nil?
-    check_auth_args user, secret, authtype if user or secret
+    # raise "nil authtype" if authtype.nil?
+    # check_auth_args user, secret, authtype if user or secret
+    check_auth_args user, secret if user or secret
 
     sock = timeout(@open_timeout) { TCPSocket.open(@address, @port) }
     @socket = Net::InternetMessageIO.new(sock)

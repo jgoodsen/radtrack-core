@@ -79,11 +79,21 @@ class ProjectsController < AuthenticatedController
 	end
   
   def invite_user
-    render :partial => 'users/show', :locals => {:user => @user}
+    password = generate_random_password
+    email = params[:user][:email]
+    @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
+    @user.deliver_password_reset_instructions!
+    # flash[:notice] = "Instructions have been emailed to #{@user.email}."
+    render :json => @user
   end
   
   protected
     def get_project_by_id
       @project = @current_user.projects.find(params[:id])
     end
+    
+    def generate_random_password
+      (0...20).map{ ('a'..'z').to_a[rand(26)] }.join
+    end
+    
 end

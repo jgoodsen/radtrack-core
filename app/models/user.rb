@@ -41,12 +41,12 @@ class User < ActiveRecord::Base
   has_many :cards
   
   def self.create_admin_user
-    u = User.create!({:admin => true, :login => 'admin', :email => 'admin@radtrack.com', :password => 'monkey', :password_confirmation => 'monkey', :name => 'Administrator', :admin => 1})
+    u = User.create!({:admin => true, :login => 'admin@radtrack.com', :email => 'admin@radtrack.com', :password => 'monkey', :password_confirmation => 'monkey', :name => 'Administrator', :admin => 1})
   end
   
   def self.create_guest_user
     u = User.find_by_login 'guest'
-    u ||= User.create! :login => 'guest', :email => 'guest@radtrack.com', :password => 'password', :password_confirmation => 'password'
+    u ||= User.create! :login => 'guest@radtrack.com', :email => 'guest@radtrack.com', :password => 'password', :password_confirmation => 'password'
   end
     
   def deliver_password_reset_instructions!
