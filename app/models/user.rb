@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   
   acts_as_authentic do |c|
     c.crypto_provider = Authlogic::CryptoProviders::Sha1
+    c.validates_length_of_password_field_options :minimum => 6
   end
   
   has_many :project_assignments
