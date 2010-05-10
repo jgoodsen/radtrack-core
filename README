@@ -15,9 +15,6 @@ Now Edit the two files you just copied above for your local database and smtp em
 8. rake db:migrate (This also creates an admin user by default. Login is as 'admin@radtrack.com' and 'monkey')
 9. rake spec
 
-Edit the Copied Template Files
-------------------------------
-
 Running tests
 -----------------
 TODO: Still need to run all the tests at once with a single rake task..
@@ -28,19 +25,17 @@ We currently have rspec tests for our models.  Run this with rake spec
 
 We've started to us ScrewUnit for java script unit tests.  Run these with rake spec:javascript
 
-We have Cucumber/Selenium tests.  
+We have Cucumber/Watir tests.  
 
-Cucumber/Selenium Configuration
+Cucumber/Watir Configuration
 -------------------------------
 We have a small suite of cucumber tests that are more like smoke tests than exhaustive acceptance tests.  
-They use Selenium to test drive the full application and simulate some basic user interactions like signing, creating/moving cards, etc.
+They now use Watir to run (they used to use Selenium, but we found Watir to be simpler and more reliable)
 
-Follow the Cucumber/Selenium installation instructions at http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium
+Follow the Cucumber/Watir installation instructions at http://wiki.github.com/aslakhellesoy/cucumber
 
 Run cucumber tests, you need to do the following:
 
-  1. run the command "selenium" in it's own window to start the selenium server.
   2. run the rails server in a cucumber environment: script/server -e cucumber
   3. run "rake cucumber".  Use "rake cucumber:wip" to run @wip tagged cucumber features
 
-For a good overview of available selenium RC commands, check out http://selenium-client.rubyforge.org/classes/Selenium/Client/Idiomatic.html
