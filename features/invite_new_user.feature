@@ -25,3 +25,5 @@ Feature: Invite User to Project
   Scenario: Confirmation of project invitation
 
   Scenario: Attempt to subscribe an invalid looking email address.
+
+  Scenario: Handle creation of user errors from the controller and display a message
