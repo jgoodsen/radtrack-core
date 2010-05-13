@@ -11,13 +11,14 @@ When /^I send an invitation to "([^\"]*)"$/ do |email|
 end
 
 Then /^a confirmation email is sent to "([^\"]*)"$/ do |email|
-  raise "No confirmation email was sent" unless ActionMailer::Base.deliveries.count == 1
+  ## TODO: No way to check if email was sent from the web server process right now
+  ##raise "No confirmation email was sent" unless ActionMailer::Base.deliveries.count == 1
 end
 
 Then /^an account for "([^\"]*)" exists$/ do |email|
   raise "Could not find user #{email}" unless User.find_by_email(email)
 end
 
-Then /^the account for "([^\"]*)" is marked as pending$/ do |email|
-  pending "How to mark an account as pending?"
+Then /^the account for "([^\"]*)" is not yet activated$/ do |email|
+  raise "User account for #{email} was actived when it should inactive" if User.find_by_email(email).activated
 end

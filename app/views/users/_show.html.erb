@@ -17,10 +17,3 @@
 		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "Active Tasks in This Project", :tasks => user.active_tasks.select{|t| t.card.project == @project}} unless user.active_tasks %>
 		
 	</div>
-	<div id="invite_user_dialog" style="display: none;">
-		<% form_for :user, :url => project_invite_user_url(@project) do |f| -%>
-			<p>Enter their email address:</p>
-			<%= f.text_field :email %>
-			<p><input id="invite_user_submit" type="submit" value="Send Invite &rarr;"></p>
-		<% end -%>
-	</div>

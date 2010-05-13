@@ -14,7 +14,10 @@ Feature: Invite User to Project
 	When I send an invitation to "eric@test.com"
 	Then a confirmation email is sent to "eric@test.com"
 	And an account for "eric@test.com" exists
-	And the account for "eric@test.com" is displayed as a pending member
+	And the account for "eric@test.com" is not yet activated
+	And the account for "eric@test.com" is associated with "Project One"
+
+  Scenario: Password Reset action will set user account to activated if it is not yet activated
 
   Scenario: An invite is sent to an existing user - the user is immediately added to the project
 

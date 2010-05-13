@@ -20,8 +20,12 @@ config.action_controller.allow_forgery_protection    = false
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
+config.action_mailer.default_url_options = {
+  :host => '127.0.0.1',
+  :port => 3000
+}
 
 REST_AUTH_SITE_KEY=''
 REST_AUTH_DIGEST_STRETCHES=1
 
-DOMAIN_AND_PORT="localhost:3000"
+DOMAIN_AND_PORT="127.0.0.1:3000"
