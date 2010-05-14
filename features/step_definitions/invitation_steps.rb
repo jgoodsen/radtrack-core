@@ -19,6 +19,10 @@ Then /^an account for "([^\"]*)" exists$/ do |email|
   raise "Could not find user #{email}" unless User.find_by_email(email)
 end
 
-Then /^the account for "([^\"]*)" is not yet activated$/ do |email|
-  raise "User account for #{email} was actived when it should inactive" if User.find_by_email(email).activated
+Then /^the account for "([^\"]*)" is associated with the project "([^\"]*)"$/ do |email, project_name|
+  Project.find_by_name(project_name).users.include?(User.find_by_email(email))
+end
+
+Then /^I see an entry for "([^\"]*)" in the Team Member list$/ do |email|
+  raise "Expected to see team member entry for #{email}" unless @browser.text =~ /email/
 end

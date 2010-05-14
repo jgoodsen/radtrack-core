@@ -23,6 +23,16 @@
 
 <script type="text/javascript" charset="utf-8">
 
+	function add_team_member(user) {
+		var html = "";
+		html += '<div id="user_' + user.id + '" class="user project_user">';
+		html += '<h1>' + user.email;
+		html += '<img title="Remove this user from the project?" style="cursor: pointer; float: right;" src="/images/icons/cog_delete.png" id="project_user_'+ user.id + '" class="project_user_delete" alt="Cog_delete">';
+		html += '</h1>';
+		html += '</div>'
+		$('#project_users').append($(html).project_user());
+	}
+	
 	function popup_invite_user_dialog() {
 		$('#invite_user_dialog').dialog({title:"Invite a Person to this Project"});
 		$('#invite_user_dialog').dialog("open");
@@ -32,10 +42,17 @@
 		$('#invite_user_button').click(function() {
 			popup_invite_user_dialog();
 		})
-		$('#invite_user_dialog form').ajaxForm(function() {
-			$('#invite_user_dialog').dialog("close");
-			add_new_team_member()
-        });
+		
+		// setup jQuery Plugin 'ajaxForm'
+	    var options = {
+	        dataType:  'json',
+	        success: function(json) {
+				$('#invite_user_dialog').dialog("close");
+				add_team_member(json.user);
+	        }
+		};
+		
+		$('#invite_user_dialog form').ajaxForm(options);
 	});
 	
 </script>

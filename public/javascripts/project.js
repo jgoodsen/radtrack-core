@@ -40,8 +40,8 @@ $(function() {
 		  }
 		  return true;
 		}
-
 		$('img.project_user_delete', this).click(remove_user_from_project);
+		return $(this);
 	}
 
 	$('#myprojects .project').project_tout();

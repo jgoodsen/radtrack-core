@@ -1,19 +1,6 @@
 <div id="user_<%= user.id %>" class="user project_user">
     <h1>
-
 		<%= user.email %>
-
-		<% beta_user? do %>
-			<a href="skype:<%= user.login %>?chat"><img src="http://download.skype.com/share/skypebuttons/buttons/chat_green_white_164x52.png" style="border: none;" width="82px;" height="26px;" alt="Chat with me" title="Skype chat with <%= user.name %>"/></a>
-		<% end %>
-
-		<% beta_user? do %>
-			<%= image_tag("icons/cog_delete.png", :id => "project_user_#{user.id}", :class => "project_user_delete", :style => "cursor: pointer; float: right; ", :title => 'Remove this user from the project?') %>
-		<% end %>
-		</h1>
-		
-		<h2><%= user.name %></h2>
-
-		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "Active Tasks in This Project", :tasks => user.active_tasks.select{|t| t.card.project == @project}} unless user.active_tasks %>
-		
-	</div>
+		<%= image_tag("icons/cog_delete.png", :id => "project_user_#{user.id}", :class => "project_user_delete", :style => "cursor: pointer; float: right; ", :title => 'Remove this user from the project?') %>
+	</h1>
+</div>
