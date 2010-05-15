@@ -1,7 +1,6 @@
-You have been invited to join the  <%= @user.login %>
+You have been invited by <%= @from_user.email %> to join the RAD/Track project <%= @project.name %>
 
-If you did not make this request, simply ignore this email.
-If you did make this request just click the link below:
+Please click here to activate your account and join the project.
 
 	<%= edit_password_reset_url(@user.perishable_token) %>
     

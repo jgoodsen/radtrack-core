@@ -8,12 +8,12 @@ class Notifier < ActionMailer::Base
     body          :user => user
   end
 
-  def project_invitation(user)
+  def project_invitation(user, project, from_user)
     subject       "RAD/Track Project Invitation"
     from          "RAD/Track"
     recipients    user.email
     sent_on       Time.now
-    body          :user => user
+    body          :user => user, :project => project, :from_user => from_user
   end
 
 end

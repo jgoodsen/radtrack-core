@@ -55,9 +55,9 @@ class User < ActiveRecord::Base
     Notifier.deliver_password_reset_instructions(self)
   end
   
-  def deliver_password_reset_instructions!
+  def deliver_project_invitation(project, from_user)
     reset_perishable_token!
-    Notifier.deliver_project_invitation(self)
+    Notifier.deliver_project_invitation(self, project, from_user)
   end
   
   def current_project

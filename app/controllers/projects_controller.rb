@@ -82,10 +82,9 @@ class ProjectsController < AuthenticatedController
     password = generate_random_password
     email = params[:user][:email]
     @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
-    @user.deliver_password_reset_instructions!
+    @user.deliver_project_invitation(@project, current_user)
     @project.users << @user
     @user.save!
-    # flash[:notice] = "Instructions have been emailed to #{@user.email}."
     render :json => @user
   end
   
