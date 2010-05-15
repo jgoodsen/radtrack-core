@@ -57,7 +57,7 @@ Net::SMTP.class_eval do
     end
   end
 
-  def startles
+  def starttls
     getok('STARTTLS')
   end
 
