@@ -14,11 +14,14 @@
 
 </div>
 <div id="invite_user_dialog" style="display: none;">
-	<% form_for :user, :url => project_invite_user_url(@project) do |f| -%>
+	<% form_for :user, :url => project_invite_user_url(@project), :id=>'invite_user_form' do |f| -%>
 		<p>Enter their email address:</p>
 		<%= f.text_field :email %>
 		<p><input id="invite_user_submit" type="submit" value="Send Invite &rarr;"></p>
 	<% end -%>
+	<div id="invite_user_working" style="display: none;">
+		<h1><%= image_tag 'spinner.gif' %>Sending Invitation ...</h1>
+	</div>
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -41,6 +44,11 @@
 		$('#invite_user_dialog').dialog("open");
 	}
 	
+	function showInvitingUserWorking(){ 
+		$('#invite_user_form').hide();
+		$('#invite_user_working').show();
+	}
+	
 	$(function() {
 		$('#invite_user_button').click(function() {
 			popup_invite_user_dialog();
@@ -49,6 +57,7 @@
 		// setup jQuery Plugin 'ajaxForm'
 	    var options = {
 	        dataType:  'json',
+			beforeSubmit: showInvitingUserWorking,
 	        success: function(json) {
 				$('#invite_user_dialog').dialog("close");
 				add_team_member(json.user, true);

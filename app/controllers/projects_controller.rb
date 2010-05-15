@@ -70,7 +70,6 @@ class ProjectsController < AuthenticatedController
 	  @project = Project.find(params[:id])
     @user = User.find(params[:user_id])
     @user.disassociate_from_project(@project)
-    @user.save!
     @project.save!
     respond_to do |format|
       format.html { redirect_to admin_user_path(@user) }
@@ -84,7 +83,7 @@ class ProjectsController < AuthenticatedController
     @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
     @project.users << @user
     @user.save!
-    @user.deliver_project_invitation(@project, current_user) if RAILS_ENV=='production'
+    @user.deliver_project_invitation(@project, current_user) #if RAILS_ENV=='production'
     render :json => @user
   end
   
