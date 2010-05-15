@@ -929,3 +929,11 @@ text-decoration:none;
 	margin-top: 6px;
 	margin-bottom: 6px;
 }
+
+ul.wip_limit_exceeded {
+	border: 3px solid red;
+}
+
+ul.wip_limit_acheived {
+	border: 3px solid blue;
+}

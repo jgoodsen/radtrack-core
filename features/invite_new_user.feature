@@ -4,7 +4,7 @@ Feature: Invite User to Project
   As a project administrator
   I want to send a project invitation to that user
 	
-  @wip
+  @done
   Scenario: An invite is sent to an non-existent user
 	
 	Given a baseline configuration	
