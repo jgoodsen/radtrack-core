@@ -33,3 +33,5 @@ Feature: Invite User to Project
   Scenario: Handle creation of user errors from the controller and display a message
 
   Scenario: Bring up the Invite User dialog more than once (a bug keeps it from popping up a second time)
+  
+  Scenario: Bad Email Address is detected and ajax request is never made

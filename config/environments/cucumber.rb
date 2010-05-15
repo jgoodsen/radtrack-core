@@ -1,5 +1,3 @@
-# Edit at your own peril - it's recommended to regenerate this file
-# in the future when you upgrade to a newer version of Cucumber.
 
 # IMPORTANT: Setting config.cache_classes to false is known to
 # break Cucumber's use_transactional_fixtures method.
@@ -30,11 +28,12 @@ config.gem 'safariwatir', :lib => false
 config.gem 'firewatir', :lib => false
 
 ## Only needed for Ruby 1.8.6 installations (which is my server at radtrack.com right now)
-config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
+# config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
 
 DOMAIN_AND_PORT="localhost:3000"
 config.action_mailer.default_url_options = {
   :host => '127.0.0.1',
   :port => 3000
 }
+
 

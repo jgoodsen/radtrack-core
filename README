@@ -29,9 +29,17 @@ We have a small suite of cucumber tests that are more like smoke tests than exha
 They now use Watir to run (they used to use Selenium, but we found Watir to be simpler and more reliable)
 
 Follow the Cucumber/Watir installation instructions at http://wiki.github.com/aslakhellesoy/cucumber
+* Install the Firefox jssh addon.
 
-To run cucumber tests, you need to do the following:
+To run cucumber tests, you need to do the following (these are Mac instructions - somebody please translate this to windows for me)
 
-  * run the rails server in one command window: script/server -e cucumber
+  * start firefox with -jssh enabled:  
+  
+       rake cucumber:firefox
+       
+  * run the rails server in one command window: 
+
+       script/server -e cucumber
+  
   * run "rake cucumber:ok" in another command window.  
   

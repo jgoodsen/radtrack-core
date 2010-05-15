@@ -1,7 +1,13 @@
 require 'rubygems'
+# Sets up the Rails environment for Cucumber
+ENV["RAILS_ENV"] ||= "cucumber"
+require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
+require 'cucumber/rails/world'
+Cucumber::Rails::World.use_transactional_fixtures = false
+
 require 'spec/expectations'
 require 'factory_girl'
-require 'config/environment.rb'
+require File.expand_path(File.dirname(__FILE__) + '/../../spec/factories')
 
 if ENV['FIREWATIR']
   require 'firewatir'
@@ -21,6 +27,7 @@ else
     raise "This platform is not supported (#{PLATFORM})"
   end
 end
+
 
 # "before all"
 browser = Browser.new
