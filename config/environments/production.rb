@@ -35,6 +35,7 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.perform_deliveries = true
 config.action_mailer.default_url_options   = { :host => DOMAIN_AND_PORT }
 
+config.gem 'mysql'
 config.gem "newrelic_rpm"
 
 config.action_mailer.default_url_options = {
