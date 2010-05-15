@@ -82,9 +82,9 @@ BETA_USERS=['admin@radtrack.com', 'admin', 'jgoodsen', 'jgoodsen@radsoft.com', '
 if File.exist?("#{RAILS_ROOT}/config/smtp_config.rb")
   require "#{RAILS_ROOT}/config/smtp_config.rb"
 else
-  DEFAULT_SMTP_TEMPLATE="#{RAILS_ROOT}/config/smtp_config_template.rb"
+  DEFAULT_SMTP_TEMPLATE="#{RAILS_ROOT}/config/smtp_config.rb.template"
   puts "WARNING: Using default smtp configuration template - which may or may not be valid: #{DEFAULT_SMTP_TEMPLATE}"
   puts File.read(DEFAULT_SMTP_TEMPLATE)
-  puts "To fix this, run the command 'cp config/smtp_config_template.rb config/smtp_config.rb && mate config/smtp_config.rb'
-  require "#{RAILS_ROOT}/config/smtp_config_template.rb"
+  puts "To fix this, run the command 'cp config/smtp_config.rb.template config/smtp_config.rb && mate config/smtp_config.rb'
+  require "#{RAILS_ROOT}/config/smtp_config.rb.template"
 end

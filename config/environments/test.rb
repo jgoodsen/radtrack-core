@@ -29,3 +29,7 @@ REST_AUTH_SITE_KEY=''
 REST_AUTH_DIGEST_STRETCHES=1
 
 DOMAIN_AND_PORT="127.0.0.1:3000"
+
+config.gem "sqlite3-ruby", :lib => 'sqlite3'
+config.gem 'rspec',        :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails',  :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))

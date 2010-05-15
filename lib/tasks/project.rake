@@ -25,6 +25,17 @@ namespace :svn do
   task :all => [:del, :add]
 end
 
+namespace :gems do
+  namespace :install do
+    task :all do
+      system "rake gems:install RAILS_ENV=development"
+      system "rake gems:install RAILS_ENV=test"
+      system "rake gems:install RAILS_ENV=production"
+      system "rake gems:install RAILS_ENV=cucumber"
+    end
+  end
+end
+
 namespace :db do
 
   desc "Re-run all migrations in both dev and test environments"
