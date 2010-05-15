@@ -1,5 +1,4 @@
-require 'smtp_tls'
-class PasswordResetsController < ApplicationController
+]class PasswordResetsController < ApplicationController
   
   before_filter :load_user_using_perishable_token, :only => [:edit, :update]
   before_filter :require_no_user
