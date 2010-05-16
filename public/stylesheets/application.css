@@ -931,9 +931,9 @@ text-decoration:none;
 }
 
 ul.wip_limit_exceeded {
-	border: 3px solid red;
+	border: 4px solid red;
 }
 
 ul.wip_limit_acheived {
-	border: 3px solid blue;
+	border: 4px solid green;
 }

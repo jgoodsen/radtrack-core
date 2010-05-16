@@ -42,7 +42,7 @@ describe Card do
     end
 
     it "provide unassigned mock owner if not assigned yet" do
-      @card.owner.name.should == "Owner is unassigned"
+      @card.owner.name.should == "Unassigned"
     end
 
     it "use user if exists for owner" do

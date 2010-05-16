@@ -33,7 +33,7 @@ var mock_card = function(options) {
 			"position":0,
 			"card_type_id":2,
 			"owner": {
-				"name":"Owner is unassigned",
+				"name":"Unassigned",
 				"admin":null,
 				"login":null,
 				"email":null,

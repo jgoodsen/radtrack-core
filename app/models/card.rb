@@ -36,7 +36,7 @@ class Card < ActiveRecord::Base
   end
 
   def owner
-    user_id ? User.find(user_id) : User.new(:name => "Owner is unassigned")
+    user_id ? User.find(user_id) : User.new(:name => "Unassigned")
   end
   
   def move_to_backlog
