@@ -21,9 +21,9 @@
 #cboxOverlay{background:#000;}
 
 #colorbox{}
-    #cboxTopLeft{width:14px; height:14px; background:url(colorbox_colorbox_images/controls.png) 0 0 no-repeat;}
-    #cboxTopCenter{height:14px; background:url(colorbox_colorbox_images/border.png) top left repeat-x;}
-    #cboxTopRight{width:14px; height:14px; background:url(colorbox_colorbox_images/controls.png) -36px 0 no-repeat;}
+    #cboxTopLeft{width:14px; height:14px; background:url(colorbox_images/controls.png) 0 0 no-repeat;}
+    #cboxTopCenter{height:14px; background:url(colorbox_images/border.png) top left repeat-x;}
+    #cboxTopRight{width:14px; height:14px; background:url(colorbox_images/controls.png) -36px 0 no-repeat;}
     #cboxBottomLeft{width:14px; height:43px; background:url(colorbox_images/controls.png) 0 -32px no-repeat;}
     #cboxBottomCenter{height:43px; background:url(colorbox_images/border.png) bottom left repeat-x;}
     #cboxBottomRight{width:14px; height:43px; background:url(colorbox_images/controls.png) -36px -32px no-repeat;}
