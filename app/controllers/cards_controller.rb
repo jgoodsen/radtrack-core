@@ -74,7 +74,7 @@ class CardsController < AuthenticatedController
   def show
     @card ||= @project.cards.find(params[:id])
     respond_to do |format|
-      format.html { raise "HTML View of a Card is not yet implemented" }
+      format.html {render :partial => 'cards/colorbox_card'}
       format.js
       format.json { render :json => @card.to_json(:include => [:tasks]) }
     end

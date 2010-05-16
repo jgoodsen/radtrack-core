@@ -9,6 +9,7 @@ javascripts:
   - jquery.jeditable
   - jquery.ezpz_tooltip
   - jquery.form
+  - jquery.colorbox
 - tail:
   - application
   - kanban_card
@@ -24,4 +25,5 @@ stylesheets:
   - yui
   - default
   - buttons
+  - colorbox_card
   

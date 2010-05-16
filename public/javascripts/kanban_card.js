@@ -115,7 +115,7 @@ $(function() {
 
 	        function card_type_image_icon_tag(card) {
 	            var number_of_card_types_for_project = 5;
-	            return '<span class="card_type_icon card_type_icon_' + (card.card_type_id % number_of_card_types_for_project) + '"/>'
+	            return '<a href="/projects/' + project_id + '/cards/' + card.id + '" class="card_type_icon"><span card_id="'+ card.id  + '" class="card_type_icon card_type_icon_' + (card.card_type_id % number_of_card_types_for_project) + '"/></a>'
 	        }
 
 	        var card = options.card;
@@ -190,8 +190,8 @@ $(function() {
         $(base + ' a.popup_card_link', this).click(popup_card_dialog);
         $(base + ' img.delete_card', this).click(delete_card)
         $(base + ' img.remove_from_kanban', this).click(remove_from_kanban);
-
-
+				$(base + ' a.card_type_icon', this).colorbox({opacity:0.3});
+				
         return $(this);
     };
 
