@@ -71,7 +71,7 @@
 }
 
 #colorbox_card .description {
-	font: normal normal normal 1em/1.5em Arial, sans-serif;
+	font: normal normal normal 0.9em Arial, sans-serif;
 	color: #555;
 	min-height: 60px;
 	border: 1px solid #999;

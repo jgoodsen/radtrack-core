@@ -7,6 +7,7 @@ javascripts:
   - jquery.livequery
   - jquery.wresize
   - jquery.jeditable
+  - jquery.editinplace
   - jquery.ezpz_tooltip
   - jquery.form
   - jquery.colorbox

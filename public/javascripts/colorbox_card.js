@@ -21,6 +21,9 @@ $(function() {
 				add_task(this, task);
 			}
 			
+			$('div.task .title', this).editInPlace({
+				url:"http://foobar.com/"
+			})
 			return $(this);
 			
 	};
@@ -46,8 +49,17 @@ $(function() {
 				html += '<div class="tasks">';
 				html += '</div>';
 
-		  $(this).html(html);	
+		  $(this).html(html);
+		  $(this).find('.description').editInPlace({
+				field_type:"textarea",
+				textarea_cols: 79,
+				textarea_rows: 5,
+			  url: "http://com.examplesite.www/users",
+			  params: "name=david"
+			});
+			
 			$(this).find('.tasks').colorbox_tasklist({card:card});
+			
 			
 			return $(this);
 
