@@ -17,6 +17,7 @@ javascripts:
   - kanban
   - backlog
   - project
+  - ../colorbox_card/colorbox_card
 stylesheets: 
 - base: 
   - ../jquery-ui-1.7.2.custom/css/default/jquery-ui-1.7.2.custom
@@ -25,5 +26,5 @@ stylesheets:
   - yui
   - default
   - buttons
-  - colorbox_card
+  - ../colorbox_card/colorbox_card
   
