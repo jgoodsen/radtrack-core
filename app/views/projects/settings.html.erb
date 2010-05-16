@@ -5,15 +5,14 @@
 	
      <ul>
          <li><a href="#members"><span>Team Members</span></a></li>
-         <li><a href="#value_stream"><span>Workflow</span></a></li>
-
+         <li><a href="#process"><span>Process</span></a></li>
      </ul>
 
     <div id="members">
 		<%= render :partial => 'users/index', :locals => {:users => @project.users} %>
     </div>
 
-    <div id="value_stream">
+    <div id="process">
 		<%= render :partial => 'card_states/index' %>
     </div>
 
@@ -23,7 +22,6 @@
 <script type="text/javascript">
     $(function() {
         $('#project_settings_tabs').tabs();
-        $('#project-tools-tabs').tabs();
     });
 </script>
 <% end %>

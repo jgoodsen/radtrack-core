@@ -65,7 +65,7 @@
 			var card_state_id = $(ui.item).attr('id').replace(/[^\d]+/g, '');
 			var to_card_states = $('#card_states').sortable("serialize");
 			$.post(project_card_state_dropped_path(project_id, card_state_id), {
-			'authenticity_token':window._auth_token,
+			    'authenticity_token':window._auth_token,
 			    'card_state_id': card_state_id,
 			    'card_states': to_card_states
 			 });

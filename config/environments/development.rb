@@ -20,9 +20,9 @@ config.action_controller.allow_forgery_protection    = true
 REST_AUTH_SITE_KEY=''
 REST_AUTH_DIGEST_STRETCHES=1
 
-DOMAIN_AND_PORT="127.0.0.1:3000"
+DOMAIN_AND_PORT="localhost:3000"
 config.action_mailer.default_url_options = {
-  :host => '127.0.0.1',
+  :host => 'localhost',
   :port => 3000
 }
 

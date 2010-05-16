@@ -16,20 +16,19 @@ config.action_controller.perform_caching             = false
 # Disable request forgery protection in test environment
 config.action_controller.allow_forgery_protection    = false
 
+config.gem "sqlite3-ruby", :lib => 'sqlite3'
+config.gem 'rspec',        :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails',  :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+
 # Tell Action Mailer not to deliver emails to the real world.
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 config.action_mailer.default_url_options = {
-  :host => '127.0.0.1',
+  :host => 'localhost',
   :port => 3000
 }
+DOMAIN_AND_PORT="localhost:3000"
 
 REST_AUTH_SITE_KEY=''
 REST_AUTH_DIGEST_STRETCHES=1
-
-DOMAIN_AND_PORT="127.0.0.1:3000"
-
-config.gem "sqlite3-ruby", :lib => 'sqlite3'
-config.gem 'rspec',        :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
-config.gem 'rspec-rails',  :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))

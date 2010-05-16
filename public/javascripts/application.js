@@ -76,5 +76,11 @@ function make_card_id(id, prefix) {
 
 $(function() {
 	$('#quickcard').clearOnFocus();
+	
+	
+	$('body').ajaxError(function() {
+	  alert("AJAX Error");
+	});
+	
 });
 

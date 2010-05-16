@@ -32,7 +32,7 @@ config.gem 'firewatir', :lib => false
 
 DOMAIN_AND_PORT="localhost:3000"
 config.action_mailer.default_url_options = {
-  :host => '127.0.0.1',
+  :host => 'localhost',
   :port => 3000
 }
 
