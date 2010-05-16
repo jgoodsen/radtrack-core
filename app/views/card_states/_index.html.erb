@@ -9,7 +9,8 @@
 		<%= f.text_field :name %>
 		
 		<br/>
-		<%= f.label :wip_limit, "WIP Limit: " %><%= f.select :wip_limit, [["None", 0],1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] %>
+		<%= f.label :wip_limit, "WIP Limit: " %>
+		<%= f.select :wip_limit, (1..12).inject([["None", 0]]) { |memo, val| memo << [val, val] } %>
 
 		<br/>
 		<br/>
