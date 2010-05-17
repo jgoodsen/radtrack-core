@@ -77,7 +77,7 @@ Rails::Initializer.run do |config|
 end
 
 ## TODO: Remove this bitwise feature exposure experiment
-BETA_USERS=['admin@radtrack.com', 'admin', 'jgoodsen', 'jgoodsen@radsoft.com', 'dudeblak@gmail.com', 'curtis.cooley@gmail.com', 'jhno', 'pdale', 'bschnorf', 'jeff.kondas@gmail.com']
+BETA_USERS=['admin@radtrack.com', 'admin', 'john@test.com', 'jgoodsen@radsoft.com', 'dudeblak@gmail.com', 'curtis.cooley@gmail.com']
 
 if File.exist?("#{RAILS_ROOT}/config/smtp_config.rb")
   require "#{RAILS_ROOT}/config/smtp_config.rb"

@@ -1,17 +1,16 @@
 class CardsController < AuthenticatedController
   
   helper :all
+
   include ActionView::Helpers::UrlHelper  
   include ActionController::UrlWriter
 
   include ApplicationHelper
-    
+
   def index
     @cards ||= @project.cards
-    respond_to do |format|
-      
+    respond_to do |format|     
       format.json { 
-        # card_positions = { '490' => {:top => 50, :left => 80} }
         card_positions = session[:backlog_card_positions] ? session[:backlog_card_positions] : {}
         cards_json = @cards.collect{ |c| 
           id = c.id.to_s
@@ -76,7 +75,7 @@ class CardsController < AuthenticatedController
     respond_to do |format|
       format.html {render :partial => 'cards/colorbox_card'}
       format.js
-      format.json { render :json => @card.to_json(:include => [:tasks]) }
+      format.json { render :json => @card.to_json(:include => {:tasks => {:include => :user} }) }
     end
   end
   

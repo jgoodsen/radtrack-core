@@ -18,22 +18,61 @@
   </div>
 
   <% beta_user? do %>
+
+
   <div id="project-tools">
     <div id="project-tools-tabs" style="float: left; width: 100%; height: 800px;">
       <ul>
-      <li><a href="#project-tools-fitnesse"><span>Fitnesse</span></a></li>
+		
+	      <li><a href="#project-tools-1"><span>fluid IA</span></a></li>
+	      <li><a href="#project-tools-3"><span>Workamajig</span></a></li>
+	      <li><a href="#project-tools-2"><span>Dabbleboard</span></a></li>
       </ul>
-      <div id="project-tools-fitnesse" width="100%;" height="100%;"><iframe src="http://localhost:4444" width="98%" height="760px;"></iframe></div>
+      <div id="project-tools-1" width="100%;" height="100%;"><iframe src="http://www.fluidia.org/" width="98%" height="760px;"></iframe></div>
+      <div id="project-tools-2" width="100%;" height="100%;"><iframe src="http://www.dabbleboard.com/" width="98%" height="760px;"></iframe></div>
+      <div id="project-tools-3" width="100%;" height="100%;"><iframe src="http://www.workamajig.com" width="98%" height="760px;"></iframe></div>
     </div>
   </div>
+
   <% end %>
 
 </div>
 
 <% content_for :tail_javascript do %>
 <script type="text/javascript">
+
+
 $(function() {
-  
+
+  $.fn.UserTabs = function(options) {
+		var defaults = {
+		       tabs: [{ title:"Sample Tab", url:"http://www.fluidia.org" }]
+		   };
+		   var options = $.extend(defaults, options);
+
+		var html = '';
+	    html += '<div id="project-tools-tabs" style="float: left; width: 100%; height: 800px;">';
+	
+	    html += '<ul>';
+	
+		for (var i=0; i < options.tabs.length; i++) {
+			var tab = options.tabs[i];
+		}
+
+		$(this).tabs({
+		});
+
+  }
+
+  $('#project-tools-tabs').UserTabs();
+
+  $('#project_detail_tabs').tabs({
+    load: reload_cards,
+    spinner: '',
+    ajaxOptions: {success: function() {}}
+  }).fadeIn(1000);
+
+
   function reload_cards(event, ui) {
     $(ui.panel).hide();
     $('.spinner', ui.tab).show();
@@ -51,15 +90,6 @@ $(function() {
       }
     });
   }
-
-  $('#project-tools-tabs').tabs({
-    ajaxOptions:{success: function() {}}
-  });
-  $('#project_detail_tabs').tabs({
-    load: reload_cards,
-    spinner: '',
-    ajaxOptions: {success: function() {}}
-  }).fadeIn(1000);
 
 });
 </script>

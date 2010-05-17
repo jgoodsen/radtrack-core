@@ -11,6 +11,7 @@ $(function() {
 			function add_task(parent, task) {
 				var html = '';
 				html += '<div class="task">';
+				html += '<span class="owner">' + task.owner + '</span>';
 				html += '<span class="title">' + task.name + '</span>';
 				html += '</div>';
 				$(parent).append(html);
