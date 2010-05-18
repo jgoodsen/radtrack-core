@@ -1,28 +1,16 @@
 class CardsController < AuthenticatedController
   
   helper :all
+
   include ActionView::Helpers::UrlHelper  
   include ActionController::UrlWriter
 
   include ApplicationHelper
-    
+
   def index
     @cards ||= @project.cards
-    respond_to do |format|
-      
-      format.json { 
-        # card_positions = { '490' => {:top => 50, :left => 80} }
-        card_positions = session[:backlog_card_positions] ? session[:backlog_card_positions] : {}
-        cards_json = @cards.collect{ |c| 
-          id = c.id.to_s
-          tasks_json = c.tasks.collect { |t|
-            {:name => t.name, :task_state_id => t.task_state_id}
-          }
-          position = card_positions[id].nil? ? {} : {:top => card_positions[id][:top].to_i, :left => card_positions[id][:left].to_i}
-          { :card => c.attributes.merge(:owner => {:id => c.owner.id, :name => c.owner.name}, :tasks => tasks_json).merge(position) } 
-        }
-        render :status => 200, :json => cards_json
-      }
+    respond_to do |format|     
+      format.json { render :status => 200, :json => @cards }
     end    
   end
   
@@ -76,7 +64,7 @@ class CardsController < AuthenticatedController
     respond_to do |format|
       format.html {render :partial => 'cards/colorbox_card'}
       format.js
-      format.json { render :json => @card.to_json(:include => [:tasks]) }
+      format.json { raise "Not Yet Implemented"}
     end
   end
   

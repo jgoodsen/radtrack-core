@@ -94,7 +94,6 @@ $(function() {
 	                    for (var j = 0; j < card.tasks.length; j++) {
 	                        var task = card.tasks[j];
 	                        x += '<tr><td><div class="task_state ' + task_state_class(task) + '"></div></td><td></td><td>' + task.name + '</td></tr>';
-	                        // x += '<div class="task"><div class="task_state '+ task_state_class(task) + '">' + '</div><div class="task_name">' + card.tasks[j].name + '</div></div>';
 	                    }
 	                    x += '</table>';
 	                } else {

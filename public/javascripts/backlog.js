@@ -1,25 +1,3 @@
-(function($) {
-
-    // // $.fn.swimLane = function() {
-    // //   return $(this).addClass("kanban_swimlane").addClass("kanban_backlog");
-    // // };
-    // 
-    // $.fn.Backlog = function(options) {
-    //   $.fn.Backlog.defaults = {
-    //     cards: [],
-    //   };
-    //   var opts = $.extend({}, $.fn.Backlog.defaults, options);
-    // 
-    //   var swimlane = $('<div/>').addClass("kanban_swimlane").addClass("kanban_backlog");
-    //   for(var i=0; i < opts.cards.length; i++) {
-    //     $(swimlane).addCard({card:opts.cards[i].card});
-    //   }
-    //   return $(this).append(swimlane);
-    //   
-    // };
-
-})(jQuery);
-
 $(function() {
   
   $.fn.backlog = function(options) {
@@ -34,7 +12,7 @@ $(function() {
     var ul = $('<ul/>').addClass("kanban_backlog");
 
     for(var i=0; i < options.cards.length; i++) {
-      var card = options.cards[i].card;
+      var card = options.cards[i];
       if (card.card_state_id == null) {
         ul.kanban_card({
           card: card, 

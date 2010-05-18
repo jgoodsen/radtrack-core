@@ -14,7 +14,7 @@ function task_owner_select(task) {
 	html += '></option>';
 
 	for (var i=0; i < users.length; i++) {
-		user = users[i].user;
+		user = users[i];
 		html += '<option value="' + user.id + '"';
 		if (user.id == task.user_id) {
 			html += ' "selected=\"selected\"';
@@ -29,7 +29,7 @@ function task_owner_select(task) {
 function task_state_select(task) {
 	var html = '<select id="task_state_' + task.id + '" class="task_state">';
 	for (var i=0; i < task_states.length; i++) {
-		task_state = task_states[i].task_state;
+		task_state = task_states[i];
 		html += '<option value="' + task_state.id + '"';		
 		if (task_state.id == task.task_state_id) {
 			html += ' "selected=\"selected\"';
@@ -56,7 +56,7 @@ function tasklist_table() {
 	var tbody = '<tbody>';
 	
 	for(i =0; i < tasks.length; i++) {
-		task = tasks[i].task;
+		task = tasks[i];
 		
 		// TODO: Not DRY.  This HTML generation needs to be abstracted and tasks/_tasklist_row.html.erb should be removed
 		var row = '<tr id="task_' + task.id + '">';

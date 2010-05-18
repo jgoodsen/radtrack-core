@@ -10,13 +10,13 @@ $(function() {
         var div = '';
 
         for (var j = 0; j < options.card_states.length; j++) {
-            card_state = options.card_states[j].card_state;
+            card_state = options.card_states[j];
             wip_limit_indicator = card_state.wip_limit == 0 ? "": ' (' + card_state.wip_limit + ')';
             ul = $('<ul id="card_state_' + card_state.id + '" class="kanban_swimlane" style="float: left; width:' + (85 / (options.card_states.length)) + '%;"/>');
             ul.append('<li class="header">' + card_state.name + wip_limit_indicator + '</li>');
             for (var i = 0; i < options.cards.length; i++) {
 
-                var card = options.cards[i].card;
+                var card = options.cards[i];
                 if (card.card_state_id == card_state.id) {
                     ul.kanban_card({
                         card: card,
@@ -63,7 +63,7 @@ $(function() {
 
 				function updateWipLimitFeedback() {
 	        for (var j = 0; j < options.card_states.length; j++) {
-            card_state = options.card_states[j].card_state;
+            card_state = options.card_states[j];
 
 						$('#' + 'card_state_' + card_state.id).removeClass("wip_limit_exceeded");						
 						$('#' + 'card_state_' + card_state.id).removeClass("wip_limit_acheived");						
