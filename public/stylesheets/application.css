@@ -373,7 +373,6 @@ table.admin_users thead td {
 	background-image: url(/images/icons/icon_wand.gif);
 }
 
-
 .welcome_column {
 	float: left;
 	width: 35%;
@@ -385,24 +384,27 @@ div#signup_form {
 	height: 360px;
 	width: 100%;
 }
+
 div#signup_form h3 {
   color:#444444;
   font-size:1.5em;
   margin-bottom: 14px;
 }
-div#signup_form .registration_code {
+
+div#signup_form .registration_section {
 	float: left;
-	width: 300px;
-	height: 260px;
 	border: 1px solid #999;
 	padding: 10px;
+}
+
+div#signup_form .registration_code {
+	width: 300px;
+	height: 237px;
 	margin-right: 30px;
 }
-div#signup_form .registration_details {
-	float: left;
-	height: 260px;
-	border: 1px solid #999;
-	padding: 10px;
+
+div#signup_form .registration_details p {
+	padding-bottom: 10px;
 }
 
 div#login_form {

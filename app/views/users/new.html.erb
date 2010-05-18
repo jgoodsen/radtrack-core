@@ -4,7 +4,7 @@
   <% @user.password = @user.password_confirmation = nil if @user %>
 	<% form_for @user do |f| -%>
 
-  <div class="registration_code">    <%= link_to image_tag('graffle/radtrack_logo_beta.png', :border => '0'), 'http://radtrack.com' %>
+  <div class="registration_section registration_code">    <%= link_to image_tag('graffle/radtrack_logo_beta.png', :border => '0'), 'http://radtrack.com' %>
     <br/>
     <br/>
 
@@ -18,7 +18,7 @@
     
   </div>    
 
-  <div class="registration_details">  	
+  <div class="registration_section registration_details">  	
   
     <h3 class="as_h1">... and create your account!</h3>
     
