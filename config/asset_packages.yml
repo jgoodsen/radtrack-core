@@ -11,6 +11,7 @@ javascripts:
   - jquery.ezpz_tooltip
   - jquery.form
   - jquery.colorbox
+  - jquery.livesearch
 - tail:
   - application
   - kanban_card

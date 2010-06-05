@@ -41,7 +41,9 @@ $(function() {
             });
 
         };
+        
 				updateWipLimitFeedback();
+				
         $(this).fadeIn(2000);
 
         function CardDragged(x, ui) {
@@ -86,11 +88,6 @@ $(function() {
 
     }
     //end of kanban scope
-
-    $.fn.card_state = function(options) {
-
-    };
-    // end of card_state
 
 });
 

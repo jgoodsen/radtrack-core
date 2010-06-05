@@ -93,30 +93,5 @@ $(function() {
 
 });
 </script>
-<script type="text/javascript" src="/javascripts/jquery.livesearch.js"></script>
-<script type="text/javascript">
-(function($) {
- $(document).ready(function() {
-    var backlog_cards = '.kanban_backlog li'
-   
-    $('input[name="f"]').search(backlog_cards, function(on) {
-      on.reset(function() {
-        $('#none').hide();
-        $(backlog_cards).show();
-      });
 
-      on.empty(function() {
-        $('#none').show();
-        $(backlog_cards).hide();
-      });
-
-      on.results(function(results) {
-        $('#none').hide();
-        $(backlog_cards).hide(); //hide all
-        results.show(); //show only resulting elements
-      });
-    });
-  });
-})(jQuery);
-</script>
 <% end %>

@@ -8,6 +8,31 @@ $(function() {
     };
     var options = $.extend(defaults, options);
 
+    self.enableLivesearch = function() {
+      var backlog_cards = '.kanban_backlog li'
+
+      $('input[name="f"]').search(backlog_cards, function(on) {
+        on.reset(function() {
+          $('#none').hide();
+          $(backlog_cards).show();
+        });
+
+        on.empty(function() {
+          $('#none').show();
+          $(backlog_cards).hide();
+        });
+
+        on.results(function(results) {
+          $('#none').hide();
+          $(backlog_cards).hide(); //hide all
+          results.show(); //show only resulting elements
+        });
+      });  
+          
+    }
+
+    enableLivesearch();
+    
     var board = $(this);
     var ul = $('<ul/>').addClass("kanban_backlog");
 
@@ -73,6 +98,7 @@ $(function() {
   		var W = w.width(); 
   		$('.kanban_backlog').css( {width: W-360} ); 
   	};
+  	
     kanban_backlog_resize();
   	$( window ).wresize( kanban_backlog_resize ); 
   };
