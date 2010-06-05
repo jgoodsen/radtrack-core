@@ -78,13 +78,18 @@ class ProjectsController < AuthenticatedController
 	end
   
   def invite_user
-    password = generate_random_password
     email = params[:user][:email]
-    @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
-    @project.users << @user
-    @user.save!
-    @user.deliver_project_invitation(@project, current_user) #if RAILS_ENV=='production'
-    render :json => @user
+    if @user=User.find_by_email(email)
+      @project.users << @user
+      @user.save
+    else
+      password = generate_random_password
+      @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
+      @project.users << @user
+      @user.save!
+      @user.deliver_project_invitation(@project, current_user) #if RAILS_ENV=='production'
+    end
+    render :json => @user, :success => true
   end
   
   protected

@@ -78,9 +78,9 @@ $(function() {
 	$('#quickcard').clearOnFocus();
 	
 	
-	$('body').ajaxError(function() {
-	  alert("AJAX Error");
-	});
+	// $('body').ajaxError(function() {
+	//   //alert("AJAX Error");
+	// });
 	
 });
 

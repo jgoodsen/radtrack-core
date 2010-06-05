@@ -29,7 +29,7 @@ Feature: Invite User to Project
 	Then the account for "eric@test.com" is associated with the project "Project One"
 	And I see an entry for "eric@test.com" in the Team Member list
 	
-	
+  @wip
   Scenario: An invite is sent to an existing user that is already assigned to the project
 
   Scenario: Expire pending accounts after 30 days
