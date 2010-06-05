@@ -27,6 +27,8 @@
 <script type="text/javascript" charset="utf-8">
 
 	function add_team_member(user, pending) {
+		$('#invite_user_working').hide();
+		
 		var html = "";
 		html += '<div id="user_' + user.id + '" class="user project_user">';
 		html += '<h1>' + user.email;
