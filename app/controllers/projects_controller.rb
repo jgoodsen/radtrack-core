@@ -82,6 +82,7 @@ class ProjectsController < AuthenticatedController
     if @user=User.find_by_email(email)
       @project.users << @user
       @user.save
+      @user.deliver_project_invitation(@project, current_user) #if RAILS_ENV=='production'
     else
       password = generate_random_password
       @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
