@@ -356,12 +356,25 @@ table.admin_users thead td {
 	background: no-repeat;
 }
 
+.livesearch_empty {
+  border: 3px solid red;
+}
+
+.card_type_filter_icon {
+	float: left;
+	margin: 0 4px 0 0;
+	width: 18px;
+	height: 18px;
+	background: no-repeat;
+	border: 2px solid #999;
+}
+
 .card_type_filter_icon_off {
 	border: 4px solid #EEE;
 }
 
-.card_type_filter_icon_on {
-	border: 1px solid #999;
+.card_type_filter_icon.card_type_filter_icon_on {
+	border: 2px solid red;
 }
 
 .card_type_icon_0 {

@@ -9,20 +9,24 @@ $(function() {
     var options = $.extend(defaults, options);
 
     self.enableLivesearch = function() {
+      
       var backlog_cards = '.kanban_backlog li'
 
       $('input[name="f"]').search(backlog_cards, function(on) {
         on.reset(function() {
+          $(this).removeClass("livesearch_empty")
           $('#none').hide();
           $(backlog_cards).show();
         });
 
         on.empty(function() {
-          $('#none').show();
+          // $('#none').show();
+          $(this).addClass("livesearch_empty")
           $(backlog_cards).hide();
         });
 
         on.results(function(results) {
+          $(this).removeClass("livesearch_empty")
           $('#none').hide();
           $(backlog_cards).hide(); //hide all
           results.show(); //show only resulting elements
@@ -30,8 +34,20 @@ $(function() {
       });  
           
     }
-
     enableLivesearch();
+    
+    self.enableFilterByCardType = function() {
+      $('.card_type_filter_icon').click(function() {
+        var card_type_id = $(this).attr("card_type_id")
+        $(this).toggleClass("card_type_filter_icon_on")
+        if ($(this).hasClass("card_type_filter_icon_on")) {
+          $('.kanban_backlog .card_type_icon_' + card_type_id).closest(".kanban_card").hide()
+        } else {
+          $('.kanban_backlog .card_type_icon_' + card_type_id).closest(".kanban_card").show()          
+        }
+      })
+    }
+    enableFilterByCardType();
     
     var board = $(this);
     var ul = $('<ul/>').addClass("kanban_backlog");
