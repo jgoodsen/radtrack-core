@@ -50,6 +50,11 @@ class User < ActiveRecord::Base
     u ||= User.create! :login => 'guest@radtrack.com', :email => 'guest@radtrack.com', :password => 'password', :password_confirmation => 'password'
   end
     
+  def deliver_added_to_project_notification(project, from_user)
+    reset_perishable_token!
+    Notifier.deliver_added_to_project_notification(self, project, from_user)
+  end
+    
   def deliver_password_reset_instructions!
     reset_perishable_token!
     Notifier.deliver_password_reset_instructions(self)
