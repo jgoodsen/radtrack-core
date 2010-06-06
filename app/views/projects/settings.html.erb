@@ -9,12 +9,28 @@
      </ul>
 
     <div id="members">
-		<%= render :partial => 'users/index', :locals => {:users => @project.users} %>
+  		<%= render :partial => 'users/index', :locals => {:users => @project.users} %>
     </div>
 
     <div id="process">
-		<%= render :partial => 'card_states/index' %>
-    </div>
+      <div class="swimlanes">
+        <fieldset>
+          <legend>Kanban Workflow</legend>
+    		  <%= render :partial => 'card_states/index' %>
+        </fieldset>
+      </div>
+  	  <div class="wip_enforcement_policy">
+        <fieldset>
+          <legend>WIP Enforcement Policy</legend>
+          <input type="checkbox" name="enable_override" value="" id="enable_override">
+          <label for="enable_override">Enable WIP Limits to be overridden</label>
+          <br/>
+          <input type="checkbox" name="warn_override" value="" id="warn_override">
+          <label for="warn_override">Warn on Override</label>
+        </fieldset>
+      </div>
+	  </div>
+	  
 
 </div>
 

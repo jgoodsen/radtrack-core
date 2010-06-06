@@ -939,6 +939,25 @@ text-decoration:none;
 #project_settings_tabs .ui-tabs-panel {
   border: 1px solid #999;
   float: left;
+  min-width: 800px;
+  min-height: 500px;
+}
+
+#project_settings_tabs fieldset {
+  padding: 10px;
+}
+#project_settings_tabs legend {
+  font: normal normal bold 1.1em/1.5em Arial, sans-serif;
+}
+
+#project_settings_tabs .swimlanes {
+  float: left;
+}
+
+#project_settings_tabs .wip_enforcement_policy {
+  float: left;
+  margin-left: 30px;
+  
 }
 
 .kanban_backlog_card .owner_name {

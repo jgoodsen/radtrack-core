@@ -1,4 +1,14 @@
+//
+// This was originally jquery.livesearch.js but I modified it to be case insensitive 
+// and renamed the file - John Goodsen. April 21, 2010
+//
 (function($) {
+  
+  // Implement a case insensitive jQuery selecgtor operation ":icontains() that is used when matching elements"
+  $.expr[':'].icontains = function(obj, index, meta, stack){
+  return (obj.textContent || obj.innerText || jQuery(obj).text() || '').toLowerCase().indexOf(meta[3].toLowerCase()) >= 0;
+  };
+  
   var Search = function(block) {
     this.callbacks = {};
     block(this);
@@ -11,7 +21,7 @@
 
   function query(selector) {
     if (val = this.val()) {
-      return $(selector + ':contains("' + val + '")');;
+      return $(selector + ':icontains("' + val + '")');;
     } else {
       return false;
     }
