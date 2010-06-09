@@ -76,8 +76,18 @@ function make_card_id(id, prefix) {
 	return prefix + id;
 }
 
+function toArray(enum) {
+    return Array.prototype.slice.call(enum);
+}
 
-$(function() {
-	$('#quickcard').clearOnFocus();
-});
+Function.prototype.curry = function() {
+    if (arguments.length < 1) {
+        return this; //nothing to curry with - return function
+    }
+    var __method = this;
+    var args = toArray(arguments);
+    return function() {
+        return __method.apply(this, args.concat(toArray(arguments)));
+    }
+}
 

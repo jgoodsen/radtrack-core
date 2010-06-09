@@ -59,7 +59,7 @@
 	height: 400px;
 }
 
-#colorbox_card h1 {
+#colorbox_card .title {
 	margin-top: 10px;
 	font: normal small-caps normal 1.3em/1.5em Arial, sans-serif;
 }
