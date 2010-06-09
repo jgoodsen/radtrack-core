@@ -35,6 +35,7 @@ ActionController::Routing::Routes.draw do |map|
     end
     
     project.resources :cards do |card|
+      card.update_attribute 'update_attribute', :controller => 'cards', :action => 'update_attribute'
       card.backlog_card_drop 'move_to_backlog', :controller => 'cards', :action => 'move_to_backlog'
       card.backlog_card_drop 'backlog_card_drop', :controller => 'cards', :action => 'backlog_card_drop'
       card.activate 'activate', :controller => 'cards', :action => 'activate'

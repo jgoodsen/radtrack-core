@@ -38,29 +38,27 @@ $(function() {
 	  var card = options.card;
 	
 		function card_description(card) {
-			return card.descriptoin == null ? "No Description" : card.description;
+			return card.description == null ? "No Description" : card.description;
 		}
 		
 			var html = '';
 			html += '<h1>' + card.title + '</h1>' ;
 			html += '<h2>Description / Narrative</h2>';
 			html += '<div class="description">'  + card_description(card)  + '</div>';
-
-				html += '<h2>Task List</h2>';
-				html += '<div class="tasks">';
-				html += '</div>';
+			html += '<h2>Task List</h2>';
+			html += '<div class="tasks">';
+			html += '</div>';
 
 		  $(this).html(html);
 		  $(this).find('.description').editInPlace({
 				field_type:"textarea",
 				textarea_cols: 79,
 				textarea_rows: 5,
-			  url: "http://com.examplesite.www/users",
-			  params: "name=david"
+			  url: project_card_update_attribute_url(project_id, card.id),
+			  params: "_method=put&attribute=description"
 			});
 			
 			$(this).find('.tasks').colorbox_tasklist({card:card});
-			
 			
 			return $(this);
 

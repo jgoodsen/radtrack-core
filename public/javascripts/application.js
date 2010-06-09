@@ -27,6 +27,9 @@ function project_cards_url(project_id) {
 function project_card_url(project_id, card_id) {
 	return "http://" + DOMAIN_AND_PORT + "/projects/" + project_id + "/cards/" + card_id;
 }
+function project_card_update_attribute_url(project_id, card_id) {
+	return "http://" + DOMAIN_AND_PORT + "/projects/" + project_id + "/cards/" + card_id + "/update_attribute";
+}
 
 function project_card_backlog_card_drop_url(project_id, card_id) {
   return project_card_url(project_id, card_id) + "/backlog_card_drop"
@@ -76,11 +79,5 @@ function make_card_id(id, prefix) {
 
 $(function() {
 	$('#quickcard').clearOnFocus();
-	
-	
-	// $('body').ajaxError(function() {
-	//   //alert("AJAX Error");
-	// });
-	
 });
 

@@ -88,4 +88,13 @@ class CardsController < AuthenticatedController
     end
   end
 
+  def update_attribute
+    @card ||= @project.cards.find(params[:id])
+    attribute = params[:attribute]
+    @card.update_attributes({attribute.to_sym => params[:update_value]})
+    @card.save!
+    render :text => @card.send(attribute)
+    
+  end
+  
 end

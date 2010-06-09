@@ -12,4 +12,11 @@
 	</select>
 	<input id="quickcard" class="title" name="card[title]" size="50" value="QuickCard: Enter a card title to create a new card"/>
 </form>
+
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		$('#new_card_form').ajaxSubmit();
+	})
+</script>
