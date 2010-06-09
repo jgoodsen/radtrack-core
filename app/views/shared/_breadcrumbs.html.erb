@@ -1,12 +1,16 @@
 <div id="breadcrumbs">
-	<% 	@text = ""
-    		@breadcrumbs = []
-    		@breadcrumbs << ["All Projects", projects_path]
-    		@breadcrumbs << [@project.name, project_path(@project.id)] if @project
-		@breadcrumbs.each do |breadcrumb| 
-			@text << " >> " unless @breadcrumbs.first == breadcrumb
-			@text << link_to(breadcrumb[0], breadcrumb[1])
-	 	end 
-	%>
-	<%= @text %>	
+	<% 	 options = {:include_blank => 'All Projects'} %>
+	<%=  select("project", "id", current_user.projects.all.collect {|p| [ p.name, p.id ] }, options) %>
 </div>
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		$("select#project_id").change(function() {
+			var value = $(this).val()
+			if (value != "") {
+				window.location = project_url(value)
+			} else {
+				window.location = projects_url()
+			}
+		})
+	})
+</script>

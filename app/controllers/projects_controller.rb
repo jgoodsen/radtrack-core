@@ -43,7 +43,7 @@ class ProjectsController < AuthenticatedController
       
   def destroy
     @project.destroy
-    render :action => 'index'
+    render :status => 200, :text => ''
   end
   
   def select_project

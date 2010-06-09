@@ -8,15 +8,15 @@ $(function() {
 		
 		function delete_project() {
 		  if (confirm('Are you sure you want to remove this project?')) {
-			var user_id = $(this).attr('id').replace(/[^\d]+/g, '');
-				$.post(project_user_url(project_id, user_id), {"_method":"delete", "authenticity_token":window._auth_token}, delete_project_callback_success, "json");        
+			var project_id = $(this).attr('project_id')
+				$.post(project_url(project_id), {"_method":"delete", "authenticity_token":window._auth_token}, delete_project_callback_success, "json");        
 		  }
 		  return true;
 		}
 
 		function delete_project_callback_success(data, textStatus) {
-      		console.log($(this));
 			$(this).remove();
+			return true;
 		}
 		$('img.project_delete', this).click(delete_project);
 	
@@ -33,7 +33,7 @@ $(function() {
 		  if (confirm('Are you sure you want to remove this user from the project?')) {
 			  var user_id = $(this).attr('id').replace(/[^\d]+/g, '');
         $.post(
-          remove_user_from_project_url(project_id, user_id), 
+          admin_remove_user_from_project_url(project_id, user_id), 
           { "authenticity_token":window._auth_token }, 
           function(date) {$('#user_' + user_id).remove();}, "json"
         );        

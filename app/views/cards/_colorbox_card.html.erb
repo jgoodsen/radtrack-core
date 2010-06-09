@@ -2,7 +2,7 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-	var card_json = <%= @card.to_json(:include => {:tasks => {:include => :user} }) %>
+	var card_json = <%= @card.to_json(:include => :tasks ) %>
 	var users_json = <%= @project.users.to_json() %>
 	$('#colorbox_card').colorbox_card({card: card_json});
 </script>

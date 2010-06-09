@@ -12,6 +12,7 @@ javascripts:
   - jquery.form
   - jquery.colorbox
   - radtrack.livesearch
+  - routes
 - tail:
   - application
   - kanban_card

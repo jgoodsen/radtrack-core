@@ -8,6 +8,7 @@ $(function() {
 		var card = options.card;
 
 		function add_task(parent, task) {
+			alert(task.name)
 			var html = '';
 			html += '<div class="task">';
 			html += '<span class="owner">' + task.owner + '</span>';

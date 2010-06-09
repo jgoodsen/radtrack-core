@@ -26,7 +26,7 @@ ActionController::Routing::Routes.draw do |map|
 
     project.settings 'settings', :controller => 'projects', :action => 'settings'
     project.invite_user 'invite_user', :controller => 'projects', :action => 'invite_user'
-    
+
     project.kanban_card_dropped 'card_dropped', :controller => 'kanban', :action => 'card_dropped'
 
     project.resources :users

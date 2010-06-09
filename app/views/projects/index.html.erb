@@ -12,7 +12,7 @@
 		        <% current_user.projects.each do |project| %>
 		            <div class="project">
 		                <h1><%= link_to project.name,  project_path(project.id) %></h1>
-						        <%= image_tag("icons/cog_delete.png", :id => "project_#{project	.id}", :class => "project_delete", :style => "cursor: pointer; float: right; ", :title => 'Delete this project? All associated cards and tasks will be destroyed.  This cannot be undone.') %>
+						        <%= image_tag("icons/cog_delete.png", :project_id => project.id, :class => "project_delete", :style => "cursor: pointer; float: right; ", :title => 'Delete this project? All associated cards and tasks will be destroyed.  This cannot be undone.') %>
 		                <h2>(<%= project.users.size %> Users, <%= project.cards.size %> Cards)</h2>
 		            </div>
 		        <% end %>
