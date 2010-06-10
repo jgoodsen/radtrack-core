@@ -185,9 +185,17 @@ ul#login_bar {
 	font-size: 8pt;
 	margin-top: 10px;
   list-style-type:none;
+  list-style-image: url(/images/grippy.png);
+  padding-left: 1em;
+	text-indent: -1em;  
+	width: 100%;
+	font-size: 1.0em;
+  
 }
 ul#login_bar li {
 	float: left;
+	margin-left: 30px ;
+	padding-left: 20px;
 }
 
 
