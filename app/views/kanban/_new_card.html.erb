@@ -1,5 +1,4 @@
 <% if @project %>
-<%= image_tag 'icons/tasklist-32x32.png', :class => "toolbar_icon" %>
 
 <form id="new_card_form" action="<%= project_cards_url(@project) %>" method="post">    
 
@@ -21,7 +20,6 @@
 	</script>
 
 </form>
-
 <script type="text/javascript" charset="utf-8">
 	$(function() {
 		$('#new_card_form').ajaxSubmit();

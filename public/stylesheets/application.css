@@ -258,8 +258,10 @@ form.new_project #project_name {
 }
 
 #new_card_form {
+	border: 1px black solid;
 	float: right;
-	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 #dashboard {
@@ -899,11 +901,9 @@ button.done_button {
 	padding: .2em;
   margin-left: .5em;
 }
-#breadcrumbs {
-	font-size: .8em;
+#project_selector {
 	float: left;
-	margin-left:6px;
-	margin-top:16px;
+	margin-left:8px;
 }
 
 .ui-tabs .ui-widget-header {

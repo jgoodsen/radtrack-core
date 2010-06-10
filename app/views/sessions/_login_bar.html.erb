@@ -1,11 +1,52 @@
+<style type="text/css" media="screen">
+	ul#login_bar {
+		font-size: bold;
+		color: #666;
+	}
+	ul#login_bar li.username {
+		color: #666;
+	}
+	ul#login_bar a:link, a:visited {
+		color: #666;
+		text-decoration:none;
+	}
+	select#project_id {
+		margin-top: -3px;
+	}
+</style>
 <ul id="login_bar">
 	<% if current_user -%>
-		<li><%= current_user.login %> </li>
-		<%= content_tag(:li, "&nbsp;" + link_to("| Project Settings", project_settings_path(@project))) if @project %>
+	
+		<li>
+			<div><%= render :partial => 'kanban/new_card'%></div>
+		</li>
+	
+		<li>
+			<div id="project_selector">
+				<% 	 options = {:include_blank => 'All Projects'} %>
+				<span style="float: left;">Project: </span> <%=  select("project", "id", current_user.projects.all.collect {|p| [ p.name, p.id ] }, options) %>
+			</div>
+			<script type="text/javascript" charset="utf-8">
+				$(function() {
+					$("select#project_id").change(function() {
+						var value = $(this).val()
+						if (value != "") {
+							window.location = project_url(value)
+						} else {
+							window.location = projects_url()
+						}
+					})
+				})
+			</script>
+		</li>
+		
+		<%= content_tag(:li, "&nbsp; | " + link_to("Project Settings", project_settings_path(@project))) if @project %>
+		
 		<li>&nbsp; | <%= link_to "Account Settings", edit_user_path(:current) %></li>
 		<% if current_user.admin? %>
 	  	  <li>&nbsp; | <%= link_to 'Administrators Console', '/admin' %></li>
 	    <% end %>
+		<li class="username">&nbsp; | <%= current_user.login %> </li>
 		<li>&nbsp; | <%= link_to "Logout", logout_path %></li>
 	<% else -%>
       <li><%= link_to "Register for a Free Beta Account", new_user_path %></li>

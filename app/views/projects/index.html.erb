@@ -1,6 +1,3 @@
-<%= render :partial => 'shared/breadcrumbs' %>
-<%= render :partial => 'kanban/new_card'%>
-
 <% if current_user.projects.empty? %>
 	<%= render :partial => 'projects/create_your_first_project' %>
 <% else %>
