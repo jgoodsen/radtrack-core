@@ -17,15 +17,22 @@
 		            </div>
 		        <% end %>
 		        <div class="buttons">
-		            <%= link_to image_tag("icons/add.png") + "Create a New Project", new_project_path, :id => 'new_project_button', :class => 'button' %>
+		            <button id="new_project_button">
+						<%= image_tag("icons/add.png") %> 
+						Create a New Project
+					</button>
 		        </div>
 			</div>
 		</div>
 
 	<% content_for :tail_javascript do %>
+	<div id="new_project_colorbox" style="float: left;">
+		<%= render :partial => 'projects/new' %>
+	</div>
 	<script type="text/javascript">
 	    $(function() {
 	        $('#project-tabs').tabs().fadeIn("slow");
+			$('#new_project_button').colorbox({inline:true, href:"#new_project_colorbox", opacity:0.3});
 	    });
 	</script>
 	<% end %>

@@ -567,13 +567,9 @@ div#user_change_password h1 {
 }
 
 form.new_project {
-    width: 500px;
-    border: #666 dashed thin;
-    padding: 6px;
-    margin: 10px;
-	background: #FFF7BB;
-	float: left;
-
+   width: 500px;
+   padding: 6px;
+	 float: left;
 }
 
 ul#card_states {

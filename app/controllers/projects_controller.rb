@@ -43,7 +43,7 @@ class ProjectsController < AuthenticatedController
       
   def destroy
     @project.destroy
-    render :status => 200, :text => ''
+    render :status => 200, :json => {'status' => 'success'}
   end
   
   def select_project
