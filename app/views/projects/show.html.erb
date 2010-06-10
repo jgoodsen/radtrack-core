@@ -49,8 +49,6 @@ $(function() {
     ajaxOptions: {success: function() {}}
   }).fadeIn(1000);
 
-  $('#project_details_tabs').triggerTab(2)
-
   function reload_cards(event, ui) {
     $(ui.panel).hide();
     $('.spinner', ui.tab).show();
