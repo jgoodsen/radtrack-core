@@ -20,7 +20,7 @@ class CardsController < AuthenticatedController
       if @card.save
         flash.now[:success] = "Card was saved successfully."
         @cards ||= @project.cards
-        redirect_to (project_path(@project.id) + "#backlog_tab")
+        redirect_to (project_path(@project.id) + "?show_tab=0")
       else
         flash.now[:error] << "Card creation failed."
         render :action => 'new'

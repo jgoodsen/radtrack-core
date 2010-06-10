@@ -17,6 +17,7 @@
 <% content_for :tail_javascript do %>
 <script type="text/javascript">
 
+<%= "var show_tab = " + (@show_tab.nil? ? "0" : "#{@show_tab}")  %>
 
 $(function() {
 
@@ -44,7 +45,7 @@ $(function() {
 
   $('#project_detail_tabs').tabs({
     load: reload_cards,
-	selected: 1,
+	selected: show_tab,
     spinner: '',
     ajaxOptions: {success: function() {}}
   }).fadeIn(1000);
