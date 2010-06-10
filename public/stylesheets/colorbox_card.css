@@ -20,7 +20,7 @@
 */
 #cboxOverlay{background:#000;}
 
-#colorbox{}
+#colorbox{background: #E9ECF1}
     #cboxTopLeft{width:14px; height:14px; background:url(colorbox_images/controls.png) 0 0 no-repeat;}
     #cboxTopCenter{height:14px; background:url(colorbox_images/border.png) top left repeat-x;}
     #cboxTopRight{width:14px; height:14px; background:url(colorbox_images/controls.png) -36px 0 no-repeat;}
@@ -29,7 +29,7 @@
     #cboxBottomRight{width:14px; height:43px; background:url(colorbox_images/controls.png) -36px -32px no-repeat;}
     #cboxMiddleLeft{width:14px; background:url(colorbox_images/controls.png) -175px 0 repeat-y;}
     #cboxMiddleRight{width:14px; background:url(colorbox_images/controls.png) -211px 0 repeat-y;}
-    #cboxContent{background:#fff;}
+    #cboxContent{background:#E9ECF1;}
         #cboxLoadedContent{margin-bottom:5px;}
         #cboxLoadingOverlay{background:url(colorbox_images/loading_background.png) center center no-repeat;}
         #cboxLoadingGraphic{background:url(colorbox_images/loading.gif) center center no-repeat;}
