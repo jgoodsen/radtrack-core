@@ -1,7 +1,7 @@
 <% if @project %>
 <div class="new_card_form">
 <form id="new_card_form" action="<%= project_cards_url(@project) %>" method="post">    
-
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 	<select name="card[card_type_id]">
 		<% @project.card_types.each do |card_type| %>
 		<option value="<%= card_type.id %>" <%= card_type == @project.default_card_type ? "selected=\"selected\"" : "" %> ><%= card_type.name %></option>
