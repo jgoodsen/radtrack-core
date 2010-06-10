@@ -2,7 +2,7 @@ button, a.button, input[type=button] {
 	display: inline-block;
 	vertical-align: baseline;
 	margin-right: 0.3em;
-	background-color: #FFF7BB;
+    background-image: url(/images/radial1.gif)
 	border-top: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-bottom: 1px solid #aaa;

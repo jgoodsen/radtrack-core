@@ -283,8 +283,8 @@ form.new_project #project_name {
     border: #666 dashed thin;
     padding: 6px;
     margin-top: 6px;
-	margin-bottom: 10px;
-	background: #FFF7BB;
+	  margin-bottom: 10px;
+    background-image: url(/images/radial1.gif)
 }
 
 ul li.header .actions {
@@ -559,8 +559,7 @@ div#user_change_password h1 {
     border: #666 dashed thin;
     padding: 6px;
     margin-top: 6px;
-	background: #FFF7BB;
-
+	background: #E9ECF1;
 }
 
 #project_users .user h1, #value_strea, h1 {
@@ -602,8 +601,7 @@ li.activity_state {
     border: #666 dashed thin;
     padding: 6px;
     margin-top: 6px;
-	background: #FFF7BB;
-
+	background: #E9ECF1;
 }
 
 .tasklist_expand_collapse {
@@ -741,7 +739,7 @@ ul.active_tasks li ul li {
 }
 
 #backlog .kanban_backlog {
-	background: #FFF7BB;
+	background: #E9ECF1;
 	margin: 2px;
 	border: 4px solid #CCCCCC;
   list-style-type:none;
@@ -759,7 +757,7 @@ ul.active_tasks li ul li {
 }
 
 #kanban_queue {
-	background: #FFF7BB;
+	background: #E9ECF1;
 	margin: 2px;
 	border: 4px solid #CCCCCC;
 	padding: 8px;
@@ -793,7 +791,7 @@ div.kanban_staging_arrow {
   -moz-background-clip:border;
   -moz-background-inline-policy:continuous;
   -moz-background-origin:padding;
-  background:#FFF7BB none repeat scroll 0 0;
+	background: #E9ECF1;
   border-bottom:4px solid #CCCCCC;
   border-right:4px solid #CCCCCC;
   border-top:4px solid #CCCCCC;
@@ -839,7 +837,7 @@ div.kanban_staging_arrow img {
 }
 
 .kanban_swimlane {
-	background: #FFF7BB;
+	background: #E9ECF1;
 	margin: 2px;
 	border: 4px solid #CCCCCC;
 	padding: 4px;
@@ -856,7 +854,7 @@ div.kanban_staging_arrow img {
 	margin-bottom: 8px;
 	border: 1px solid white;
 	padding-top: 4px;
-	background: lightyellow;
+	background: #D9DBF1;
 }
 .kanban_swimlane .header2 {
   font-style: italic;
