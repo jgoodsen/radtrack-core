@@ -6,8 +6,7 @@ width:100%;
 }
 
 #bd {
-	min-height: 600px;
-	width: 99%;
+	width: 100%;
 }
 
 #ft {
@@ -43,7 +42,7 @@ div#new_user_session {
 	width: 350px;
 }
 
-#new_user_session label {
+	#new_user_session label {
 	color: #999;
 }
 
@@ -259,12 +258,9 @@ form.new_project #project_name {
 }
 
 #new_card_form {
-	border: 1px #444 solid;
 	float: right;
-	padding: 0px 4px 2px 4px;
 	margin-left: 8px;
 	margin-right: 8px;
-	margin-top: -10px;
 }
 
 #dashboard {
@@ -424,8 +420,6 @@ div#signup_form .registration_section {
 }
 
 div#signup_form .registration_code {
-	width: 300px;
-	height: 237px;
 	margin-right: 30px;
 }
 
@@ -436,7 +430,7 @@ div#signup_form .registration_details p {
 div#login_form {
 	padding: 12px;
 	height: 360px;
-    margin: 10px;
+  margin: 10px;
 }
 
 div#login_form h3 {
@@ -910,7 +904,7 @@ button.done_button {
   margin-left: .5em;
 }
 #project_selector {
-	float: left;
+	clear: both;
 	margin-left:8px;
 }
 
@@ -921,9 +915,11 @@ color:#453821;
 font-weight:bold;
 }
 .ui-tabs .ui-tabs-nav li a {
-float:left;
-padding:0.2em 0.4em 0.2em 0.4em;
-text-decoration:none;
+	float:left;
+	padding:0.2em 0.4em 0.2em 0.4em;
+	text-decoration:none;
+	font-size: .8em;
+	font-weight: normal;
 }
 
 #project_detail_tabs .ui-tabs-panel {
