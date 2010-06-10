@@ -187,13 +187,13 @@ ul#login_bar {
   padding-left: 1em;
 	text-indent: -1em;  
 	width: 100%;
-	font-size: 1.0em;
+	font-size: 0.8em;
   
 }
 ul#login_bar li {
 	float: left;
-	margin-left: 30px ;
-	padding-left: 20px;
+	margin-left: 24px ;
+	padding-left: 12px;
 }
 
 
@@ -407,8 +407,9 @@ table.admin_users thead td {
 }
 
 div#signup_form {
+	float: left;
 	padding-top: 20px;
-	padding-left: 20px;
+	padding-left: 40px;
 	height: 360px;
 	width: 100%;
 }
