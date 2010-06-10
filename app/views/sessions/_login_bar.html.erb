@@ -12,15 +12,12 @@
 	}
 	select#project_id {
 		margin-top: -3px;
+		margin-left: 4px;
 	}
 </style>
 <ul id="login_bar">
 	<% if current_user -%>
-	
-		<li>
-			<div><%= render :partial => 'kanban/new_card'%></div>
-		</li>
-	
+		
 		<li>
 			<div id="project_selector">
 				<% 	 options = {:include_blank => 'All Projects'} %>
@@ -53,3 +50,5 @@
 	  <li>&nbsp; | <%= link_to "Log in",  login_path,  { :title => "Log in" } %> </li>
 	<% end -%>
 </ul>
+<%= render :partial => 'kanban/new_card'%>
+	

@@ -1,10 +1,6 @@
 <% if @project %>
-
+<div class="new_card_form">
 <form id="new_card_form" action="<%= project_cards_url(@project) %>" method="post">    
-
-	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-	<%# hidden_field_tag :description, '', :name => 'card[description]' %>
-	<div id="cardtypeDropdown"></div>
 
 	<select name="card[card_type_id]">
 		<% @project.card_types.each do |card_type| %>
@@ -20,6 +16,7 @@
 	</script>
 
 </form>
+</div>
 <script type="text/javascript" charset="utf-8">
 	$(function() {
 		$('#new_card_form').ajaxSubmit();

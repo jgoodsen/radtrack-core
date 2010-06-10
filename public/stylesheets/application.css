@@ -181,7 +181,6 @@ ul.menu li.title {
 ul#login_bar {
 	float: right;
 	margin-right: 10px;
-	float: right;
 	font-size: 8pt;
 	margin-top: 10px;
   list-style-type:none;
@@ -258,10 +257,12 @@ form.new_project #project_name {
 }
 
 #new_card_form {
-	border: 1px black solid;
+	border: 1px #444 solid;
 	float: right;
+	padding: 0px 4px 2px 4px;
 	margin-left: 8px;
 	margin-right: 8px;
+	margin-top: -10px;
 }
 
 #dashboard {
@@ -576,6 +577,11 @@ form.new_project {
 
 ul#card_states {
 	list-style-type: none;
+}
+
+div.new_card_form {
+	clear: both;
+	float: right;
 }
 
 form#new_card_state {
