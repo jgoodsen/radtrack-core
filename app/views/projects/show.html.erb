@@ -44,10 +44,12 @@ $(function() {
 
   $('#project_detail_tabs').tabs({
     load: reload_cards,
+	selected: 1,
     spinner: '',
     ajaxOptions: {success: function() {}}
   }).fadeIn(1000);
 
+  $('#project_details_tabs').triggerTab(2)
 
   function reload_cards(event, ui) {
     $(ui.panel).hide();
