@@ -7,6 +7,11 @@ class ProjectsController < AuthenticatedController
     @projects = current_user.projects
   end
   
+  def show
+    @show_tab = params[:show_tab]
+    @show_tab ||= 1
+  end
+  
   def mytasks_tab
     render :partial => 'projects/mytasks', :layout => false
   end
@@ -43,7 +48,7 @@ class ProjectsController < AuthenticatedController
       
   def destroy
     @project.destroy
-    render :action => 'index'
+    render :status => 200, :json => {'status' => 'success'}
   end
   
   def select_project

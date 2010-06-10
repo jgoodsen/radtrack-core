@@ -1,5 +1,3 @@
-<%= render :partial => 'shared/breadcrumbs' %>
-<%= render :partial => 'kanban/new_card'%>
 
 <div id="project_detail_tabs" style="float: left; width: 100%; display: none;">
   
@@ -8,39 +6,18 @@
     <li><a href="<%= project_kanban_tab_path(@project) %>" class="kanban_tab"><span><%= spinner %>&nbsp;Project Kanban</span></a></li>
     <li><a href="<%= project_mytasks_tab_path(@project) %>"><span><%= spinner %>&nbsp;My Tasks</span></a></li>
     <li><a id="members_tab" href="#members"><span>Team Members</span></a></li>
-    <% beta_user? do %>
-      <li><a href="#project-tools"><span>3rd Party Tools</span></a></li>
-    <% end %>
   </ul>
 
   <div id="members" class="tab_content">
     <%= render :partial => 'users/index', :locals => {:users => @project.users} %>
   </div>
 
-  <% beta_user? do %>
-
-
-  <div id="project-tools">
-    <div id="project-tools-tabs" style="float: left; width: 100%; height: 800px;">
-      <ul>
-		
-	      <li><a href="#project-tools-1"><span>fluid IA</span></a></li>
-	      <li><a href="#project-tools-3"><span>Workamajig</span></a></li>
-	      <li><a href="#project-tools-2"><span>Dabbleboard</span></a></li>
-      </ul>
-      <div id="project-tools-1" width="100%;" height="100%;"><iframe src="http://www.fluidia.org/" width="98%" height="760px;"></iframe></div>
-      <div id="project-tools-2" width="100%;" height="100%;"><iframe src="http://www.dabbleboard.com/" width="98%" height="760px;"></iframe></div>
-      <div id="project-tools-3" width="100%;" height="100%;"><iframe src="http://www.workamajig.com" width="98%" height="760px;"></iframe></div>
-    </div>
-  </div>
-
-  <% end %>
-
 </div>
 
 <% content_for :tail_javascript do %>
 <script type="text/javascript">
 
+<%= "var show_tab = " + (@show_tab.nil? ? "0" : "#{@show_tab}")  %>
 
 $(function() {
 
@@ -68,10 +45,10 @@ $(function() {
 
   $('#project_detail_tabs').tabs({
     load: reload_cards,
+	selected: show_tab,
     spinner: '',
     ajaxOptions: {success: function() {}}
   }).fadeIn(1000);
-
 
   function reload_cards(event, ui) {
     $(ui.panel).hide();

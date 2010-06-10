@@ -4,13 +4,12 @@
   <% @user.password = @user.password_confirmation = nil if @user %>
 	<% form_for @user do |f| -%>
 
-  <div class="registration_section registration_code">    <%= link_to image_tag('graffle/radtrack_logo_beta.png', :border => '0'), 'http://radtrack.com' %>
-    <br/>
-    <br/>
+  <div class="registration_section registration_code">    
+<%= link_to image_tag('graffle/radtrack_logo_with_cards.png', :border => '0', :width => '85%', :height => '50%'), root_url %>
 
     <p>The free radtrack beta program is currently by invitation only. </p>
     <br/>
-  	<h3 class="as_h1">Enter your invitation code ...</h3>
+  	<h3 class="as_h1">Oh lookey!, a free invitation code for you ...</h3>
 
   	<p><label for="login">Invitation Code</label><br/>
   	<%= text_field_tag :invitation_code, 'xhr798' %></p>

@@ -39,19 +39,6 @@ class UsersController < AuthenticatedController
     end
   end
   
-  def destroy
-
-    ## if the REST url has a project context like /projects/1/users/1, then just remove the user from that project, don't delete the user from the system.
-    if @project 
-      #@user.disassociate_from_project(@project)      
-    end
-    
-    respond_to do |format|
-      format.json { render :status => 200, :json => @user}
-    end    
-    
-  end
-  
   def show
     redirect_to root_url
   end

@@ -1,11 +1,10 @@
 <div id="login_form">
 
-  <%= link_to image_tag('graffle/radtrack_logo_beta.png', :border => '0'), 'http://radtrack.com' %><br/>
+  <%= link_to image_tag('graffle/radtrack_logo_with_cards.png', :border => '0'), root_url %><br/>
 
   <% form_for @user_session do |f| %>
     <%= f.error_messages %>
     <div>
-      <br/>
       <%= f.label :login, 'Enter your email address' %><br />
       <%= f.text_field :login %>
     </div>

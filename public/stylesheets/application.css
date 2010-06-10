@@ -1,11 +1,12 @@
 
 #hd {
-	width: 99%;
+margin-top:-12px;
+padding:4px;
+width:100%;
 }
 
 #bd {
-	min-height: 600px;
-	width: 99%;
+	width: 100%;
 }
 
 #ft {
@@ -41,7 +42,7 @@ div#new_user_session {
 	width: 350px;
 }
 
-#new_user_session label {
+	#new_user_session label {
 	color: #999;
 }
 
@@ -76,7 +77,7 @@ input.card_title {
 	padding: 0px;
 }
 .ui-dialog {
-	border: 8px solid #999;
+	border: 8px solid #999999
 	background: #F4D7B6;
 }
 .ui-dialog-titlebar {
@@ -181,7 +182,6 @@ ul.menu li.title {
 ul#login_bar {
 	float: right;
 	margin-right: 10px;
-	float: right;
 	font-size: 8pt;
 	margin-top: 10px;
   list-style-type:none;
@@ -259,7 +259,8 @@ form.new_project #project_name {
 
 #new_card_form {
 	float: right;
-	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 #dashboard {
@@ -419,8 +420,6 @@ div#signup_form .registration_section {
 }
 
 div#signup_form .registration_code {
-	width: 300px;
-	height: 237px;
 	margin-right: 30px;
 }
 
@@ -431,7 +430,7 @@ div#signup_form .registration_details p {
 div#login_form {
 	padding: 12px;
 	height: 360px;
-    margin: 10px;
+  margin: 10px;
 }
 
 div#login_form h3 {
@@ -567,17 +566,18 @@ div#user_change_password h1 {
 }
 
 form.new_project {
-    width: 500px;
-    border: #666 dashed thin;
-    padding: 6px;
-    margin: 10px;
-	background: #FFF7BB;
-	float: left;
-
+   width: 500px;
+   padding: 6px;
+	 float: left;
 }
 
 ul#card_states {
 	list-style-type: none;
+}
+
+div.new_card_form {
+	clear: both;
+	float: right;
 }
 
 form#new_card_state {
@@ -903,11 +903,9 @@ button.done_button {
 	padding: .2em;
   margin-left: .5em;
 }
-#breadcrumbs {
-	font-size: .8em;
-	float: left;
-	margin-left:6px;
-	margin-top:16px;
+#project_selector {
+	clear: both;
+	margin-left:8px;
 }
 
 .ui-tabs .ui-widget-header {
@@ -917,9 +915,11 @@ color:#453821;
 font-weight:bold;
 }
 .ui-tabs .ui-tabs-nav li a {
-float:left;
-padding:0.2em 0.4em 0.2em 0.4em;
-text-decoration:none;
+	float:left;
+	padding:0.2em 0.4em 0.2em 0.4em;
+	text-decoration:none;
+	font-size: .8em;
+	font-weight: normal;
 }
 
 #project_detail_tabs .ui-tabs-panel {

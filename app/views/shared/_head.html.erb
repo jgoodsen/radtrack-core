@@ -6,7 +6,7 @@
 <script type="text/javascript" charset="utf-8">
 // TODO: Should probably just dump this in the page layout template instead
 var DOMAIN_AND_PORT = "<%= DOMAIN_AND_PORT %>";
-<% if @project %>
+<% if @project && @project.id %>
   var card_states = <%= @project.card_states.to_json %>;
   var users = <%= @project.users.to_json %>;
   var task_states = <%= @project.task_states.to_json %>;
