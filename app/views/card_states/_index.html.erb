@@ -44,7 +44,7 @@
 			}
 
 			function delete_card_state_cb(data, textStatus) {
-				$("#card_state_" + data.card_state.id).fadeOut("slow");
+				$("#card_state_" + data.id).fadeOut("slow");
 			}
 			$('.project_card_state_delete').live("click", delete_card_state);
 		});
