@@ -910,7 +910,12 @@ button.done_button {
 }
 #project_selector {
 	clear: both;
-	margin-left:8px;
+	padding-left:8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-top: -10px;
+	background: #E9ECF1;
+	border
 }
 
 .ui-tabs .ui-widget-header {

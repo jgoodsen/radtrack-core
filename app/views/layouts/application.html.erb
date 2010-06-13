@@ -10,41 +10,34 @@
 <div id="doc3" class="yui-t4">
   
   <div id="hd">
-  	<div style="float: left; width: 100%">
+  	<div style="width: 100%">
 			<div style="z-index:3">
-		  <%= image_tag('radtrack_logo.png', :width => '15%', :height => '15%')  if current_user %> 
+		  <%= image_tag('graffle/radtrack_logo_header.png')  if current_user %> 
     	<div style="float:right">
         <%= render :partial => 'sessions/login_bar' %>
     	</div>
       </div>
 
-			<% if current_user %>
-			<div id="project_selector" style="z-index: 5">
-			
-				<div style="margin-top: 3px;">
-				<% 	 options = {:include_blank => 'All Projects'} %>
-				<span style="float: left;">Project: </span> 
-				<%=  select("project", "id", current_user.projects.all.collect {|p| [ p.name, p.id ] }, options, {:style => "float: left;"})  %>
-				</div>
-			
-				<div style="float:left">
-				<%= render :partial => 'kanban/new_card'%>
-				</div>
-			
-			</div>
-			<script type="text/javascript" charset="utf-8">
-				$(function() {
-					$("select#project_id").change(function() {
-						var value = $(this).val()
-						if (value != "") {
-							window.location = project_url(value)
-						} else {
-							window.location = projects_url()
-						}
-					})
-				})
-			</script>
-			<% end # if current_user %>
+	<% if current_user %>
+	<div id="project_selector">
+		<% 	 options = {:include_blank => 'All Projects'} %>
+		<span >Project: </span> 
+		<%=  select("project", "id", current_user.projects.all.collect {|p| [ p.name, p.id ] }, options)  %>
+		<%= render :partial => 'kanban/new_card'%>			
+	</div>
+	<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$("select#project_id").change(function() {
+				var value = $(this).val()
+				if (value != "") {
+					window.location = project_url(value)
+				} else {
+					window.location = projects_url()
+				}
+			})
+		})
+	</script>
+	<% end # if current_user %>
 	</div>
 
   </div>
