@@ -42,6 +42,8 @@ namespace :deploy do
    # EOF
    run "ln -nfs #{deploy_to}/shared/config/database.yml #{deploy_to}/releases/#{release_name}/config/database.yml" 
    run "ln -nfs #{deploy_to}/shared/config/smtp_config.rb #{deploy_to}/releases/#{release_name}/config/smtp_config.rb"
+   run "ln -nfs #{deploy_to}/shared/plugins/new_relic #{deploy_to}/releases/#{release_name}/vendor/plugins/new_relic"
+   run "ln -nfs #{deploy_to}/shared/config/new_relic.yml #{deploy_to}/releases/#{release_name}/config/new_relic.yml"
  
    ## TODO: Only a temporary Hack as we run Rails 2.1.0 on slicehost
    run "ln -nfs #{deploy_to}/releases/#{release_name}/app/controllers/application_controller.rb #{deploy_to}/releases/#{release_name}/app/controllers/application.rb"
