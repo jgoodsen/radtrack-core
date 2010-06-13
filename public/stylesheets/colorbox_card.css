@@ -57,16 +57,22 @@
 #colorbox_card {
 	width: 700px;
 	height: 400px;
+	font: normal small-caps normal 1.1em/1.1em Arial, sans-serif;
+	
 }
 
 #colorbox_card .title {
 	margin-top: 10px;
-	font: normal small-caps normal 1.1em/1.2em Arial, sans-serif;
+}
+
+#colorbox_card .editInPlace-active {
+	margin-top: 10px;
+	height: 500px;
 }
 
 #colorbox_card h2 {
-	margin-top: 10px;
-	font: normal normal normal 1.0em/1.2em Arial, sans-serif;
+		margin-top: 10px;
+	font: normal normal normal 1.1em/1.2em Arial, sans-serif;
 	color: #AAA;
 }
 

@@ -45,6 +45,10 @@ function delete_task_url(project_id, card_id, task_id) {
 	return project_card_url(project_id, card_id) + "/tasks/" + task_id;
 }
 
+function project_card_task_update_attribute_url(project_id, card_id, task_id) {
+	return project_card_url(project_id, card_id) + "/tasks/" + task_id + "/update_attribute"
+}
+
 function project_card_state_url(project_id, card_state_id) {
 	return project_url(project_id) + "/card_states/" + card_state_id;
 }

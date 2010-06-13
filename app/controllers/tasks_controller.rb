@@ -50,6 +50,13 @@ class TasksController < AuthenticatedController
     redirect_to request.env['HTTP_REFERER']
   end
   
+  ## Used to capture field level edits from the jquery inlineEditor
+  def update_attribute
+    task = @card.tasks.find(params[:task_id])
+    task.update_attributes({params[:attribute] => params[:update_value]})
+    render :text => task.send(params[:attribute])
+  end
+  
   private
   
     def task_as_json(task)

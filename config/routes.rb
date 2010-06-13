@@ -42,6 +42,7 @@ ActionController::Routing::Routes.draw do |map|
         task.grabit 'grabit', :controller => 'tasks', :action => 'grabit'
         task.previous_state 'previous_state', :controller => 'tasks', :action => 'previous_state'
         task.next_state 'next_state', :controller => 'tasks', :action => 'next_state'
+        task.update_name 'update_attribute', :controller => 'tasks', :action => 'update_attribute'
       end
     end
     

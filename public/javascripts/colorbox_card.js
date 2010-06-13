@@ -9,9 +9,9 @@ $(function() {
 
 		function add_task(parent, task) {
 			var html = '';
-			html += '<div class="task">';
+			html += '<div class="task" task_id="'+ task.id + '" card_id=' + card.id + ' >';
 			html += '<span class="owner">' + task.owner + '</span>';
-			html += '<span class="title">' + task.name + '</span>';
+			html += '<span class="name">' + task.name + '</span>';
 			html += '</div>';
 			$(parent).append(html);
 		}
@@ -20,11 +20,18 @@ $(function() {
 			var task = card.tasks[i];
 			add_task(this, task);
 		}
+		
+		$('div.task .name', this).each(function(index, element) {
+			var task = $(this).parents("div.task:first");
+			$(this).editInPlace({
+				url: project_card_task_update_attribute_url(project_id, task.attr("card_id"), task.attr("task_id")),
+				params: "attribute=name"
+			})
+		});
 
-		$('div.task .title', this).editInPlace({
-			url: "http://foobar.com/"
-		})
 		return $(this);
+		var url = 
+		$.post(url, {"task[name]":value, "authenticity_token":window._auth_token, "_method":"put"});
 
 	};
 
