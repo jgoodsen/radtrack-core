@@ -69,7 +69,7 @@ $(function() {
 		html += '<h2>Task List</h2>'
 		html += '<div class="tasks">'
 		html += '</div>'
-		html += '<form class="new_task_form">'
+		//html += '<form class="new_task_form">'
 
 		$(this).html(html)
 
