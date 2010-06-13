@@ -85,8 +85,8 @@ $(function() {
           {"authenticity_token":window._auth_token, "left":left, "top":top}, 
           function (data, textStatus) {
 						$(self).effect("bounce", { times:2 }, 300);
-						$(self).css("top", top + "px")
-						$(self).css("left", left + "px")
+						// $(self).css("top", top + "px")
+						// $(self).css("left", left + "px")
           }, 
           "json"
         );        
@@ -108,7 +108,7 @@ $(function() {
           project_card_activate_url(project_id, card_id), 
           {"authenticity_token":window._auth_token}, 
           function (data, textStatus) {
-            $(ui.draggable).hide("puff", {}, 1000);
+            $(ui.draggable).hide("puff", {}, 500).remove();
           }, 
           "json"
         );        
