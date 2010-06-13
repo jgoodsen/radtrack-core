@@ -40,6 +40,7 @@ namespace :deploy do
    # run <<-EOF
    #   cd #{release_path} && rake deploy:assets
    # EOF
+   run "ln -nfs #{deploy_to}/shared/config/production.rb #{deploy_to}/releases/#{release_name}/config/environments/production.rb" 
    run "ln -nfs #{deploy_to}/shared/config/database.yml #{deploy_to}/releases/#{release_name}/config/database.yml" 
    run "ln -nfs #{deploy_to}/shared/config/smtp_config.rb #{deploy_to}/releases/#{release_name}/config/smtp_config.rb"
    run "ln -nfs #{deploy_to}/shared/config/newrelic.yml #{deploy_to}/releases/#{release_name}/config/newrelic.yml"

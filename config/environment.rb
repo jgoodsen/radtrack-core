@@ -67,7 +67,8 @@ Rails::Initializer.run do |config|
 
   config.gem "authlogic"
   config.gem 'will_paginate'
-
+  config.gem 'hoptoad_notifier'
+  
   # Searches for all gems in the /vendor/gems directory adds them to
   # the load path.  All gems must still be required for them to work.
   config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
