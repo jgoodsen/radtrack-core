@@ -64,3 +64,10 @@ task :backup do
   run "mysqldump -u root radtrack_production > /tmp/radtrack.sql"
   system "scp admin@radtrack.com:/tmp/radtrack.sql /tmp/radtrack.sql"
 end
+
+
+Dir[File.join(File.dirname(__FILE__), '..', 'vendor', 'gems', 'hoptoad_notifier-*')].each do |vendored_notifier|
+  $: << File.join(vendored_notifier, 'lib')
+end
+
+require 'hoptoad_notifier/capistrano'
