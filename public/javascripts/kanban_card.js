@@ -189,7 +189,7 @@ $(function() {
         $(base + ' a.popup_card_link', this).click(popup_card_dialog);
         $(base + ' img.delete_card', this).click(delete_card)
         $(base + ' img.remove_from_kanban', this).click(remove_from_kanban);
-				$(base + ' a.card_type_icon', this).colorbox({opacity:0.3});
+				$(base + ' a.card_type_icon', this).colorbox({	opacity:0.3});
 				
         return $(this);
     };

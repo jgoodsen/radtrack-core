@@ -44,4 +44,8 @@ class Task < ActiveRecord::Base
     task_state
   end
   
+  def to_json
+    x = super
+    raise x.inspect
+  end
 end

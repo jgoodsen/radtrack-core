@@ -19,6 +19,7 @@ javascripts:
   - card_owner
   - kanban
   - backlog
+  - card
   - project
   - colorbox_card
 stylesheets: 

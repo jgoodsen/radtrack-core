@@ -2,16 +2,20 @@ $(function() {
 
 	$.fn.colorbox_tasklist = function(options) {
 		var defaults = {
-			card: null,
+			users: null,
 		};
 		var options = $.extend(defaults, options);
 		var card = options.card;
 
+		function getTaskOwner(task) {
+			
+		}
+		
 		function add_task(parent, task) {
 			var html = '';
 			html += '<div class="task" task_id="'+ task.id + '" card_id=' + card.id + ' >';
-			html += '<span class="owner">' + task.owner + '</span>';
-			html += '<span class="name">' + task.name + '</span>';
+			html += '<span class="owner">' + Card.find(task.owner) + '</span>';
+			html += '<span class="name">' + getTaskOwner(task) + '</span>';
 			html += '</div>';
 			$(parent).append(html);
 		}
