@@ -13,6 +13,8 @@ javascripts:
   - jquery.colorbox
   - radtrack.livesearch
   - routes
+  - JSLINQ/IEnumerable
+  - JSLINQ/JSLINQ
 - tail:
   - application
   - kanban_card

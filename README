@@ -43,3 +43,14 @@ To run cucumber tests, you need to do the following (these are Mac instructions 
   
   * run "rake cucumber:ok" in another command window.  
   
+
+Running Jasmine Javascript Tests
+--------------------------------
+To run the server:
+
+rake jasmine
+
+To run the automated CI task with Selenium:
+
+rake jasmine:ci
+
