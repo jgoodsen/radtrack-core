@@ -1,9 +1,9 @@
 Given /^a baseline configuration$/ do
   Project.delete_all
   User.delete_all
-  project = Factory(:project, :name => 'Project One')
+  project = project_new(:name => 'Project One')
   project.save!
-  user = Factory(:user, :email => 'john@test.com')
+  user = user_new(:email => 'john@test.com')
   project.users << user
   user.save!
   Project.all.size.should == 1

@@ -1,3 +1,5 @@
+# Edit at your own peril - it's recommended to regenerate this file
+# in the future when you upgrade to a newer version of Cucumber.
 
 # IMPORTANT: Setting config.cache_classes to false is known to
 # break Cucumber's use_transactional_fixtures method.
@@ -19,21 +21,9 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem 'gherkin'
-config.gem 'cucumber'
 config.gem 'cucumber-rails',   :lib => false, :version => '>=0.3.1' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber-rails'))
-
-config.gem 'rb-appscript', :lib => false
-config.gem 'safariwatir', :lib => false
-config.gem 'firewatir', :lib => false
-
-## Only needed for Ruby 1.8.6 installations (which is my server at radtrack.com right now)
-# config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
-
-DOMAIN_AND_PORT="localhost:3000"
-config.action_mailer.default_url_options = {
-  :host => 'localhost',
-  :port => 3000
-}
-
+config.gem 'database_cleaner', :lib => false, :version => '>=0.5.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
+config.gem 'webrat',           :lib => false, :version => '>=0.7.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/webrat'))
+config.gem 'rspec',            :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails',      :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 

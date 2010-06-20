@@ -4,7 +4,7 @@ class CreateCardViews < ActiveRecord::Migration
       t.belongs_to :project
       t.belongs_to :user
       t.string :name
-      t.string :data
+      t.text :data
       t.timestamps
     end
   end

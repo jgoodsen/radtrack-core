@@ -40,9 +40,8 @@ class CardsController < AuthenticatedController
   end
 
   def backlog_card_drop
-    session[:backlog_card_positions] ||= {}
     position = {:left => params[:left].to_i, :top => params[:top].to_i}
-    session[:backlog_card_positions][params[:card_id]] = position
+    @project.board[:backlog].update_card_position(params[:card_id], position)
     respond_to do |format|
       format.json { render :status => 200, :json => position }
     end    

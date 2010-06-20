@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20091210081602
+# Schema version: 20100613153258
 #
 # Table name: users
 #
@@ -7,15 +7,13 @@
 #  login                     :string(40)      
 #  name                      :string(100)     default("")
 #  email                     :string(100)     
-#  crypted_password          :string(128)     default(""), not null
-#  salt                      :string(128)     default(""), not null
+#  admin                     :boolean         
 #  created_at                :datetime        
 #  updated_at                :datetime        
 #  remember_token            :string(40)      
 #  remember_token_expires_at :datetime        
 #  activation_code           :string(40)      
 #  activated_at              :datetime        
-#  admin                     :boolean         
 #  persistence_token         :string(255)     
 #  perishable_token          :string(255)     default(""), not null
 #  login_count               :integer         default(0), not null
@@ -24,6 +22,8 @@
 #  current_login_ip          :string(255)     
 #  last_login_at             :datetime        
 #  last_login_ip             :string(255)     
+#  crypted_password          :string(128)     default(""), not null
+#  salt                      :string(128)     default(""), not null
 #
 
 class User < ActiveRecord::Base

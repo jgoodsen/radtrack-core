@@ -1,16 +1,16 @@
 # == Schema Information
-# Schema version: 20091210081602
+# Schema version: 20100613153258
 #
 # Table name: tasks
 #
 #  id            :integer         not null, primary key
 #  name          :string(255)     
+#  position      :integer         default(0)
 #  task_state_id :integer         not null
 #  card_id       :integer         
 #  user_id       :integer         
 #  created_at    :datetime        
 #  updated_at    :datetime        
-#  position      :integer         default(0)
 #
 
 class Task < ActiveRecord::Base
@@ -46,6 +46,5 @@ class Task < ActiveRecord::Base
   
   def to_json
     x = super
-    raise x.inspect
   end
 end

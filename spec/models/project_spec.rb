@@ -4,7 +4,7 @@ require 'rubygems'
 describe Project do
   
   before(:each) do
-    @project = Factory(:project)
+    @project = create_project()
   end
  
   describe 'saving a project' do
@@ -79,8 +79,7 @@ describe Project do
       CardState.delete_all
       Card.delete_all
       CardType.init
-      @project = Factory(:project)
-      @project.save!
+      @project = create_project
       @project.card_states.should_not be_empty
     end
 
@@ -143,9 +142,8 @@ describe Project do
     
     before(:each) do
       @project.users = []
-      @normal_user = Factory.build(:user)
-      @admin_user = Factory.build(:user)
-      @admin_user.admin = true
+      @normal_user = new_user(:login => 'normal@test.com', :email => 'normal@test.com')
+      @admin_user = new_user(:login => 'admin@test.com', :email => 'admin@test.com', :admin => true)
       @project.users << @normal_user
       @project.users << @admin_user
     end

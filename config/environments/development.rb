@@ -34,5 +34,4 @@ config.action_mailer.default_url_options   = { :host => DOMAIN_AND_PORT }
 config.gem 'cucumber',    :lib => false,        :version => '>=0.3.97' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber'))
 config.gem 'rspec',       :lib => false,        :version => '>=1.2.6' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
 config.gem 'rspec-rails', :lib => 'spec/rails', :version => '>=1.2.6' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
-config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
 config.gem "sqlite3-ruby", :lib => 'sqlite3'

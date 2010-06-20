@@ -1,3 +1,22 @@
+# == Schema Information
+# Schema version: 20100613153258
+#
+# Table name: cards
+#
+#  id             :integer         not null, primary key
+#  title          :string(255)     
+#  description    :text            
+#  status         :string(255)     
+#  point_estimate :integer         default(0)
+#  position       :integer         default(0)
+#  project_id     :integer         
+#  created_at     :datetime        
+#  updated_at     :datetime        
+#  card_type_id   :integer         default(2)
+#  card_state_id  :integer         
+#  user_id        :integer         
+#
+
 class Card < ActiveRecord::Base
 
   belongs_to :owner, :class_name => "User", :foreign_key => "user_id"

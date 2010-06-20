@@ -69,11 +69,14 @@ $(function() {
 
     board.append(ul);
     $('.kanban_card', ul).draggable({
+	    containment: '#backlog',
       items: '.kanban_card',
       stop: function(data, ui) { 
 	
-				var left = ui.position.left;
-				var top = ui.position.top;
+				var position = $(this).position();
+				
+				var left = position.left;
+				var top = position.top;
 
         var card_id = $(this).attr("card_id");
         var project_id = $(this).attr("project_id");
@@ -84,7 +87,7 @@ $(function() {
           project_card_backlog_card_drop_url(project_id, card_id), 
           {"authenticity_token":window._auth_token, "left":left, "top":top}, 
           function (data, textStatus) {
-						$(self).effect("bounce", { times:2 }, 300);
+						//$(self).effect("bounce", { times:2 }, 300);
 						// $(self).css("top", top + "px")
 						// $(self).css("left", left + "px")
           }, 

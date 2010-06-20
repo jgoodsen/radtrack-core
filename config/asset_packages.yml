@@ -17,6 +17,7 @@ javascripts:
   - JSLINQ/JSLINQ
 - tail:
   - application
+  - user
   - kanban_card
   - card_owner
   - kanban

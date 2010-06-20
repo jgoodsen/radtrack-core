@@ -1,9 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-
 describe CardState do
   
   before(:each) do
-    @project = Factory(:project)
+    @project = create_project()
   end
   
   it "should only allow alphanumerics, spaces, ampersands,dashes and underscores for a name" do

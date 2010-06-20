@@ -1,7 +1,8 @@
 var Card = function() {
 	
-	var find = function(id) {
+	var findBy = function(id) {
 		alert("find card "  + id)
 	}
 	
 }
+
