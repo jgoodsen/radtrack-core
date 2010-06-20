@@ -2,7 +2,7 @@ $(function() {
 
 	$.fn.colorbox_tasklist = function(options) {
 		var defaults = {
-			users: null,
+			users: CurrentProject.users,
 		};
 		var options = $.extend(defaults, options);
 		var card = options.card;

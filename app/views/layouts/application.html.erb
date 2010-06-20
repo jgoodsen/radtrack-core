@@ -60,11 +60,17 @@
 
 <script type="text/javascript" charset="utf-8">
 <% if @project && @project.id %>
-  var card_states = <%= @project.card_states.to_json %>
-  var users = <%= @project.users.to_json %>
-  var task_states = <%= @project.task_states.to_json %>
-  var project_id = <%= @project.id %>
-  var CurrentProject = new Project(project_id)
+var card_states = <%= @project.card_states.to_json %>
+var task_states = <%= @project.task_states.to_json %>
+var project_id = <%= @project.id %>
+
+var CurrentProject;
+
+$(function() {
+  CurrentProject = new Project(<%= @project.id %>)
+  CurrentProject.init();
+})
+
 <% end %>	
 </script>
 

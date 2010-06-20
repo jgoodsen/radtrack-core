@@ -10,7 +10,7 @@ CardOwnerWidget = {
   owner_select_list: function(card) {
     var select = '<select class="card_owner_select" style="display:none;">';
         select += '<option value="unknown"></option>'; 
-        $.each(users, function() {  select += CardOwnerWidget.option(card, this); });
+        $.each(CurrentProject.users, function() {  select += CardOwnerWidget.option(card, this); });
       select += '</select';
     return select;
   },
@@ -24,7 +24,7 @@ CardOwnerWidget = {
   },
 
   display: function(card, users) {
-    return CardOwnerWidget.card_owner(card) + CardOwnerWidget.owner_select_list(card, users) + CardOwnerWidget.done_button();
+    return CardOwnerWidget.card_owner(card) + CardOwnerWidget.owner_select_list(card, CurrentProject.users) + CardOwnerWidget.done_button();
   },
 
   setup_events: function(parent){

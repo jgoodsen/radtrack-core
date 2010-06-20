@@ -2,15 +2,17 @@ var Project = function(project_id) {
 
 	var self = this;
 	var users = null;
+  var project_id = project_id;
 
 	self.init = function() {
 		self.ajaxGetUsersForProject();
 	}
 
 	self.ajaxGetUsersForProject = function() {
-		$.post("/projects/" + project_id + "/cards", {},
+		alert("getting users for project")
+		$.get("/projects/" + project_id + "/users", {},
 		function(data, textStatus) {
-			users = data;
+			self.users = data;
 		},
 		"json")
 		self.users = [{
@@ -20,7 +22,6 @@ var Project = function(project_id) {
 }
 
 $(function() {
-
 	$.fn.project_tout = function(options) {
 		
 		var defaults = {

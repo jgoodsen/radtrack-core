@@ -4,8 +4,16 @@ class UsersController < AuthenticatedController
   before_filter :require_user_edit_access, :except => [:show]
   
   def index
-    @users = @project.users if @project
-    redirect_to root_url
+    if @project
+      respond_to do |format|     
+        format.json { 
+          @users = @project.users
+          render :status => 200, :json => @users 
+        }
+      end
+    else
+      redirect_to root_url
+    end
   end
   
   def new

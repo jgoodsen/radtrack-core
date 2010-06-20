@@ -4,6 +4,7 @@ var card_json = <%= @card.to_json %>
 var tasks = <%= @card.tasks.to_json %>;
 
 function task_owner_select(task) {
+	var users = CurrentProject.users
 	var html = '<select id="task_owner_' + task.id + '" class="task_owner">';
 
 	// Include a blank value and select it if no task owner exists yet
