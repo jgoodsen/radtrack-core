@@ -74,7 +74,8 @@ input.card_title {
 .ui-dialog .ui-dialog-content {
 	padding: 0px;
 }
-.ui-dialog {
+
+div.ui-dialog {
 	border: 8px solid #999999
 	background: #F4D7B6;
 }
@@ -992,5 +993,9 @@ ul.wip_limit_exceeded {
 
 ul.wip_limit_acheived {
 	border: 4px solid green;
+}
+div.ui-dialog {
+	border: 8px solid #999999;
+	background: #F4D7B6;
 }
 
