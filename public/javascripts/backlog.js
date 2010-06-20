@@ -56,13 +56,17 @@ $(function() {
 		var ul = $('<ul/>').addClass("kanban_backlog");
 
 
+
 		function getCardPosition(id) {
 			for (var i = 0; i < card_positions.length; i++) {
 				if (card_positions[i].id == id) {
-				 	return card_positions[i].position
+					return card_positions[i].position
 				}
 			};
-			return {"top":"", "left":""};
+			return {
+				"top": "",
+				"left": ""
+			};
 		}
 
 		for (var i = 0; i < options.cards.length; i++) {
@@ -77,7 +81,7 @@ $(function() {
 					display_cardowner: true,
 					display_go_back: false,
 					card_class: 'kanban_backlog_card',
-					position:getCardPosition(card.id)
+					position: getCardPosition(card.id)
 				});
 			}
 		};
@@ -93,32 +97,35 @@ $(function() {
 				var card_id = $(this).attr("card_id");
 				var project_id = $(this).attr("project_id");
 
+				var position = $(this).position()
+
+				if ($(self).css("position") == "relative") {
+					$(self).css("top", position.top + "px")
+					$(self).css("left", position.left + "px")
+					alert($(self).css("position") + ", " + $(self).attr("id") + ", " + position.left + ", " + position.top)
+					$(this).css("position", "absolute")
+				}
 				// First go through each card and make sure it has the right positioning and set it's absolute original position
 				$('.kanban_backlog_card').each(function(index, element) {
 					var x = $(element);
-					x.css("position", "absolute")
 					var pos = x.position()
-					x.css("left", pos.left + "px")
-					x.css("top", pos.top + "px")
-					x.css("left", pos.left + "px")
-					x.css("top", pos.top + "px")
+					// x.css("left", pos.left + "px")
+					// 	x.css("top", pos.top + "px")
+					// 	x.css("left", pos.left + "px")
+					// 	x.css("top", pos.top + "px")
+					if ($(self).css("position") == "relative") {
+						x.css("top", pos.top + 2 + "px")
+						x.css("left", pos.left + 2 + "px")
+					}
 				})
-
-				// $(self).css("position", "relative")
-				var position = $(this).position()
-				var left = position.left
-				var top = position.top
-
 				$('.kanban_backlog_card').css("position", "absolute")
-				$(self).css("top", top + "px")
-				$(self).css("left", left + "px")
 
-				
+				alert("Need to save ALL card positions, not just the card that was moved, in order to handle switching from rel to abs positioning")
 				$.post(
 				project_card_backlog_card_drop_url(project_id, card_id), {
 					"authenticity_token": window._auth_token,
-					"left": left,
-					"top": top
+					"left": position.left,
+					"top": position.top
 				},
 				function(data, textStatus) {
 					//$(self).effect("bounce", { times:2 }, 300);
@@ -151,7 +158,7 @@ $(function() {
 			}
 		});
 
-		for (var i=0; i < card_positions.length; i++) {
+		for (var i = 0; i < card_positions.length; i++) {
 			var pos = card_positions[i]
 			var card = $('#backlog_card_' + pos.id);
 			card.css("position", "absolute")

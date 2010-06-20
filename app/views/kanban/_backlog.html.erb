@@ -19,7 +19,6 @@ $('#backlog_reset_layout').click(function() {
 	var cards = $('.kanban_backlog_card');
 	cards.css("left", "")
 	cards.css("top", "")
-	cards.css("position", "relative")
 	$.post(
 	project_board_reset_card_positions_url(project_id, 'backlog'), {
 		"authenticity_token": window._auth_token
