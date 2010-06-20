@@ -62,7 +62,8 @@ $(function() {
           display_go_back: true,
           card_tag: 'li',
           id_prefix: 'card_',
-          position: 'absolute'
+					card_class: '',
+          position: {"left":"", "top":""}
       };
       var options = $.extend(defaults, options);
 
@@ -147,7 +148,7 @@ $(function() {
 	    function make_card_html(options) {
 
 	        var card = options.card;
-	        var content = '<' + options.card_tag + ' id="' + make_card_id(card.id, options.id_prefix) + '" class="kanban_card kanban_backlog_card"' + ' project_id="' + card.project_id + '" card_id="' + card.id + '">';
+	        var content = '<' + options.card_tag + ' id="' + make_card_id(card.id, options.id_prefix) + '" class="kanban_card ' + options.card_class + '"' + ' project_id="' + card.project_id + '" card_id="' + card.id + '">';
 
 	        content += make_inner_card_content(options);
 

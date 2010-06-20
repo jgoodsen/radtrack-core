@@ -5,13 +5,7 @@ $(function() {
 		var defaults = {
 			project_id: 0,
 			cards: [],
-			card_positions: [{
-				"id": "1",
-				"position": {
-					"top": "220",
-					"left": "240"
-				}
-			}]
+			card_positions: []
 		};
 		var options = $.extend(defaults, options);
 
@@ -19,7 +13,7 @@ $(function() {
 
 		self.enableLivesearch = function() {
 
-			var backlog_cards = '.kanban_backlog li'
+			var backlog_cards = '.kanban_backlog_card'
 
 			$('input[name="f"]').search(backlog_cards, function(on) {
 				on.reset(function() {
@@ -64,18 +58,16 @@ $(function() {
 
 		function getCardPosition(id) {
 			for (var i = 0; i < card_positions.length; i++) {
-				if (card_positions[i].id == "1") {
+				if (card_positions[i].id == id) {
 				 	return card_positions[i].position
 				}
 			};
-			return {"top":"20", "left":"20"};
+			return {"top":"", "left":""};
 		}
 
 		for (var i = 0; i < options.cards.length; i++) {
 			var card = options.cards[i];
 			if (card.card_state_id == null) {
-				var position = getCardPosition(card.id);
-				alert("left " + position.left)
 				ul.kanban_card({
 					card: card,
 					card_tag: 'li',
@@ -83,12 +75,15 @@ $(function() {
 					tasklist_popup: false,
 					description_popup: false,
 					display_cardowner: true,
-					display_go_back: false
+					display_go_back: false,
+					card_class: 'kanban_backlog_card',
+					position:getCardPosition(card.id)
 				});
 			}
 		};
 
 		board.append(ul);
+
 		$('.kanban_card', ul).draggable({
 			containment: '#backlog',
 			items: '.kanban_card',
@@ -98,15 +93,27 @@ $(function() {
 				var card_id = $(this).attr("card_id");
 				var project_id = $(this).attr("project_id");
 
-				// $(self).css("position", "relative")
-				var position = $(this).position();
-				var left = position.left;
-				var top = position.top;
+				// First go through each card and make sure it has the right positioning and set it's absolute original position
+				$('.kanban_backlog_card').each(function(index, element) {
+					var x = $(element);
+					x.css("position", "absolute")
+					var pos = x.position()
+					x.css("left", pos.left + "px")
+					x.css("top", pos.top + "px")
+					x.css("left", pos.left + "px")
+					x.css("top", pos.top + "px")
+				})
 
-				$(self).css("position", "absolute")
+				// $(self).css("position", "relative")
+				var position = $(this).position()
+				var left = position.left
+				var top = position.top
+
+				$('.kanban_backlog_card').css("position", "absolute")
 				$(self).css("top", top + "px")
 				$(self).css("left", left + "px")
 
+				
 				$.post(
 				project_card_backlog_card_drop_url(project_id, card_id), {
 					"authenticity_token": window._auth_token,
@@ -143,6 +150,14 @@ $(function() {
 				"json");
 			}
 		});
+
+		for (var i=0; i < card_positions.length; i++) {
+			var pos = card_positions[i]
+			var card = $('#backlog_card_' + pos.id);
+			card.css("position", "absolute")
+			card.css("top", pos.position.top + "px")
+			card.css("left", pos.position.left + "px")
+		};
 
 		return $(this);
 

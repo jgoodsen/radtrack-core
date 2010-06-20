@@ -99,6 +99,12 @@ class ProjectsController < AuthenticatedController
     render :json => @user, :success => true
   end
   
+  def reset_card_positions
+    @board = @project.boards.find_by_name(params[:board_id])
+    @board.card_positions_json = "[]"
+    @board.save!
+  end
+  
   protected
     def get_project_by_id
       @project = @current_user.projects.find(params[:id])

@@ -66,6 +66,10 @@ function project_invite_user_url(project_id) {
 	
 }
 
+function project_board_reset_card_positions_url(project_id, board_name) {
+		return project_url(project_id) + "/boards/" + board_name + "/reset_card_positions"
+}
+
 function admin_remove_user_from_project_url(project_id, user_id) { 
   return "http://" + DOMAIN_AND_PORT + "/admin/projects/" + project_id + "/remove_user/" + user_id
 }

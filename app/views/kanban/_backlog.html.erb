@@ -10,5 +10,23 @@
 		<span class="card_type_filter_icon card_type_icon_<%= card_type.id %>" card_type_id="<%= card_type.id %>"></span>
 	<% end %>
     <span id="none" style="display:none; float:left;">There were no cards to match your search</span>  
+	<button id='backlog_reset_layout'>Reset Card Layout</button>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+$('#backlog_reset_layout').click(function() {
+	var cards = $('.kanban_backlog_card');
+	cards.css("left", "")
+	cards.css("top", "")
+	cards.css("position", "relative")
+	$.post(
+	project_board_reset_card_positions_url(project_id, 'backlog'), {
+		"authenticity_token": window._auth_token
+	},
+	function(data, textStatus) {
+	},
+	"json");
+})
+	
+</script>

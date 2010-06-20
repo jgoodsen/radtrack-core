@@ -27,6 +27,10 @@ ActionController::Routing::Routes.draw do |map|
     project.settings 'settings', :controller => 'projects', :action => 'settings'
     project.invite_user 'invite_user', :controller => 'projects', :action => 'invite_user'
 
+    project.resources :boards do |board|
+      board.reset_card_positions 'reset_card_positions', :controller => 'projects', :action => 'reset_card_positions'
+    end
+    
     project.kanban_card_dropped 'card_dropped', :controller => 'kanban', :action => 'card_dropped'
     project.resources :users
     project.resources :card_states do |card_state|
