@@ -113,12 +113,13 @@ $(function() {
 					// 	x.css("top", pos.top + "px")
 					// 	x.css("left", pos.left + "px")
 					// 	x.css("top", pos.top + "px")
-					if ($(self).css("position") == "relative") {
-						x.css("top", pos.top + 2 + "px")
-						x.css("left", pos.left + 2 + "px")
-					}
+					//if ($(self).css("position") == "relative") {
+						//x.css("top", pos.top + 2 + "px")
+						//x.css("left", pos.left + 2 + "px")
+						// x.css("position", "absolute")
+					//}
 				})
-				$('.kanban_backlog_card').css("position", "absolute")
+				// $('.kanban_backlog_card').css("position", "absolute")
 
 				alert("Need to save ALL card positions, not just the card that was moved, in order to handle switching from rel to abs positioning")
 				$.post(
