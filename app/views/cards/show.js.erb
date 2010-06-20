@@ -115,6 +115,7 @@ function popup_card_html() {
 	html += '<div class="card_description"><%=escape_javascript(h(@card.description).gsub("\n", "<br/>")) if @card.description %></div>'; // TODO: Convert this erb to js
   html += tasklist_table(tasks);
 	html += '</div>';;
+	<%= raise @card.inspect %>
 	return html;
 }
 
@@ -125,17 +126,18 @@ function update_card_title(card) {
 
 function card_title_changed(value, settings) { 
 	var url = project_card_url(project_id, card_id);
-	bodyContent = $.ajax({
+	return $.ajax({
 	      url: url + ".json",
 	      global: false,
 	      type: "POST",
 	      data: ({"card[title]":value, "authenticity_token":window._auth_token, "_method":"put"}),
 	      dataType: "json",
 	      success: function(msg){
-	         update_card_title(msg.card);
+					 alert("msg: " + msg)
+	         update_card_title(msg);
 	      }
 	   }
-	).responseText;
+	).responseText;	
 	
 
 };
@@ -143,7 +145,7 @@ function card_title_changed(value, settings) {
 function card_description_changed(value, settings) { 
 	var url = project_card_url(project_id, card_id);
 	$.post(url, {"card[description]":value, "authenticity_token":window._auth_token, "_method":"put"}, null, "script");
-	return(value);
+	return value;
 };
 
 function delete_task_callback_success(data, textStatus) {

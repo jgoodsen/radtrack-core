@@ -77,7 +77,7 @@ class CardsController < AuthenticatedController
     respond_to do |format|
       format.html { render :action => 'show' }
       format.js { render :action => 'show'}
-      format.json { render :json => @card.to_json(:include => :owner) }
+      format.json { render :json => @card.to_json }
     end
   end
   
