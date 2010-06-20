@@ -10,6 +10,7 @@ class ProjectsController < AuthenticatedController
   def show
     @show_tab = params[:show_tab]
     @show_tab ||= 1
+    @backlog_card_positions = @project.board(:backlog).card_positions_json
   end
   
   def mytasks_tab

@@ -970,6 +970,10 @@ font-weight:bold;
   
 }
 
+.kanban_backlog_card {
+	position: relative;
+}
+
 .kanban_backlog_card .owner_name {
   color: #999;
 }
@@ -989,3 +993,4 @@ ul.wip_limit_exceeded {
 ul.wip_limit_acheived {
 	border: 4px solid green;
 }
+

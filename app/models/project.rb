@@ -13,9 +13,8 @@ class Project < ActiveRecord::Base
   
   has_many :project_assignments
   has_many :users, :through => :project_assignments
-  
+  has_many :boards
   has_many :cards, :dependent => :delete_all, :order => 'position'
-  
   has_many :task_states
   has_many :card_states, :dependent => :delete_all, :order => 'position'
   
@@ -25,6 +24,11 @@ class Project < ActiveRecord::Base
   after_save :ensure_initial_task_states
     
   validates_presence_of :name, :message => "can't be blank"
+  
+  def board(name_sym)
+    board = self.boards.find_by_name(name_sym.to_s)
+    board ||= self.boards.create(:name => name_sym.to_s)
+  end
   
   def card_types
     CardType.all

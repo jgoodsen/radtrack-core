@@ -41,7 +41,10 @@ class CardsController < AuthenticatedController
 
   def backlog_card_drop
     position = {:left => params[:left].to_i, :top => params[:top].to_i}
-    @project.board[:backlog].update_card_position(params[:card_id], position)
+    @board = @project.boards.find_by_name("backlog")
+    @board ||= @project.boards.create(:name => "backlog")
+    @board.update_card_position(params[:card_id], position)
+    @board.save!
     respond_to do |format|
       format.json { render :status => 200, :json => position }
     end    
