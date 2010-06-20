@@ -1,6 +1,6 @@
 function mouse_over_pointer(e) {
 	$(this).css("cursor", "pointer");
-};
+}
 
 $.fn.clearOnFocus = function() {
     return this.focus(function() {
@@ -20,8 +20,8 @@ function make_card_id(id, prefix) {
 	return prefix + id;
 }
 
-function toArray(enum) {
-    return Array.prototype.slice.call(enum);
+function toArray(enum_local) {
+    return Array.prototype.slice.call(enum_local);
 }
 
 Function.prototype.curry = function() {
@@ -32,6 +32,30 @@ Function.prototype.curry = function() {
     var args = toArray(arguments);
     return function() {
         return __method.apply(this, args.concat(toArray(arguments)));
-    }
+    };
+};
+
+function is() {
+  var browser = {
+    ie: Boolean(document.all),
+    ie6: !window.XMLHttpRequest,
+    opera: Boolean(window.opera),
+    chrome: Boolean(window.chrome),
+    firefox: Boolean(window.sidebar)
+  };
+  return browser;
 }
 
+function browser_warning() {
+  if(!is().chrome && !is().firefox) {
+    popup = $('#jquery_dialog_card');
+    popup.dialog('warning');
+    popup.html("You appear to be using an obsolete browser and may not display correctly on modern websites, therefore it is recommended that you update it. For modern browser choices try <a href=”http://http://www.google.com/chrome”>Google Chrome</a> or <a href='http://www.mozilla.com/en-US/firefox/firefox.html'>Mozilla Firefox</a>.");
+
+    popup.dialog({
+      minWidth: 460,
+      width: 460,
+      close: function(event, ui) { $('#jquery_dialog_card').dialog('warning'); }
+    }).dialog('open').fadeIn("slow");
+  }
+}

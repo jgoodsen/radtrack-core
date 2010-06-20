@@ -16,3 +16,4 @@ config/smtp_config.rb
 db/schema.rb
 typescript
 tmp
+.rvmrc
