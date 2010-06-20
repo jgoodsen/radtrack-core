@@ -19,6 +19,9 @@ unless (defined?(Fixjour))
     define_builder(User) do |klass, overrides|
       klass.new(:login => 'joe@test.com', :email => 'joe@test.com', :password => 'password', :password_confirmation => 'password')
     end
+    define_builder(Board) do |klass, overrides|
+      klass.new(:project_id => create_project().id)
+    end
   end
   include Fixjour
 end

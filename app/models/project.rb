@@ -18,7 +18,6 @@ class Project < ActiveRecord::Base
   
   has_many :task_states
   has_many :card_states, :dependent => :delete_all, :order => 'position'
-  has_many :card_views, :dependent => :delete_all
   
   has_many :activity_log_entries
   
