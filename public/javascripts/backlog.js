@@ -102,7 +102,6 @@ $(function() {
 				if ($(self).css("position") == "relative") {
 					$(self).css("top", position.top + "px")
 					$(self).css("left", position.left + "px")
-					alert($(self).css("position") + ", " + $(self).attr("id") + ", " + position.left + ", " + position.top)
 					$(this).css("position", "absolute")
 				}
 				// First go through each card and make sure it has the right positioning and set it's absolute original position
@@ -121,7 +120,6 @@ $(function() {
 				})
 				// $('.kanban_backlog_card').css("position", "absolute")
 
-				alert("Need to save ALL card positions, not just the card that was moved, in order to handle switching from rel to abs positioning")
 				$.post(
 				project_card_backlog_card_drop_url(project_id, card_id), {
 					"authenticity_token": window._auth_token,

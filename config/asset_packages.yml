@@ -3,20 +3,18 @@ javascripts:
 - base: 
   - ../jquery-ui-1.7.2.custom/js/jquery-1.3.2.min
   - ../jquery-ui-1.7.2.custom/js/jquery-ui-1.7.2.custom.min
-  - ../multidraggable/js/ui.multidraggable
   - jquery.livequery
   - jquery.wresize
   - jquery.jeditable
   - jquery.editinplace
-  - jquery.ezpz_tooltip
   - jquery.form
   - jquery.colorbox
-  - radtrack.livesearch
-  - routes
   - JSLINQ/IEnumerable
   - JSLINQ/JSLINQ
-- tail:
   - application
+  - radtrack.livesearch
+  - routes
+- tail:
   - user
   - kanban_card
   - card_owner

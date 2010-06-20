@@ -115,7 +115,6 @@ function popup_card_html() {
 	html += '<div class="card_description"><%=escape_javascript(h(@card.description).gsub("\n", "<br/>")) if @card.description %></div>'; // TODO: Convert this erb to js
   html += tasklist_table(tasks);
 	html += '</div>';;
-	<%= raise @card.inspect %>
 	return html;
 }
 

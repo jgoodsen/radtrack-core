@@ -11,12 +11,12 @@
 #   - dist/**/*.js
 #
 src_files:
-  - public/javascripts/prototype.js
-  - public/javascripts/effects.js
-  - public/javascripts/controls.js
-  - public/javascripts/dragdrop.js
-  - public/javascripts/application.js
-
+  - public/jquery-ui-1.7.2.custom/js/jquery-1.3.2.min
+  - public/jquery-ui-1.7.2.custom/js/jquery-ui-1.7.2.custom.min
+  - public/javascripts/*.js
+  - public/javascripts/JSLINQ/IEnumerable
+  - public/javascripts/JSLINQ/JSLINQ
+  
 # stylesheets
 #
 # Return an array of stylesheet filepaths relative to src_dir to include before jasmine specs.
@@ -66,7 +66,7 @@ spec_files:
 #
 # src_dir: public
 #
-src_dir:
+src_dir: public
 
 # spec_dir
 #

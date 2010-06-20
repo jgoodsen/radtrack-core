@@ -1,5 +1,22 @@
-var Project = function() {
-	
+var Project = function(project_id) {
+
+	var self = this;
+	var users = null;
+
+	self.init = function() {
+		self.ajaxGetUsersForProject();
+	}
+
+	self.ajaxGetUsersForProject = function() {
+		$.post("/projects/" + project_id + "/cards", {},
+		function(data, textStatus) {
+			users = data;
+		},
+		"json")
+		self.users = [{
+			id: "retrieving..."
+		}];
+	}
 }
 
 $(function() {
@@ -26,7 +43,6 @@ $(function() {
 		$('img.project_delete', this).click(delete_project);
 	
 	};
-	
 	
 	$.fn.project_user = function(options) {
 		

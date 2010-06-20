@@ -20,6 +20,14 @@ function popup_card_dialog() {
 
 $(function() {
 
+	// This function isolates the logic on creating the html id for a card 
+	function make_card_id(id, prefix) {
+	    if (typeof prefix == "undefined") {
+	      prefix = "card_";
+	    }
+		return prefix + id;
+	}
+
 	function delete_card(id_prefix) {
 		if (confirm('Are you sure you want to delete this card.  All data associated with this card will be lost and cannot be retrieved.  Are you *REALLY* sure?')) {
 			$.post(project_card_url(project_id, ElementId.card_id($(this))), {
