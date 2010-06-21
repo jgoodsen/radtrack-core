@@ -1,23 +1,23 @@
 function Project(project_id) {
 
-	var self = this;
-	
-	this.users = [{id:555}];
+  var self = this;
+
+	this.users = [];
 	this.project_id = project_id;
 
-	self.init = function() {
-		self.ajaxGetUsersForProject();
+	Project.prototype.init = function() {
+		this.ajaxGetUsersForProject();
 	}
 
-	this.ajaxGetUsersForProjectCB = function(data, textStatus) {
+	Project.prototype.ajaxGetUsersForProjectCB = function(data, textStatus) {
+		alert("ajaxGetUsersForProjectCB " + textStatus)
 		self.users = data;
 	}
 
-}
+	Project.prototype.ajaxGetUsersForProject = function() {
+		$.get("/projects/" + project_id + "/users", {}, this.ajaxGetUsersForProjectCB, "json")
+	}
 
-Project.prototype.ajaxGetUsersForProject = function() {
-	$.get("/projects/" + project_id + "/users", {},
-	ajaxGetUsersForProjectCB, "json")
 }
 
 $(function() {
@@ -28,8 +28,6 @@ $(function() {
 		var options = $.extend(defaults, options);
 
 		var self = this;
-
-
 
 		function delete_project(parent) {
 			if (confirm('Are you sure you want to remove this project?')) {

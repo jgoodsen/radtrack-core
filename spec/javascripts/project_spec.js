@@ -1,37 +1,35 @@
+describe('CurrentProject', function() {
 
-	describe('CurrentProject', function() {
+	var users_json = [{
+		id: 1,
+		login: "admin@test.com",
+		email: "admin@test.com",
+		admin: true
+	},
+	{
+		id: 2,
+		login: "joe@test.com",
+		email: "joe@test.com",
+		admin: false
+	},
+	]
 
-		var users_json = [
-		{
-			id: 1,
-			login: "admin@test.com",
-			email: "admin@test.com",
-			admin: true
-		},
-		{
-			id: 2,
-			login: "joe@test.com",
-			email: "joe@test.com",
-			admin: false
-		},
-		]
-		
-		beforeEach(function() {
-			
+	beforeEach(function() {
+		CurrentProject = new Project(99)
+		spyOn(CurrentProject, "ajaxGetUsersForProject").andCallFake(function() {
+			CurrentProject.users = users_json
 		})
-		
-		it('should ask the service for the project users on the first request', function() {
-			CurrentProject = new Project(99)						
-					spyOn(CurrentProject, "ajaxGetUsersForProject").andCallFake(function() {
-							CurrentProject.users = users_json
-						})
-			CurrentProject.init()					
-			expect(CurrentProject.users).toEqual(users_json)
-		});
+		CurrentProject.init()
+	})
 
-		describe('nested describe', function() {
-			it('should also have a passing test', function() {
-				expect(true).toEqual(true);
-			});
+	it('should ask the service for the project users on the first request', function() {
+		expect(CurrentProject.users).toEqual(users_json)
+	});
+
+	describe('nested describe', function() {
+		it('should also have a passing test', function() {
+			expect(true).toEqual(true);
 		});
 	});
+
+});
