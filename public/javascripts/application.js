@@ -1,5 +1,3 @@
-$(function() {
-	
 	function mouse_over_pointer(e) {
 		$(this).css("cursor", "pointer");
 	};
@@ -28,5 +26,3 @@ $(function() {
 	        return __method.apply(this, args.concat(toArray(arguments)));
 	    }
 	}
-
-})
