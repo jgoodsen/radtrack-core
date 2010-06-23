@@ -33,9 +33,9 @@
   };
 //})();
 
-
-console.log(IEnumerable([2, 3, 5])
-  .push(function (element, index, array) { 
-    return index > 1 ? true : false;
-  })
-  .getNext());
+//no internet explorer support
+//console.log(IEnumerable([2, 3, 5])
+  //.push(function (element, index, array) { 
+    //return index > 1 ? true : false;
+  //})
+  //.getNext());
