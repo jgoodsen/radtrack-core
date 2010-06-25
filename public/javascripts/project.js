@@ -10,7 +10,6 @@ function Project(project_id) {
 	}
 
 	Project.prototype.ajaxGetUsersForProjectCB = function(data, textStatus) {
-		alert("ajaxGetUsersForProjectCB " + textStatus)
 		self.users = data;
 	}
 
@@ -54,7 +53,6 @@ $(function() {
 
 		var defaults = {};
 		var options = $.extend(defaults, options);
-
 
 
 		function remove_user_from_project() {
