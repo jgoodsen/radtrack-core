@@ -8,7 +8,6 @@ ElementId = {
 }
 
 
-
 function popup_card_dialog() {
 	var url = "/projects/" + ElementId.extract_project_id($(this)) + "/cards/" + ElementId.card_id($(this)) + ".js";
 	$(this).parent().prev().children('.spinner').show();
@@ -22,11 +21,13 @@ $(function() {
 
 	// This function isolates the logic on creating the html id for a card 
 	function make_card_id(id, prefix) {
-	    if (typeof prefix == "undefined") {
-	      prefix = "card_";
-	    }
+		if (typeof prefix == "undefined") {
+			prefix = "card_";
+		}
 		return prefix + id;
 	}
+
+
 
 	function delete_card(id_prefix) {
 		if (confirm('Are you sure you want to delete this card.  All data associated with this card will be lost and cannot be retrieved.  Are you *REALLY* sure?')) {
@@ -75,6 +76,8 @@ $(function() {
 			}
 		}
 
+
+
 		function tooltip_content(card) {
 
 			var x = '';
@@ -104,6 +107,8 @@ $(function() {
 
 			return x;
 		};
+
+
 
 		function card_type_image_icon_tag(card) {
 			var number_of_card_types_for_project = 5;
@@ -136,9 +141,6 @@ $(function() {
 		card_display += tooltip_content(card);
 		return card_display;
 
-		// var jquery_card = $(card_display)
-		// jquery_card.find(' img.delete_card', parent).click(delete_card);
-		// return jquery_card.html()	;
 	}
 
 	$.fn.update_kanban_card = function(options) {
@@ -186,6 +188,8 @@ $(function() {
 			}
 		};
 		var options = $.extend(defaults, options);
+
+
 
 		function make_card_html(options) {
 
