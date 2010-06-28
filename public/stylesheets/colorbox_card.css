@@ -101,3 +101,7 @@
 	margin: 2px;
 	padding: 3px;
 }
+
+#colorbox_card .task .name {
+	margin-left: 6px;
+}

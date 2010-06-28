@@ -21,7 +21,7 @@ $(function() {
 		
 		function add_task(parent, task) {
 			var html = '';
-			html += '<div class="task" task_id="'+ task.id + '" card_id=' + card.id + ' >';
+			html += '<div class="task" task		 _id="'+ task.id + '" card_id=' + card.id + ' >';
 			html += '<span class="owner">' + taskOwnerDropdown(task) + '</span>';
 			html += '<span class="name">' + task.name + '</span>';
 			html += '</div>';
