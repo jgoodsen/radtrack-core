@@ -15,13 +15,13 @@ javascripts:
   - radtrack.livesearch
   - routes
 - tail:
+  - project
   - user
   - kanban_card
   - card_owner
   - kanban
   - backlog
   - card
-  - project
   - colorbox_card
 stylesheets: 
 - base: 

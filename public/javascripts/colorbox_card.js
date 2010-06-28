@@ -7,15 +7,23 @@ $(function() {
 		var options = $.extend(defaults, options);
 		var card = options.card;
 
-		function getTaskOwner(task) {
-			
+		function taskOwnerDropdown(task) {
+			var html = '';
+			html += '<select task_id="' + task.id + '" class="task_owner">'
+			html += '<option value =""></option>'
+			for (var i=0; i < CurrentProject.users.length; i++) {
+				var user = CurrentProject.users[i]
+				html += '<option value="' + user.id + '"' + (task.user_id == user.id ? ' selected="selected"' : '') + '>'+ user.login + '</option>' 
+			};
+			html += '</select>'
+			return html
 		}
 		
 		function add_task(parent, task) {
 			var html = '';
 			html += '<div class="task" task_id="'+ task.id + '" card_id=' + card.id + ' >';
-			html += '<span class="owner">' + Card.find(task.owner) + '</span>';
-			html += '<span class="name">' + getTaskOwner(task) + '</span>';
+			html += '<span class="owner">' + taskOwnerDropdown(task) + '</span>';
+			html += '<span class="name">' + task.name + '</span>';
 			html += '</div>';
 			$(parent).append(html);
 		}

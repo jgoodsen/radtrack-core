@@ -18,6 +18,16 @@ function Project(project_id) {
 		this.ajaxGetUsersForProjectCB, "json")
 	}
 
+  Project.prototype.getUser = function(id) {
+		for (var i=0; i < this.users.length; i++) {
+			var user = this.users[i]
+			if (user.id == id) {
+				return user;
+			}
+		}
+		throw "No user found for id " + id
+	}
+	
 }
 
 $(function() {

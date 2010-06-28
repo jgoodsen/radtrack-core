@@ -187,8 +187,6 @@ $(function() {
 		};
 		var options = $.extend(defaults, options);
 
-
-
 		function make_card_html(options) {
 
 			var card = options.card;
