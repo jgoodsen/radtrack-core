@@ -39,8 +39,6 @@ $(function() {
 
 		var self = this;
 
-
-
 		function delete_project(parent) {
 			if (confirm('Are you sure you want to remove this project?')) {
 				var project_id = $(this).attr('project_id')
@@ -52,8 +50,6 @@ $(function() {
 			}
 			return true;
 		}
-
-
 
 		function delete_project_callback_success(data, textStatus) {
 			return true;

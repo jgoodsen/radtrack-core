@@ -13,7 +13,7 @@ $(function() {
 			html += '<option value =""></option>'
 			for (var i=0; i < CurrentProject.users.length; i++) {
 				var user = CurrentProject.users[i]
-				html += '<option value="' + user.id + '"' + (task.user_id == user.id ? ' selected="selected"' : '') + '>'+ user.login + '</option>' 
+				html += '<option value="' + user.id + '"' + (task.user_id == user.id ? ' selected="selected"' : '') + '>'+ user.name + '</option>' 
 			};
 			html += '</select>'
 			return html
@@ -81,7 +81,6 @@ $(function() {
 		html += '<h2>Task List</h2>'
 		html += '<div class="tasks">'
 		html += '</div>'
-		//html += '<form class="new_task_form">'
 
 		$(this).html(html)
 
