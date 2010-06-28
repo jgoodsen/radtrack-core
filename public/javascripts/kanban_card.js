@@ -210,6 +210,8 @@ $(function() {
 			opacity: 0.3
 		});
 
+		CardOwnerWidget.setup_events(this);
+
 		return $(this);
 	};
 

@@ -9,7 +9,7 @@ class CardsController < AuthenticatedController
 
   def index
     @cards ||= @project.cards
-    respond_to do |format|     
+    respond_to do |format|  
       format.json { render :status => 200, :json => @cards }
     end    
   end
