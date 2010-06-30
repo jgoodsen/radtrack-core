@@ -33,21 +33,21 @@ function is() {
     ie6: !window.XMLHttpRequest,
     opera: Boolean(window.opera),
     chrome: Boolean(window.chrome),
-    firefox: Boolean(window.sidebar)
+    firefox: Boolean(window.sidebar),
+    webkit: navigator.userAgent.indexOf('AppleWebKit/') > -1  
   };
   return browser;
 }
 
-function browser_warning() {
-  if(!is().chrome && !is().firefox) {
-    popup = $('#jquery_dialog_card');
-    popup.dialog('warning');
-    popup.html("You appear to be using an obsolete browser and may not display correctly on modern websites, therefore it is recommended that you update it. For modern browser choices try <a href=”http://http://www.google.com/chrome”>Google Chrome</a> or <a href='http://www.mozilla.com/en-US/firefox/firefox.html'>Mozilla Firefox</a>.");
+function supported_browsers(){
+  return (is().chrome || is().firefox || is().webkit);
+}
 
-    popup.dialog({
-      minWidth: 460,
-      width: 460,
-      close: function(event, ui) { $('#jquery_dialog_card').dialog('warning'); }
-    }).dialog('open').fadeIn("slow");
+function browser_warning() {
+  if(!supported_browsers()) {
+    popup = $('#jquery_dialog_card');
+    popup.html("You are using an unsupported browser and may not render radtrack pages correctly, therefore it is recommended that you update it. For modern browser choices try <a href=”http://http://www.google.com/chrome”>Google Chrome</a> or <a href='http://www.mozilla.com/en-US/firefox/firefox.html'>Mozilla Firefox</a>.");
+    popup.colorbox({opacity: 0.3});
+    popup.show();
   }
 }
