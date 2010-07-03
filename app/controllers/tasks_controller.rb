@@ -1,11 +1,12 @@
 class TasksController < AuthenticatedController
   
   def create
-    @task = @card.tasks.create! params[:task]
+    @task = @card.tasks.create params[:task]
     respond_to do |format|
-      format.html {
-        raise "HTML task creation is not allowed, AJAX only."
+      format.json {
+        render :status => 200, :json => @task
       }
+      ## TODO: Remove .js when we get rid of the jQuery card popup in favor of the colorbox popup
       format.js
     end
   end

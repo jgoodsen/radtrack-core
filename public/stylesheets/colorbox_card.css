@@ -70,8 +70,7 @@
 	height: 500px;
 }
 
-#colorbox_card h2 {
-		margin-top: 10px;
+#colorbox_card span.tasklist_header {
 	font: normal normal normal 1.1em/1.2em Arial, sans-serif;
 	color: #AAA;
 }
@@ -84,6 +83,7 @@
 	padding: 4px;
 	background: #EEE;
 	margin-top: 4px;
+	margin-bottom: 8px;
 }
 
 #colorbox_card .tasks {
@@ -104,4 +104,11 @@
 
 #colorbox_card .task .name {
 	margin-left: 6px;
+}
+
+#colorbox_card form.create_new_task {
+	font-size: .8em;
+	margin-left: 10px;
+}
+#colorbox_card form.create_new_task {
 }

@@ -65,7 +65,5 @@ class Card < ActiveRecord::Base
   def activate!
     self.card_state = self.project.card_states.first
   end
-  
-  private
-  
+    
 end

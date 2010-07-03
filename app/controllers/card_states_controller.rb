@@ -21,15 +21,12 @@ class CardStatesController < AuthenticatedController
   end
     
   def dropped
-    # "card_state[]=139&card_state[]=137&card_state[]=140&card_state[]=141&card_state[]=143"
     ids = params[:card_states].split('&').collect do |x| x =~ /card_state\[\]=(.*)/ ; $1 end
-    
     ids.each_with_index do |id, index|
       card_state  = @project.card_states.find(id)
       card_state.update_attributes(:position => index+1)
     end
     render :text => '', :layout => false
-    
   end
   
 end

@@ -78,7 +78,7 @@ describe Project do
       Project.delete_all
       CardState.delete_all
       Card.delete_all
-      CardType.init
+      CardType.init ## TODO: Probably want to have  CardTypes per each project
       @project = create_project
       @project.card_states.should_not be_empty
     end

@@ -7,21 +7,25 @@ $(function() {
 		var options = $.extend(defaults, options);
 		var card = options.card;
 
+
+
 		function taskOwnerDropdown(task) {
 			var html = '';
 			html += '<select task_id="' + task.id + '" class="task_owner">'
 			html += '<option value =""></option>'
-			for (var i=0; i < CurrentProject.users.length; i++) {
+			for (var i = 0; i < CurrentProject.users.length; i++) {
 				var user = CurrentProject.users[i]
-				html += '<option value="' + user.id + '"' + (task.user_id == user.id ? ' selected="selected"' : '') + '>'+ user.name + '</option>' 
+				html += '<option value="' + user.id + '"' + (task.user_id == user.id ? ' selected="selected"' : '') + '>' + user.name + '</option>'
 			};
 			html += '</select>'
 			return html
 		}
-		
+
+
+
 		function add_task(parent, task) {
 			var html = '';
-			html += '<div class="task" task		 _id="'+ task.id + '" card_id=' + card.id + ' >';
+			html += '<div class="task" task		 _id="' + task.id + '" card_id=' + card.id + ' >';
 			html += '<span class="owner">' + taskOwnerDropdown(task) + '</span>';
 			html += '<span class="name">' + task.name + '</span>';
 			html += '</div>';
@@ -32,7 +36,7 @@ $(function() {
 			var task = card.tasks[i];
 			add_task(this, task);
 		}
-		
+
 		$('div.task .name', this).each(function(index, element) {
 			var task = $(this).parents("div.task:first");
 			$(this).editInPlace({
@@ -42,8 +46,11 @@ $(function() {
 		});
 
 		return $(this);
-		var url = 
-		$.post(url, {"task[name]":value, "authenticity_token":window._auth_token, "_method":"put"});
+		var url = $.post(url, {
+			"task[name]": value,
+			"authenticity_token": window._auth_token,
+			"_method": "put"
+		});
 
 	};
 
@@ -55,6 +62,8 @@ $(function() {
 		var options = $.extend(defaults, options);
 		var card = options.card;
 
+
+
 		function card_description(card) {
 			return card.description == null ? "No Description" : card.description;
 		}
@@ -63,26 +72,45 @@ $(function() {
 		function card_number(card) {
 			return card.id
 		}
-		
+
+
+
 		function card_attribute_updated(attribute_name, value) {
 			function update_title(parent, value) {
-					parent.find("." + "card_body a").html(card_number(card) + ":" + value)
+				parent.find("." + "card_body a").html(card_number(card) + ":" + value)
 			}
 			if (attribute_name == "title") {
-				update_title($('#backlog_card_'+ card.id), value);
-				update_title($('#kanban_card_'+ card.id), value);
-			} 
+				update_title($('#backlog_card_' + card.id), value);
+				update_title($('#kanban_card_' + card.id), value);
+			}
 		}
-		
+
 		var html = ''
 		html += '<div class="title">' + card.title + '</div>'
+
 		html += '<h2>Description / Narrative</h2>'
 		html += '<div class="description">' + card_description(card) + '</div>'
-		html += '<h2>Task List</h2>'
+
+		html += '<span class="tasklist_header">Task List</span>'
+
+		html += '<form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
+		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
+		html += '<input name="task[name]" value="<enter new task>"></input>'
+		html += '</form>'
+		
 		html += '<div class="tasks">'
 		html += '</div>'
 
 		$(this).html(html)
+
+		// Setup the new task form/input to be an ajax action
+		$(this).find('form.create_new_task input').clearOnFocus()
+		$(this).find('form.create_new_task').ajaxForm({
+			dataType: 'json',
+			success: function(json) {
+				alert(json.name)
+			}
+		})
 
 		$(this).find('div.description').editInPlace({
 			field_type: "textarea",
