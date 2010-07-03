@@ -1,5 +1,6 @@
 //
 // All of the url/path methods below are designed to mimick rails named routes methods
+// TODO: Look for a plugin that will generate these pathes automagically or write one that will do it
 //
 function projects_url() {
 	return "http://" + DOMAIN_AND_PORT + "/projects/"
@@ -41,7 +42,7 @@ function project_user_url(project_id, user_id) {
 	return project_url(project_id) + "/users/" + user_id;
 }
 
-function delete_task_url(project_id, card_id, task_id) {
+function project_card_task_url(project_id, card_id, task_id) {
 	return project_card_url(project_id, card_id) + "/tasks/" + task_id;
 }
 

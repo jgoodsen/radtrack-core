@@ -100,10 +100,24 @@
 	background: white;
 	margin: 2px;
 	padding: 3px;
+	vertical-align: top;
+}
+
+#colorbox_card .task td {
+	padding: 4px;
+}
+
+#colorbox_card .task td.owner {
 }
 
 #colorbox_card .task .name {
 	margin-left: 6px;
+	width: 100%;
+}
+
+#colorbox_card .task .states {
+	margin-left: 6px;
+	border: 1px solid #999;
 }
 
 #colorbox_card form.create_new_task {

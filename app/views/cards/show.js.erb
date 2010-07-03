@@ -74,15 +74,11 @@ function tasklist_table() {
 	return '<div card_id="<%= @card.id %>" class="tasklist">' + table + '</div>';
 }
 
-function update_card_tasks_url(project_id, card_id, task_id) {
-	return "http://<%= DOMAIN_AND_PORT %>/cards/" + card_id + "/tasks/" + task_id;
-}
-
 function task_owner_changed() {
 	var user_id = $(this).val();
   var card_id = $(this).parents('.tasklist').attr('card_id');
 	var task_id = $(this).attr('id').replace("task_owner_", "");
-	var url = update_card_tasks_url(project_id, card_id, task_id)
+	var url = project_card_task_url(project_id, card_id, task_id)
 	$.post(url, {"task[user_id]":user_id, "authenticity_token":window._auth_token, "_method":"put"});  
 }
 
@@ -90,14 +86,14 @@ function task_state_changed() {
 	var task_state_id = $(this).val();
   var card_id = $(this).parents('.tasklist').attr('card_id');
 	var task_id = $(this).attr('id').replace("task_state_", "");
-	var url = update_card_tasks_url(project_id, card_id, task_id)
+	var url = project_card_task_url(project_id, card_id, task_id)
 	$.post(url, {"task[task_state_id]":task_state_id, "authenticity_token":window._auth_token, "_method":"put"});  
 };
 
 function task_name_changed(value, settings) { 
   var card_id = $(this).parents('.tasklist').attr('card_id');
 	var task_id = $(this).attr('id').replace("task_name_", "");
-	var url = update_card_tasks_url(project_id, card_id, task_id)
+	var url = project_card_task_url(project_id, card_id, task_id)
 	$.post(url, {"task[name]":value, "authenticity_token":window._auth_token, "_method":"put"});
 	return(value);
 };
@@ -154,7 +150,7 @@ function delete_task_callback_success(data, textStatus) {
 
 function do_delete_task() {
   if (confirm('Are you sure you want to delete this task ?')) {
-	  $.post(delete_task_url(project_id, card_id, $(this).parent().attr('task_id')), {"_method":"delete", "authenticity_token":window._auth_token}, delete_task_callback_success, "json");
+	  $.post(project_card_task_url(project_id, card_id, $(this).parent().attr('task_id')), {"_method":"delete", "authenticity_token":window._auth_token}, delete_task_callback_success, "json");
   };
   return true;
 };
