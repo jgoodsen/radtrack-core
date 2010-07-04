@@ -6,20 +6,15 @@ class TasksController < AuthenticatedController
       format.json {
         render :status => 200, :json => @task
       }
-      ## TODO: Remove .js when we get rid of the jQuery card popup in favor of the colorbox popup
-      format.js
     end
   end
   
   def destroy
-    task = @card.tasks.find(params[:id])
-    task.destroy
+    @task = @card.tasks.find(params[:id])
+    @task.destroy
     respond_to do |format|
-      format.html {
-        raise "HTML task deletion is not allowed, AJAX only."
-      }
-      format.js {
-        render :status => 200, :json => "{\"taskid\":\"task_#{task.id}\"}"
+      format.json {
+        render :status => 200, :json => @task
       }
     end
   end

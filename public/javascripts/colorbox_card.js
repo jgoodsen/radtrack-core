@@ -26,16 +26,16 @@ $(function() {
 
 		function delete_task() {
 			function delete_task_callback_success(data, textStatus) {
-				$(self).find("task_" + data.id).fadeOut();
+				$(self).find("#task_" + data.id).fadeOut();
 			}
 		  if (confirm('Are you sure you want to delete this task ?')) {
-			  $.post(project_card_task_url(CurrentProject.project_id, task.card_id, task.task_id), {"_method":"delete", "authenticity_token":window._auth_token}, delete_task_callback_success, "json");
+			  $.post(project_card_task_url(CurrentProject.project_id, task.card_id, task.id), {"_method":"delete", "authenticity_token":window._auth_token}, delete_task_callback_success, "json");
 		  };
 		  return true;
 		};
 
 		var html = '';
-		html += '<tr id="task_"' + task.id + '" class="task" task_id="' + task.id + '" card_id=' + task.card_id + ' >';
+		html += '<tr id="task_' + task.id + '" class="task" task_id="' + task.id + '" card_id=' + task.card_id + ' >';
 		html += '<td class="owner">' + taskOwnerDropdown(task) + '</td>';
 		html += '<td class="name">' + task.name + '</td>';
 		html += '<td class="states">' + 'states' + '</td>';
@@ -45,7 +45,7 @@ $(function() {
 		$(this).append(html);
 		
 		$(this).find(".task_owner").bind("change", task_owner_changed)
-		$(this).find(".task_delete").click(delete_task.curry(self))
+		$(this).find("#task_" + task.id).click(delete_task)
 	
 	}
 	
@@ -113,7 +113,7 @@ $(function() {
 		html += '<span class="label">Description / Narrative</span>'
 		html += '<div class="description">' + card_description(card) + '</div>'
 
-		html += '<span class="label">Task List</span>'
+		html += '<span class="label	">Task List</span>'
 
 		html += '<form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
