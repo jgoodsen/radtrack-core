@@ -131,19 +131,19 @@ $(function() {
 		var html = ''
 		html += '<div class="title">' + card.title + '</div>'
 
-		html += '<span class="label">Description / Narrative</span>'
+		html += '<div class="label">Description / Narrative</div>'
 		html += '<div class="description">' + card_description(card) + '</div>'
 
-		html += '<span class="label	">Task List</span>'
-
-		html += '<form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
+		html += '<span class="label">Task List</span>'
+		
+		html += '<span><form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
 		html += '<input name="task[name]" value="<enter new task>"></input>'
-		html += '</form>'
+		html += '</form></span>'
 		
-		html += '<table class="tasks">'
+		html += '<div class="tasks" style="overflow:auto;"><table>'
 		html += '<tr><td>Who</td><td class="name">Name</td><td>State</td><td>Actions</td></tr>'
-		html += '</table>'
+		html += '</table></div>'
 
 		$(this).html(html)
 

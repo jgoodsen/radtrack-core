@@ -179,6 +179,21 @@ ul.menu li.title {
 
 /*********** LOGIN BAR LINKS IN THE HEADER ************/
 ul#login_bar {
+	font-size: bold;
+	color: #666;
+}
+ul#login_bar li.username {
+	color: #666;
+}
+ul#login_bar a:link, a:visited {
+	color: #666;
+	text-decoration:none;
+}
+select#project_id {
+	margin-left: 4px;
+}
+
+ul#login_bar {
 	float: right;
 	margin-right: 10px;
 	font-size: 8pt;

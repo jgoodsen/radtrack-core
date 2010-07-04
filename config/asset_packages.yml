@@ -23,6 +23,7 @@ javascripts:
   - backlog
   - card
   - colorbox_card
+  - team_members
 stylesheets: 
 - base: 
   - ../jquery-ui-1.7.2.custom/css/default/jquery-ui-1.7.2.custom

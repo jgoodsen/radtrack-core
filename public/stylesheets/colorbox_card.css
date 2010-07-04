@@ -57,8 +57,13 @@
 #colorbox_card {
 	width: 650px;
 	height: 400px;
+	overflow: scroll;
 	font: normal small-caps normal 1.1em/1.1em Arial, sans-serif;
 	
+}
+
+#colorbox_card span {
+	float: left;
 }
 
 #colorbox_card .title {
@@ -88,7 +93,6 @@
 }
 
 #colorbox_card .tasks {
-	font: normal normal normal 1em/1.5em Arial, sans-serif;
 	color: #555;
 	min-height: 120px;
 	background: #CCC;
@@ -110,14 +114,13 @@
 #colorbox_card .task td.owner {
 }
 
-#colorbox_card .task .name {
+#colorbox_card .tasks .name {
 	margin-left: 6px;
 	width: 100%;
 }
 
 #colorbox_card .task .states {
 	margin-left: 6px;
-	border: 1px solid #999;
 }
 
 #colorbox_card form.create_new_task {
