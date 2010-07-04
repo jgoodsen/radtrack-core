@@ -99,8 +99,29 @@ $(function() {
 
 	};
 
+  $.fn.titleEditor = function(options) {
+		var defaults = {
+			hoverClass: 'titleHover',
+		};
+		var options = $.extend(defaults, options);
+		var self = this;
+		var original_cursor;
+		$(self).hover(
+			function()
+			{
+				$(this).addClass(options.hoverClass);
+				original_cursor = $(this).css("cursor")
+				$(this).attr("cursor", "pointer")
+			},
+			function()
+			{
+				$(this).removeClass(options.hoverClass);
+				// $(this).css("cursor", original_cursor)
+			}
+		)
+	}
+	
 	$.fn.colorbox_card = function(options) {
-
 		var defaults = {
 			card: null,
 		};
@@ -138,7 +159,7 @@ $(function() {
 		
 		html += '<span><form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
-		html += '<input name="task[name]" value="<enter new task>"></input>'
+		html += '<input name="task[name]" value="... To Create a Task, Enter the New Task Name Here ..."></input>'
 		html += '</form></span>'
 		
 		html += '<div class="tasks" style="overflow:auto;"><table>'
@@ -159,19 +180,19 @@ $(function() {
 
 		$(this).find('.description').editInPlace({
 			field_type: "textarea",
-			textarea_cols: 79,
-			textarea_rows: 5,
+			cols: 132,
 			url: project_card_update_attribute_url(project_id, card.id),
 			params: "_method=put&attribute=description",
 			success: card_attribute_updated.curry("description")
 		})
 
+		// $(this).find('.title').titleEditor({
+		// 	
+		// })
 		$(this).find('.title').editInPlace({
-			field_type: "textarea",
-			textarea_cols: 79,
-			textarea_rows: 1,
 			url: project_card_update_attribute_url(project_id, card.id),
 			params: "_method=put&attribute=title",
+			style:"inherit",
 			success: card_attribute_updated.curry("title")
 		})
 

@@ -112,7 +112,7 @@ $(function() {
 
 		function card_type_image_icon_tag(card) {
 			var number_of_card_types_for_project = 5;
-			return '<a href="/projects/' + project_id + '/cards/' + card.id + '" class="card_type_icon"><span card_id="' + card.id + '" class="card_type_icon card_type_icon_' + (card.card_type_id % number_of_card_types_for_project) + '"/></a>'
+			return '<a href="' + project_card_url(CurrentProject.project_id, card.id) + '" class="card_type_icon"><span card_id="' + card.id + '" class="card_type_icon card_type_icon_' + (card.card_type_id % number_of_card_types_for_project) + '"/></a>'
 		}
 
 		var card = options.card;
@@ -135,7 +135,7 @@ $(function() {
 		card_display += '</div>';
 
 		card_display += '<div class="card_body">';
-		card_display += '<a href="' + '#' + '" class="popup_card_link">' + card.id + ': ' + card.title + '</a>';
+		card_display += '<a href="' + project_card_url(CurrentProject.project_id, card.id) + '" class="popup_card_link">' + card.id + ': ' + card.title + '</a>';
 		card_display += '</div>';
 
 		card_display += tooltip_content(card);
@@ -143,6 +143,7 @@ $(function() {
 
 	}
 
+	// TODO: Remove this once the show.js.erb view is replaced with colorbox
 	$.fn.update_kanban_card = function(options) {
 
 		function init(parent) {
@@ -189,8 +190,6 @@ $(function() {
 		};
 		var options = $.extend(defaults, options);
 
-
-
 		function make_card_html(options) {
 
 			var card = options.card;
@@ -203,15 +202,16 @@ $(function() {
 
 		$(this).append($(make_card_html(options)));
 
+		// Append Event Handlers to the card elements
 		var base = '#' + make_card_id(options.card.id, options.id_prefix);
-		$(base + ' a.popup_card_link', this).click(popup_card_dialog);
 		$(base + ' img.delete_card', this).click(delete_card.curry(options.id_prefix));
-
 		$(base + ' img.remove_from_kanban', this).click(remove_from_kanban);
 		$(base + ' a.card_type_icon', this).colorbox({
 			opacity: 0.3
 		});
-
+		$(base + ' a.popup_card_link', this).colorbox({
+			opacity: 0.3
+		});
 		CardOwnerWidget.setup_events(this);
 
 		return $(this);
