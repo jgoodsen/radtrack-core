@@ -62,14 +62,16 @@
 }
 
 #colorbox_card .title {
-	margin-top: 10px;
+	margin-top: 4px;
+	margin-bottom: 10px;
 }
 
 #colorbox_card .editInPlace-active {
-	background: yellow;
+	background: yellow;d
+	width: 100%;
 }
 
-#colorbox_card span.tasklist_header {
+#colorbox_card span.label {
 	font: normal normal normal 1.1em/1.2em Arial, sans-serif;
 	color: #AAA;
 }

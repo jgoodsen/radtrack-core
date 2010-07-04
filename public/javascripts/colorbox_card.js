@@ -110,10 +110,10 @@ $(function() {
 		var html = ''
 		html += '<div class="title">' + card.title + '</div>'
 
-		html += '<h2>Description / Narrative</h2>'
+		html += '<span class="label">Description / Narrative</span>'
 		html += '<div class="description">' + card_description(card) + '</div>'
 
-		html += '<span class="tasklist_header">Task List</span>'
+		html += '<span class="label">Task List</span>'
 
 		html += '<form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
@@ -134,7 +134,7 @@ $(function() {
 			}
 		})
 
-		$(this).find('div.description').editInPlace({
+		$(this).find('.description').editInPlace({
 			field_type: "textarea",
 			textarea_cols: 79,
 			textarea_rows: 5,
@@ -143,7 +143,7 @@ $(function() {
 			success: card_attribute_updated.curry("description")
 		})
 
-		$(this).find('div.title').editInPlace({
+		$(this).find('.title').editInPlace({
 			field_type: "textarea",
 			textarea_cols: 79,
 			textarea_rows: 1,
