@@ -153,6 +153,7 @@ $(function() {
 			dataType: 'json',
 			success: function(json) {
 				$(self).find('.tasks').colorbox_add_task(json)
+				$(self).find('form.create_new_task input').val("")
 			}
 		})
 
