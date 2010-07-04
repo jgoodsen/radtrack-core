@@ -24,6 +24,7 @@ javascripts:
   - card
   - colorbox_card
   - team_members
+  - user_tabs
 stylesheets: 
 - base: 
   - ../jquery-ui-1.7.2.custom/css/default/jquery-ui-1.7.2.custom
