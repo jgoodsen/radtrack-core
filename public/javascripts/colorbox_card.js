@@ -45,7 +45,7 @@ $(function() {
 		$(this).append(html);
 		
 		$(this).find(".task_owner").bind("change", task_owner_changed)
-		$(this).find("#task_" + task.id).click(delete_task)
+		$(this).find("#task_" + task.id + " .task_delete").click(delete_task)
 	
 	}
 	
