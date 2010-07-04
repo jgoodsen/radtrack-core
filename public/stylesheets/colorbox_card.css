@@ -93,6 +93,7 @@
 	min-height: 120px;
 	background: #CCC;
 	margin-top: 4px;
+	width: 100%;
 }
 
 #colorbox_card .task {

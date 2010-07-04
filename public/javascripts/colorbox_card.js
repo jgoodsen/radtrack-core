@@ -24,6 +24,20 @@ $(function() {
 			return html
 		}
 
+		function task_state_select(task) {
+			var html = '<select id="task_state_' + task.id + '" class="task_state">';
+			for (var i=0; i < task_states.length; i++) {
+				task_state = task_states[i];
+				html += '<option value="' + task_state.id + '"';		
+				if (task_state.id == task.task_state_id) {
+					html += ' "selected=\"selected\"';
+				}
+				html += '>' + task_state.name + '</option>';
+			}	  
+			html += '</select>';
+			return html;
+		}
+
 		function delete_task() {
 			function delete_task_callback_success(data, textStatus) {
 				$(self).find("#task_" + data.id).fadeOut();
@@ -38,7 +52,7 @@ $(function() {
 		html += '<tr id="task_' + task.id + '" class="task" task_id="' + task.id + '" card_id=' + task.card_id + ' >';
 		html += '<td class="owner">' + taskOwnerDropdown(task) + '</td>';
 		html += '<td class="name">' + task.name + '</td>';
-		html += '<td class="states">' + 'states' + '</td>';
+		html += '<td class="states">' + task_state_select(task) + '</td>';
 		html += '<td class="actions"><img class="task_delete" src="/images/icons/cog_delete.png" style="cursor: pointer" title="Delete this task"/></td>';
 
 		html += '</tr>';
@@ -121,6 +135,7 @@ $(function() {
 		html += '</form>'
 		
 		html += '<table class="tasks">'
+		html += '<tr><td>Who</td><td class="name">Name</td><td>State</td><td>Actions</td></tr>'
 		html += '</table>'
 
 		$(this).html(html)
