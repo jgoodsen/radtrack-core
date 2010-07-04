@@ -66,8 +66,7 @@
 }
 
 #colorbox_card .editInPlace-active {
-	margin-top: 10px;
-	height: 500px;
+	background: yellow;
 }
 
 #colorbox_card span.tasklist_header {

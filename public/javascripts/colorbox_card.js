@@ -48,8 +48,8 @@ $(function() {
 			$(this).colorbox_add_task(task);
 		}
 
-		$('div.task .name', this).each(function(index, element) {
-			var task = $(this).parents("div.task:first");
+		$('.task td.name', this).each(function(index, element) {
+			var task = $(this).parents(".task:first");
 			$(this).editInPlace({
 				url: project_card_task_update_attribute_url(CurrentProject.project_id, task.attr("card_id"), task.attr("task_id")),
 				params: "attribute=name"
