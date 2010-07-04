@@ -38,6 +38,12 @@ $(function() {
 			return html;
 		}
 
+		function task_state_changed(task) {
+			var task_state_id = $(this).val()
+			var url = project_card_task_url(CurrentProject.project_id, task.card_id, task.id)
+			$.post(url, {"task[task_state_id]":task_state_id, "authenticity_token":window._auth_token, "_method":"put"});  
+		};
+
 		function delete_task() {
 			function delete_task_callback_success(data, textStatus) {
 				$(self).find("#task_" + data.id).fadeOut();
@@ -60,6 +66,7 @@ $(function() {
 		
 		$(this).find(".task_owner").bind("change", task_owner_changed)
 		$(this).find("#task_" + task.id + " .task_delete").click(delete_task)
+		$(this).find('.task_state').bind("change", task_state_changed.curry(task));
 	
 	}
 	
