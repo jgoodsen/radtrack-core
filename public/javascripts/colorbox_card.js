@@ -24,15 +24,28 @@ $(function() {
 			return html
 		}
 
+		function delete_task() {
+			function delete_task_callback_success(data, textStatus) {
+				$(self).find("task_" + data.id).fadeOut();
+			}
+		  if (confirm('Are you sure you want to delete this task ?')) {
+			  $.post(project_card_task_url(CurrentProject.project_id, task.card_id, task.task_id), {"_method":"delete", "authenticity_token":window._auth_token}, delete_task_callback_success, "json");
+		  };
+		  return true;
+		};
+
 		var html = '';
-		html += '<tr class="task" task_id="' + task.id + '" card_id=' + task.card_id + ' >';
+		html += '<tr id="task_"' + task.id + '" class="task" task_id="' + task.id + '" card_id=' + task.card_id + ' >';
 		html += '<td class="owner">' + taskOwnerDropdown(task) + '</td>';
 		html += '<td class="name">' + task.name + '</td>';
 		html += '<td class="states">' + 'states' + '</td>';
+		html += '<td class="actions"><img class="task_delete" src="/images/icons/cog_delete.png" style="cursor: pointer" title="Delete this task"/></td>';
+
 		html += '</tr>';
 		$(this).append(html);
 		
 		$(this).find(".task_owner").bind("change", task_owner_changed)
+		$(this).find(".task_delete").click(delete_task.curry(self))
 	
 	}
 	

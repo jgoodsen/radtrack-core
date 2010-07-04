@@ -55,7 +55,7 @@
 */
 
 #colorbox_card {
-	width: 700px;
+	width: 650px;
 	height: 400px;
 	font: normal small-caps normal 1.1em/1.1em Arial, sans-serif;
 	
@@ -89,8 +89,6 @@
 	font: normal normal normal 1em/1.5em Arial, sans-serif;
 	color: #555;
 	min-height: 120px;
-	border: 1px solid #999;
-	padding: 4px;
 	background: #CCC;
 	margin-top: 4px;
 }
