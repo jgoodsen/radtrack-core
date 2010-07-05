@@ -174,7 +174,7 @@ background-position: -125px 0px;
 #colorbox_card {
 width: 650px;
 height: 400px;
-overflow: scroll;
+overflow: auto;
 font: normal small-caps normal 1.1em/1.1em Arial, sans-serif;
 }
 
@@ -188,9 +188,17 @@ margin-bottom: 10px;
 min-height: 20px;
 }
 
-#colorbox_card span.label {
+#colorbox_card .label {
 font: normal normal normal 1.1em/1.2em Arial, sans-serif;
 color: #AAA;
+}
+
+#colorbox_card td.label {
+	font-size: 0.8em;
+}
+
+#colorbox_card td.task_owner {
+	min-width: 100px;
 }
 
 #colorbox_card .editInPlace-active input, #colorbox_card .editInPlace-active textarea {
@@ -202,7 +210,7 @@ color: #AAA;
 #colorbox_card .description {
 font: normal normal normal 0.8em Arial, sans-serif;
 color: #555;
-min-height: 60px;
+min-height: 20px;
 border: 1px solid #999;
 padding: 4px;
 background: #EEE;
@@ -214,7 +222,6 @@ margin-bottom: 8px;
 color: #555;
 min-height: 120px;
 background: #CCC;
-margin-top: 4px;
 width: 100%;
 }
 
@@ -247,7 +254,7 @@ margin-left: 10px;
 }
 #colorbox_card form.create_new_task input {
 	font: normal small-caps normal 1.1em/1.1em Arial, sans-serif;
-	width: 520px;
+	width: 500px;
 }
 
 .titleHover {

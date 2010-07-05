@@ -1,6 +1,9 @@
 // TODO: This was extracted from inline HTML - it needs some tests and en should be a jQuery plugin
 
+$(function() {
+	
 	function add_team_member(user, pending) {
+		
 		$('#invite_user_working').hide();
 		
 		var html = "";
@@ -13,6 +16,8 @@
 		}
 		html += '</div>'
 		$('#project_users').append($(html).project_user());
+		
+
 	}
 	
 	function popup_invite_user_dialog() {
@@ -26,6 +31,7 @@
 	}
 	
 	$(function() {
+		
 		$('#invite_user_button').click(function() {
 			popup_invite_user_dialog();
 		})
@@ -41,4 +47,16 @@
 		};
 		
 		$('#invite_user_dialog form').ajaxForm(options);
-	});
+		
+		$('.project_user .user_tasks .tasks').each(function(index, element) {
+				$('body').bind("CurrentProject.UsersLoaded", function() {
+					$(element).colorbox_tasklist_table({
+						tasks: CurrentProject.getUser(CURRENT_USER.id)
+					})
+				})
+		})
+		
+	})
+	
+})
+	

@@ -11,6 +11,7 @@ function Project(project_id) {
 
 	Project.prototype.ajaxGetUsersForProjectCB = function(data, textStatus) {
 		self.users = data;
+		$('body').trigger("CurrentProject.UsersLoaded")
 	}
 
 	Project.prototype.ajaxGetUsersForProject = function() {
@@ -25,7 +26,7 @@ function Project(project_id) {
 				return user;
 			}
 		}
-		throw "No user found for id " + id
+		throw "No user found for id '" + id + "'"
 	}
 	
 }
@@ -63,8 +64,6 @@ $(function() {
 		var defaults = {};
 		var options = $.extend(defaults, options);
 
-
-
 		function remove_user_from_project() {
 			if (confirm('Are you sure you want to remove this user from the project?')) {
 				var user_id = $(this).attr('id').replace(/[^\d]+/g, '');
@@ -80,6 +79,11 @@ $(function() {
 			return true;
 		}
 		$('img.project_user_delete', this).click(remove_user_from_project);
+		
+		$(element).colorbox_tasklist_table({
+        tasks: CurrentProject.getUser(CURRENT_USER.id)
+    })
+		
 		return $(this);
 	}
 

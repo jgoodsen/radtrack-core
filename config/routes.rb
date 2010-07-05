@@ -2,6 +2,19 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'welcome', :action => 'index'
   
+  map.resource :user_sessions  
+  map.resource :user_session, :controller => 'user_sessions'  
+  map.login "login", :controller => "welcome", :action => "index"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  map.resources :password_resets
+  
+  map.namespace :admin do |admin|
+    admin.resources :users
+    admin.resources :activity_logs
+  end
+  map.admin_add_user_to_project '/admin/projects/:id/add_user/:user_id', :controller => 'projects', :action => 'add_user' 
+  map.admin_remove_user_from_project '/admin/projects/:id/remove_user/:user_id', :controller => 'projects', :action => 'remove_user' 
+    
   map.resources :projects   do |project|
 
     project.settings 'settings', :controller => 'projects', :action => 'settings'
@@ -55,8 +68,8 @@ ActionController::Routing::Routes.draw do |map|
   map.admin_add_user_to_project '/admin/projects/:id/add_user/:user_id', :controller => 'projects', :action => 'add_user' 
   map.admin_remove_user_from_project '/admin/projects/:id/remove_user/:user_id', :controller => 'projects', :action => 'remove_user' 
   
-  # # Install the default routes as the lowest priority.
-  #  map.connect ':controller/:action/:id.:format'
-  #  map.connect ':controller/:action/:id'
-  #  
+  # Install the default routes as the lowest priority.
+   map.connect ':controller/:action/:id.:format'
+   map.connect ':controller/:action/:id'
+   
 end

@@ -13,7 +13,7 @@
     <div id="process">
       <div class="swimlanes">
         <fieldset>
-          <legend>Kanban Workflow</legend>
+          <legend>Kanban Workflow (Drag and Drop to Re-order)</legend>
     		  <%= render :partial => 'card_states/index' %>
         </fieldset>
       </div>
@@ -25,6 +25,14 @@
           <br/>
           <input type="checkbox" name="warn_override" value="" id="warn_override">
           <label for="warn_override">Warn on Override</label>
+        </fieldset>
+      </div>
+  	  <div class="wip_enforcement_policy">
+        <fieldset>
+          <legend>Kanban Card Display Options</legend>
+          <input type="checkbox" name="enable_override" value="" id="enable_override">
+          <label for="enable_override">Prefix Title with Card #</label>
+          <br/>
         </fieldset>
       </div>
 	  </div>

@@ -1,6 +1,6 @@
 $(function() {
 
-  $.fn.colorbox_add_task = function(task) {
+  $.fn.colorbox_add_task_row = function(task) {
 	
 		var self = this;
 		
@@ -62,7 +62,7 @@ $(function() {
 		html += '<td class="actions"><img class="task_delete" src="/images/icons/cog_delete.png" style="cursor: pointer" title="Delete this task"/></td>';
 
 		html += '</tr>';
-		$(this).append(html);
+		$(this).find('table').append(html);
 		
 		$(this).find(".task_owner").bind("change", task_owner_changed)
 		$(this).find("#task_" + task.id + " .task_delete").click(delete_task)
@@ -70,16 +70,17 @@ $(function() {
 	
 	}
 	
-	$.fn.colorbox_tasklist = function(options) {
+	$.fn.colorbox_tasklist_table = function(options) {
 		var defaults = {
 			users: CurrentProject.users,
+			tasks: []
 		};
 		var options = $.extend(defaults, options);
-		var card = options.card;
+		var tasks = options.tasks;
 
-		for (var i = 0; i < card.tasks.length; i++) {
-			var task = card.tasks[i];
-			$(this).colorbox_add_task(task);
+		for (var i = 0; i < tasks.length; i++) {
+			var task = tasks[i];
+			$(this).colorbox_add_task_row(task);
 		}
 
 		$('.task td.name', this).each(function(index, element) {
@@ -99,28 +100,6 @@ $(function() {
 
 	};
 
-  $.fn.titleEditor = function(options) {
-		var defaults = {
-			hoverClass: 'titleHover',
-		};
-		var options = $.extend(defaults, options);
-		var self = this;
-		var original_cursor;
-		$(self).hover(
-			function()
-			{
-				$(this).addClass(options.hoverClass);
-				original_cursor = $(this).css("cursor")
-				$(this).attr("cursor", "pointer")
-			},
-			function()
-			{
-				$(this).removeClass(options.hoverClass);
-				// $(this).css("cursor", original_cursor)
-			}
-		)
-	}
-	
 	$.fn.colorbox_card = function(options) {
 		var defaults = {
 			card: null,
@@ -155,16 +134,20 @@ $(function() {
 		html += '<div class="label">Description / Narrative</div>'
 		html += '<div class="description">' + card_description(card) + '</div>'
 
-		html += '<span class="label">Task List</span>'
-		
+		html += '<div class="tasks" style="overflow:auto;">'
+		html += '<table>'
+
+		html += '<tr><td><span>Task List</span></td><td colspan="3">'
 		html += '<span><form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
 		html += '<input name="task[name]" value="... To Create a Task, Enter the New Task Name Here ..."></input>'
 		html += '</form></span>'
-		
-		html += '<div class="tasks" style="overflow:auto;"><table>'
-		html += '<tr><td>Who</td><td class="name">Name</td><td>State</td><td>Actions</td></tr>'
-		html += '</table></div>'
+		html += '</td></tr>'
+
+		html += '<tr><td class="task_owner label">Who</td><td class="label name">Name</td><td class="label">State</td><td></td></tr>'
+
+		html += '</table>'
+		html += '</div>'
 
 		$(this).html(html)
 
@@ -173,7 +156,7 @@ $(function() {
 		$(this).find('form.create_new_task').ajaxForm({
 			dataType: 'json',
 			success: function(json) {
-				$(self).find('.tasks').colorbox_add_task(json)
+				$(self).find('.tasks').colorbox_add_task_row(json)
 				$(self).find('form.create_new_task input').val("")
 			}
 		})
@@ -181,6 +164,7 @@ $(function() {
 		$(this).find('.description').editInPlace({
 			field_type: "textarea",
 			cols: 132,
+			rows: 3,
 			url: project_card_update_attribute_url(project_id, card.id),
 			params: "_method=put&attribute=description",
 			success: card_attribute_updated.curry("description")
@@ -196,8 +180,8 @@ $(function() {
 			success: card_attribute_updated.curry("title")
 		})
 
-		$(this).find('.tasks').colorbox_tasklist({
-			card: card
+		$(this).find('.tasks').colorbox_tasklist_table({
+			tasks: card.tasks
 		})
 
 		return $(this)

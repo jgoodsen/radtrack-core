@@ -54,18 +54,13 @@
 
 <div style="display: none;" id="jquery_dialog_card"></div>
 
-<%= javascript_include_merged :tail %>
-<%= render :partial => 'shared/uservoice' %>
-<%= render :partial => 'shared/google_analytics' %>
-
 <script type="text/javascript" charset="utf-8">
 <% if @project && @project.id %>
 var card_states = <%= @project.card_states.to_json %>
 var task_states = <%= @project.task_states.to_json %>
 var project_id = <%= @project.id %>
-
+var CURRENT_USER = <%= current_user.to_json(:include => :tasks) %>
 var CurrentProject;
-
 $(function() {
   CurrentProject = new Project(<%= @project.id %>)
   CurrentProject.init();
@@ -73,6 +68,11 @@ $(function() {
 
 <% end %>	
 </script>
+
+<%= javascript_include_merged :tail %>
+<%= render :partial => 'shared/uservoice' %>
+<%= render :partial => 'shared/google_analytics' %>
+
 
 <%= yield :tail_javascript %>
 <script type="text/javascript"> browser_warning(); </script>

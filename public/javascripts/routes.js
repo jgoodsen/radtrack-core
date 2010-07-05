@@ -50,6 +50,7 @@ function project_card_tasks_url(project_id, card_id) {
 	return project_card_url(project_id, card_id) + "/tasks";
 }
 
+// TODO: THese update routes should be removed - use jEditable name: parameter and call standard REST update method instead
 function project_card_task_update_attribute_url(project_id, card_id, task_id) {
 	return project_card_url(project_id, card_id) + "/tasks/" + task_id + "/update_attribute"
 }
