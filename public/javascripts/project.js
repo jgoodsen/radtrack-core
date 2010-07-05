@@ -29,6 +29,10 @@ function Project(project_id) {
 		throw "No user found for id '" + id + "'"
 	}
 	
+  Project.prototype.setUsers = function(users_json) {
+		self.users = users_json;
+	}
+	
 }
 
 $(function() {
@@ -79,14 +83,15 @@ $(function() {
 			return true;
 		}
 		$('img.project_user_delete', this).click(remove_user_from_project);
-		
-		$(element).colorbox_tasklist_table({
-        tasks: CurrentProject.getUser(CURRENT_USER.id)
-    })
+			// 	
+			// $(this).find('tasks').colorbox_tasklist_table({
+			//         tasks: CurrentProject.getUser(CURRENT_USER.id)
+			//     })
 		
 		return $(this);
 	}
 
 	$('#myprojects .project').project_tout();
 	$('div.project_user').project_user();
+	
 });

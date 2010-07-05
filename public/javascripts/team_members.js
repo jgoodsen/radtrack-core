@@ -51,7 +51,7 @@ $(function() {
 		$('.project_user .user_tasks .tasks').each(function(index, element) {
 				$('body').bind("CurrentProject.UsersLoaded", function() {
 					$(element).colorbox_tasklist_table({
-						tasks: CurrentProject.getUser(CURRENT_USER.id)
+						//tasks: CurrentProject.getUser(CURRENT_USER.id)
 					})
 				})
 		})
