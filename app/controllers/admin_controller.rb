@@ -8,7 +8,7 @@ class AdminController < AuthenticatedController
   
   def admin_filter
     unless current_user && current_user.admin?
-      flash[:error] = "You don't have administrator priviliges"
+      flash[:error] = "You don't have administrator privileges"
       redirect_back_or_default root_url
     end
   end

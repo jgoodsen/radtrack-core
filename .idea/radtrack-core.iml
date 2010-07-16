@@ -9,18 +9,140 @@
       </configuration>
     </facet>
   </component>
-  <component name="GemRequirementsHolder" version="2">
+  <component name="GemRequirementsHolder" version="3">
+    <requirement>
+      <requirement>
+        <dependency name="RedCloth" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="Selenium" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="ZenTest" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="actionmailer" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="actionpack" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="actionwebservice" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="activerecord" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="activerecord" version="1.15.4.7794" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="vendor/plugins/acts_as_list/test/list_test.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="activerecord-oracle_enhanced-adapter" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
     <requirement>
       <requirement>
         <dependency name="activeresource" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="lib/basecamp.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="activesupport" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="acts_as_ferret" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="applescript" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
         <dependency name="authlogic" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/environment.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="autotest-rails" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="builder" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="bundler" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="capistrano" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="cgi_multipart_eof_fix" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="clearance" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="commonwatir" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="cucumber" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
@@ -30,27 +152,262 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="cucumber-rails" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="cucumber-rails" version="0.3.1" bound="GREATER_OR_EQUAL" lib="false" git="false" />
       </requirement>
       <source from="config/environments/cucumber.rb" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="database_cleaner" version="0.5.0" bound="GREATER_OR_EQUAL" lib="false" git="false" />
+        <dependency name="daemons" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
-      <source from="config/environments/cucumber.rb" />
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="database_cleaner" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
         <dependency name="database_cleaner" version="0.5.0" bound="GREATER_OR_EQUAL" lib="false" git="false" />
       </requirement>
       <source from="config/environments/cucumber.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="diff-lcs" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="dnssd" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="echoe" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="factory_girl" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="fastthread" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="fcgi" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="ferret" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="firewatir" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="formtastic" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="gem_plugin" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="gemcutter" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="geminstaller" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="gherkin" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="git" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="highline" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="hoe" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="hpricot" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="httpclient" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="jasmine" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="jeweler" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="jira4r" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="json_pure" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="libxml-ruby" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="mongrel" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="needle" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="net-scp" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="net-sftp" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="net-ssh" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="net-ssh-gateway" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="nokogiri" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="openrain-action_mailer_tls" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="polyglot" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rack" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rack-test" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
         <dependency name="rails" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/boot.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rake" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rb-appscript" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rspec" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
@@ -60,27 +417,190 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="rspec" version="1.3.0" bound="GREATER_OR_EQUAL" lib="false" git="false" />
+      </requirement>
+      <source from="config/environments/cucumber.rb" />
+      <source from="config/environments/test.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rspec-rails" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rspec-rails" version="1.2.6" bound="GREATER_OR_EQUAL" lib="spec/rails" git="false" />
       </requirement>
       <source from="config/environments/development.rb" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" lib="sqlite3" git="false" />
+        <dependency name="rspec-rails" version="1.3.2" bound="GREATER_OR_EQUAL" lib="false" git="false" />
       </requirement>
-      <source from="config/environments/development.rb" />
+      <source from="config/environments/cucumber.rb" />
+      <source from="config/environments/test.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="ruby-oci8" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="ruby-openid" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="ruby-yadis" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rubyforge" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rubygems-update" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rubynode" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="s4t-utils" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="safariwatir" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="selenium-client" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="selenium-rc" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="sinatra" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="soap4r" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
         <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/database.yml" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" lib="sqlite3" git="false" />
+      </requirement>
+      <source from="config/environments/development.rb" />
+      <source from="config/environments/test.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="term-ansicolor" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="termios" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="test-unit" version="1.2.3" bound="EQUAL" git="false" />
+      </requirement>
+      <source from="lib/tasks/rspec.rake" />
+      <source from="script/spec" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="thoughtbot-factory_girl" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="treetop" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="trollop" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="user-choices" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="webrat" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="webrat" version="0.7.0" bound="GREATER_OR_EQUAL" lib="false" git="false" />
+      </requirement>
+      <source from="config/environments/cucumber.rb" />
     </requirement>
     <requirement>
       <requirement>
         <dependency name="will_paginate" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/environment.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="xml-simple" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+      <source from="lib/basecamp.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="xmpp4r" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
   </component>
   <component name="NewModuleRootManager">
@@ -91,7 +611,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] cucumber (v0.8.3, /Library/Ruby/Gems/1.8/gems/cucumber-0.8.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v2.3.5, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] activeresource (v2.3.5, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activeresource-2.3.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] actionmailer (v2.3.5, /Library/Ruby/Gems/1.8/gems/actionmailer-2.3.5)" level="application" />
@@ -101,6 +620,87 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v2.3.5, /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.8.7, /Library/Ruby/Gems/1.8/gems/rake-0.8.7)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] sqlite3-ruby (v1.2.4, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/sqlite3-ruby-1.2.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack-test (v0.5.3, /Library/Ruby/Gems/1.8/gems/rack-test-0.5.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] webrat (v0.7.0, /Library/Ruby/Gems/1.8/gems/webrat-0.7.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] nokogiri (v1.4.1, /Library/Ruby/Gems/1.8/gems/nokogiri-1.4.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] will_paginate (v2.3.12, /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v1.3.0, /Library/Ruby/Gems/1.8/gems/rspec-1.3.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] xml-simple (v1.0.12, /Library/Ruby/Gems/1.8/gems/xml-simple-1.0.12)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cucumber-rails (v0.3.1, /Library/Ruby/Gems/1.8/gems/cucumber-rails-0.3.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] authlogic (v2.1.3, /Library/Ruby/Gems/1.8/gems/authlogic-2.1.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] database_cleaner (v0.5.2, /Library/Ruby/Gems/1.8/gems/database_cleaner-0.5.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-rails (v1.3.2, /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v1.13.6, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionwebservice (v1.2.6, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionwebservice-1.2.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord (v1.15.6, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-1.15.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v1.4.4, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] acts_as_ferret (v0.4.3, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/acts_as_ferret-0.4.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] applescript (v1.0, /Library/Ruby/Gems/1.8/gems/applescript-1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] autotest-rails (v4.1.0, /Library/Ruby/Gems/1.8/gems/autotest-rails-4.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] builder (v2.1.2, /Library/Ruby/Gems/1.8/gems/builder-2.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v0.9.26, /Library/Ruby/Gems/1.8/gems/bundler-0.9.26)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] capistrano (v2.5.2, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/capistrano-2.5.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cgi_multipart_eof_fix (v2.5.0, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/cgi_multipart_eof_fix-2.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] clearance (v0.8.8, /Library/Ruby/Gems/1.8/gems/clearance-0.8.8)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] commonwatir (v1.6.5, /Library/Ruby/Gems/1.8/gems/commonwatir-1.6.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] daemons (v1.0.10, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/daemons-1.0.10)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] diff-lcs (v1.1.2, /Library/Ruby/Gems/1.8/gems/diff-lcs-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] dnssd (v0.6.0, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/dnssd-0.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] echoe (v4.3, /Library/Ruby/Gems/1.8/gems/echoe-4.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] factory_girl (v1.2.4, /Library/Ruby/Gems/1.8/gems/factory_girl-1.2.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] fastthread (v1.0.1, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/fastthread-1.0.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] fcgi (v0.8.7, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/fcgi-0.8.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ferret (v0.11.6, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/ferret-0.11.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] firewatir (v1.6.5, /Library/Ruby/Gems/1.8/gems/firewatir-1.6.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] formtastic (v0.9.8, /Library/Ruby/Gems/1.8/gems/formtastic-0.9.8)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gem_plugin (v0.2.3, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/gem_plugin-0.2.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gemcutter (v0.5.0, /Library/Ruby/Gems/1.8/gems/gemcutter-0.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] geminstaller (v0.5.6, /Library/Ruby/Gems/1.8/gems/geminstaller-0.5.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] git (v1.2.5, /Library/Ruby/Gems/1.8/gems/git-1.2.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] highline (v1.5.0, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/highline-1.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] hoe (v2.6.0, /Library/Ruby/Gems/1.8/gems/hoe-2.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] hpricot (v0.6.164, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/hpricot-0.6.164)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] httpclient (v2.1.5.2, /Library/Ruby/Gems/1.8/gems/httpclient-2.1.5.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] jasmine (v0.10.4.0, /Library/Ruby/Gems/1.8/gems/jasmine-0.10.4.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] jeweler (v1.4.0, /Library/Ruby/Gems/1.8/gems/jeweler-1.4.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] jira4r (v0.3.0, /Library/Ruby/Gems/1.8/gems/jira4r-0.3.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] json_pure (v1.4.3, /Library/Ruby/Gems/1.8/gems/json_pure-1.4.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] libxml-ruby (v1.1.2, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/libxml-ruby-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mongrel (v1.1.5, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] needle (v1.3.0, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/needle-1.3.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] net-scp (v1.0.1, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/net-scp-1.0.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] net-sftp (v2.0.1, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/net-sftp-2.0.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] net-ssh (v2.0.4, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/net-ssh-2.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] net-ssh-gateway (v1.0.0, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/net-ssh-gateway-1.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] openrain-action_mailer_tls (v1.1.3, /Library/Ruby/Gems/1.8/gems/openrain-action_mailer_tls-1.1.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] polyglot (v0.3.1, /Library/Ruby/Gems/1.8/gems/polyglot-0.3.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.1.0, /Library/Ruby/Gems/1.8/gems/rack-1.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rb-appscript (v0.5.3, /Library/Ruby/Gems/1.8/gems/rb-appscript-0.5.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] RedCloth (v4.1.1, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/RedCloth-4.1.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-oci8 (v2.0.4, /Library/Ruby/Gems/1.8/gems/ruby-oci8-2.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-openid (v2.1.2, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/ruby-openid-2.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-yadis (v0.3.4, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/ruby-yadis-0.3.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rubyforge (v2.0.4, /Library/Ruby/Gems/1.8/gems/rubyforge-2.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rubygems-update (v1.3.6, /Library/Ruby/Gems/1.8/gems/rubygems-update-1.3.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rubynode (v0.1.5, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rubynode-0.1.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] s4t-utils (v1.0.4, /Library/Ruby/Gems/1.8/gems/s4t-utils-1.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] safariwatir (v0.3.7, /Library/Ruby/Gems/1.8/gems/safariwatir-0.3.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] Selenium (v1.1.14, /Library/Ruby/Gems/1.8/gems/Selenium-1.1.14)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] selenium-client (v1.2.18, /Library/Ruby/Gems/1.8/gems/selenium-client-1.2.18)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] selenium-rc (v2.2.1, /Library/Ruby/Gems/1.8/gems/selenium-rc-2.2.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] sinatra (v1.0, /Library/Ruby/Gems/1.8/gems/sinatra-1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] soap4r (v1.5.8, /Library/Ruby/Gems/1.8/gems/soap4r-1.5.8)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] term-ansicolor (v1.0.5, /Library/Ruby/Gems/1.8/gems/term-ansicolor-1.0.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] termios (v0.9.4, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/termios-0.9.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] thoughtbot-factory_girl (v1.2.2, /Library/Ruby/Gems/1.8/gems/thoughtbot-factory_girl-1.2.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] treetop (v1.4.5, /Library/Ruby/Gems/1.8/gems/treetop-1.4.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] trollop (v1.16.2, /Library/Ruby/Gems/1.8/gems/trollop-1.16.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] user-choices (v1.1.6.1, /Library/Ruby/Gems/1.8/gems/user-choices-1.1.6.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] xmpp4r (v0.4, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/xmpp4r-0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ZenTest (v4.3.3, /Library/Ruby/Gems/1.8/gems/ZenTest-4.3.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cucumber (v0.8.4, /Library/Ruby/Gems/1.8/gems/cucumber-0.8.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord-oracle_enhanced-adapter (v1.3.0, /Library/Ruby/Gems/1.8/gems/activerecord-oracle_enhanced-adapter-1.3.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gherkin (v2.1.2, /Library/Ruby/Gems/1.8/gems/gherkin-2.1.2)" level="application" />
   </component>
 </module>
 

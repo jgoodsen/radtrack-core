@@ -1,7 +1,7 @@
 class ProjectsController < AuthenticatedController
 
   before_filter :admin_filter, :only => [:index, :add_user, :remove_user]
-  before_filter :get_project_by_id, :only => [:destroy, :update, :show, :select_project, :edit]
+  before_filter :get_project_by_id, :only => [:destroy, :update, :show, :edit]
   
   def index
     @projects = current_user.projects
@@ -51,14 +51,6 @@ class ProjectsController < AuthenticatedController
     @project.destroy
     render :status => 200, :json => {'status' => 'success'}
   end
-  
-  def select_project
-    render :action => 'show', :id => @project.id
-  end
-  
-  def ajax_popup_card
-    render :partial => 'projects/popup_card', :layout => false
-  end
 
   def activity_log
     @entries = @project.activity_log_entries.paginate :page => params[:page], :order => 'created_at ASC'
@@ -77,9 +69,9 @@ class ProjectsController < AuthenticatedController
     @user = User.find(params[:user_id])
     @user.disassociate_from_project(@project)
     @project.save!
+
     respond_to do |format|
-      format.html { redirect_to admin_user_path(@user) }
-      format.json { render :status => 200, :json => @user }
+      format.json {render :status => 200, :json => @user }
     end 
 	end
   
