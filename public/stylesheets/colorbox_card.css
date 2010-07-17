@@ -203,9 +203,14 @@
 */
 
 #colorbox_card {
-  width: 650px;
+  width: 740px;
   height: 400px;
   font-size: 1em;
+}
+
+#colorbox_card img.radtrack_logo {
+  width:100px;
+  height:30px;
 }
 
 #colorbox_card span {
@@ -246,6 +251,9 @@
   margin-bottom: 8px;
 }
 
+#colorbox_card .tasks table {
+  width: 100%;
+}
 #colorbox_card .tasks {
   color: #555;
   min-height: 120px;
@@ -268,15 +276,20 @@
 }
 
 #colorbox_card .task td.owner {
+  width:1px; /* need to force it small - combo box will expand it as necessary */
+}
+
+#colorbox_card .task td.actions {
+  width:1px; /* need to force it small - combo box will expand it as necessary */
 }
 
 #colorbox_card .tasks .name {
   margin-left: 6px;
-  width: 100%;
 }
 
 #colorbox_card .task .states {
   margin-left: 6px;
+  width:1px; /* need to force it small - combo box will expand it as necessary */
 }
 
 #colorbox_card form.create_new_task {

@@ -151,7 +151,7 @@ $(function() {
 				},
 				function(data, textStatus) {
 					$(ui.draggable).hide("puff", {},
-					500).remove();
+					500).fadeOut();
 				},
 				"json");
 			}

@@ -64,9 +64,9 @@ $(function() {
 		html += '</tr>';
 		$(this).find('table').append(html);
 		
-		$(this).find(".task_owner").bind("change", task_owner_changed)
+		$(this).find("#task_" +task.id +" .task_owner").bind("change", task_owner_changed)
 		$(this).find("#task_" + task.id + " .task_delete").click(delete_task)
-		$(this).find('.task_state').bind("change", task_state_changed.curry(task));
+		$(this).find("#task_" + task.id + " .task_state").bind("change", task_state_changed.curry(task));
 	
 	}
 	
@@ -129,7 +129,8 @@ $(function() {
 		}
 
 		var html = ''
-		html += '<div class="title">' + card.title + '</div>'
+		html += '<div class="title">'
+    html += card.title + '</div>'
 
 //		html += '<div class="label">Description / Narrative</div>'
 		html += '<div class="description">' + card_description(card) + '</div>'
@@ -138,14 +139,22 @@ $(function() {
 		html += '<table>'
 
     html += '<thead>'
-		html += '<tr><td><span class="colorbox_tasklist_title">Task List</span></td><td colspan="3">'
+
+		html += '<tr>'
+    html += '<td class="task_owner label"><img alt="radtrack - Agility with Cards" class="radtrack_logo" src="/images/graffle/radtrack_logo_header.png?1276439082"></td>'
+    html += '<td colspan="3">'
 		html += '<span><form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
 		html += '<input name="task[name]" value="... To Create a Task, Enter the New Task Name Here ..."/>'
 		html += '</form></span>'
-		html += '</td></tr>'
+		html += '</td>'
+    html += '</tr>'
 
-		html += '<tr><td class="task_owner label">Who</td><td class="label name">Name</td><td class="label">State</td><td></td></tr>'
+//		html += '<tr>'
+//    html += '<td><span class="colorbox_tasklist_title">Task List</span></td>'
+//    html += '<td class="label name">Name</td><td class="label">State</td><td></td>'
+//    html += '</tr>'
+
     html += '</thead>'
 
     html += '<tbody/>'
