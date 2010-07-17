@@ -102,7 +102,7 @@ $(function() {
 
 	$.fn.colorbox_card = function(options) {
 		var defaults = {
-			card: null,
+			card: null
 		};
 		var options = $.extend(defaults, options);
 		var card = options.card;
@@ -131,22 +131,26 @@ $(function() {
 		var html = ''
 		html += '<div class="title">' + card.title + '</div>'
 
-		html += '<div class="label">Description / Narrative</div>'
+//		html += '<div class="label">Description / Narrative</div>'
 		html += '<div class="description">' + card_description(card) + '</div>'
 
 		html += '<div class="tasks" style="overflow:auto;">'
 		html += '<table>'
 
-		html += '<tr><td><span>Task List</span></td><td colspan="3">'
+    html += '<thead>'
+		html += '<tr><td><span class="colorbox_tasklist_title">Task List</span></td><td colspan="3">'
 		html += '<span><form method="POST" class="create_new_task" action="' + project_card_tasks_url(card.project_id, card.id) + '.json">'
 		html += '<input id="authenticity_token" name="authenticity_token" type="hidden" value="' + window._auth_token + '">'
-		html += '<input name="task[name]" value="... To Create a Task, Enter the New Task Name Here ..."></input>'
+		html += '<input name="task[name]" value="... To Create a Task, Enter the New Task Name Here ..."/>'
 		html += '</form></span>'
 		html += '</td></tr>'
 
 		html += '<tr><td class="task_owner label">Who</td><td class="label name">Name</td><td class="label">State</td><td></td></tr>'
+    html += '</thead>'
 
-		html += '</table>'
+    html += '<tbody/>'
+
+    html += '</table>'
 		html += '</div>'
 
 		$(this).html(html)
