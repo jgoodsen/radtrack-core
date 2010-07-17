@@ -65,8 +65,6 @@ class CardsController < AuthenticatedController
     @card ||= @project.cards.find(params[:id])
     respond_to do |format|
       format.html {render :partial => 'cards/colorbox_card'}
-      format.js
-      format.json { raise "Not Yet Implemented"}
     end
   end
   
@@ -85,7 +83,6 @@ class CardsController < AuthenticatedController
     @card ||= @project.cards.find(params[:id])
     @card.project.cards.destroy(@card)
     respond_to do |format|
-      format.html { raise "Delete card is only accepted for AJAX requests right now." }
       format.js { render :status => 200, :json => "{\"card_id\":\"#{@card.id}\"}"}
     end
   end

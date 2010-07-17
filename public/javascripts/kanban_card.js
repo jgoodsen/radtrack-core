@@ -4,7 +4,7 @@ ElementId = {
 	},
 	extract_project_id: function(element) {
 		return element.closest(".kanban_card").attr("project_id");
-	},
+	}
 }
 
 
@@ -160,13 +160,7 @@ $(function() {
 			var card = options.card;
 
 			$(base + ' img.remove_from_kanban', parent).click(remove_from_kanban);
-			$(base + ' .card_type_icon', parent).click(function() {
-				$(parent).trigger("show_change_card_type_panel");
-			});
 
-			$(parent).bind("show_change_card_type_panel", function(event, ui) {
-				alert("TODO: still not implemented - 'change card type'")
-			})
 		}
 
 		init($(this));
@@ -206,12 +200,6 @@ $(function() {
 		var base = '#' + make_card_id(options.card.id, options.id_prefix);
 		$(base + ' img.delete_card', this).click(delete_card.curry(options.id_prefix));
 		$(base + ' img.remove_from_kanban', this).click(remove_from_kanban);
-    var colorbox_attributes = {
-			opacity: 0.3,
-      onComplete: function(){
-        $('#cboxLoadedContent').css("overflow", "visible")
-      }
-    }
 		$(base + ' a.card_type_icon', this).colorbox(colorbox_attributes);
 		$(base + ' a.popup_card_link', this).colorbox(colorbox_attributes);
 		CardOwnerWidget.setup_events(this);

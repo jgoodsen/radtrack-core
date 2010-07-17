@@ -1,4 +1,4 @@
-<div id="personal_kanban_board">
+<div id="mytasks">
 	<div class="control_panel">
 		<%= check_box_tag 'show_tasks', 'all_tasks'%><label for="show_tasks"> Show Tasks From All Projects (not yet implemented)</label>
 	</div>
@@ -19,3 +19,9 @@
 	</div>
 </div>
 
+
+<script type="text/javascript" charset="utf-8">
+	var card_json = <%= @card.to_json %>
+	var users_json = <%= @project.users.to_json %>
+	$('#mytasks .popup_card_link').colorbox(colorbox_attributes);
+</script>

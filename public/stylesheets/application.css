@@ -713,7 +713,7 @@ ul.active_tasks li ul li {
 	min-height: 100px;
 }
 
-#personal_kanban_board .control_panel {
+#mytasks .control_panel {
 	width: 800px;
 	height: 20px;
 	border: 1px solid #999;

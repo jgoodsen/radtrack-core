@@ -44,12 +44,17 @@ function supported_browsers(){
 }
 
 function browser_warning() {
-  if(is_landing_page() && !supported_browsers()) {
-    $(document).ready(function(){
-      $.fn.colorbox({
-        width:"50%", opacity:0.3, height:"150px",
-        html:"<br /><img src='images/icons/warning.png' style='float:left; margin-right:1em;'/>You are using an unsupported browser and may not render radtrack pages correctly, therefore it is recommended that you update it. For modern browser choices try <a href=”http://http://www.google.com/chrome”>Google Chrome</a> or <a href='http://www.mozilla.com/en-US/firefox/firefox.html'>Mozilla Firefox</a>."
-      });
-    });
+  if(!supported_browsers()) {
+    popup = $('#jquery_dialog_card');
+    popup.html("You are using an unsupported browser and may not render radtrack pages correctly, therefore it is recommended that you update it. For modern browser choices try <a href=”http://http://www.google.com/chrome”>Google Chrome</a> or <a href='http://www.mozilla.com/en-US/firefox/firefox.html'>Mozilla Firefox</a>.");
+    popup.colorbox({opacity: 0.3});
+    popup.show();
+  }
+}
+
+var colorbox_attributes = {
+  opacity: 0.3,
+  onComplete: function(){
+    $('#cboxLoadedContent').css("overflow", "visible")
   }
 }

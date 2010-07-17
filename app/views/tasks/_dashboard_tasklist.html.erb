@@ -8,7 +8,7 @@
 		<ul class="active_tasks">
 			<li class="header"><%= card.title %></li>
 			<% tasks.select{|t| card.tasks.include?(t)}.each do |task| %>
-			<li project_id="<%= task.card.project.id %>" card_id="<%= task.card.id %>"><%= link_to task.name, '', :class => "popup_card_link" %></li>
+			<li project_id="<%= task.card.project.id %>" card_id="<%= task.card.id %>"><%= link_to task.name, project_card_path(task.card.project, task.card), :class => "popup_card_link" %></li>
 			<% end %>
 		</ul>
 	</li>
