@@ -1,18 +1,15 @@
 <div id="project_users">
-	
+
 <div class="buttons">
     <%= link_to image_tag("icons/add.png") + "Invite A New Project Member", '#', :id => 'invite_user_button', :class => 'button' %>
 </div>
 
-<% if users.empty? %>
-	<div class="user"><h1>No Users for this project <h1></div>
-<% else %>
    <% users.each do |u| %>
 		<%= render :partial => 'users/show', :locals => {:user => u}%>
    <% end %>
-<% end %>
 
 </div>
+
 <div id="invite_user_dialog" style="display: none;">
 	<% form_for :user, :url => project_invite_user_url(@project), :id=>'invite_user_form' do |f| -%>
 		<p>Enter their email address:</p>

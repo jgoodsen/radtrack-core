@@ -2,10 +2,12 @@
     <h1>
 		<%= user.email %>
 		<%= image_tag("icons/cog_delete.png", :id => "project_user_#{user.id}", :class => "project_user_delete", :style => "cursor: pointer; float: right; ", :title => 'Remove this user from the project?') %>
-	</h1>
+	  </h1>
 	<div class="user_tasks">
-		<table class="tasks">
-		</table>
-	<div>
+    <!--<% unless user.tasks.empty? %>-->
+		<!--<table class="tasks">-->
+		<!--</table>-->
+    <!--<% end %>-->
+	</div>
 </div>
 

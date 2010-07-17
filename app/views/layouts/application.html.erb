@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? -%>  
 <%= render :partial => 'shared/head' %>
@@ -55,16 +55,18 @@
 <div style="display: none;" id="jquery_dialog_card"></div>
 
 <script type="text/javascript" charset="utf-8">
-var CURRENT_USER = <%= current_user.to_json(:include => :tasks) %>
+
+var CURRENT_USER = <%= current_user.to_json %>;
 
 
-<% if @project && @project.id %>
+<% #noinspection RubyResolve
+if @project && @project.id %>
 var CurrentProject;
 $(function() {
   CurrentProject = new Project(project_id)
   CurrentProject.init();
   CurrentProject.setUsers(<%= @project.users.to_json %>)
-})
+});
 var card_states = <%= @project.card_states.to_json %>
 var task_states = <%= @project.task_states.to_json %>
 var project_id = <%= @project.id %>

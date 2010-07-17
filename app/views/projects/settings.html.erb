@@ -2,8 +2,8 @@
 <div id="project_settings_tabs" style="float: left; width: 100%;">
 	
      <ul>
-         <li><a href="#members"><span>Team Members</span></a></li>
          <li><a href="#process"><span>Process</span></a></li>
+       <li><a href="#members"><span>Team Members</span></a></li>
      </ul>
 
     <div id="members">
@@ -20,18 +20,18 @@
   	  <div class="wip_enforcement_policy">
         <fieldset>
           <legend>WIP Enforcement Policy</legend>
-          <input type="checkbox" name="enable_override" value="" id="enable_override">
+          <input type="checkbox" name="enable_override" value="" id="enable_override" disabled>
           <label for="enable_override">Enable WIP Limits to be overridden</label>
           <br/>
-          <input type="checkbox" name="warn_override" value="" id="warn_override">
+          <input type="checkbox" name="warn_override" value="" id="warn_override" disabled>
           <label for="warn_override">Warn on Override</label>
         </fieldset>
       </div>
   	  <div class="wip_enforcement_policy">
         <fieldset>
           <legend>Kanban Card Display Options</legend>
-          <input type="checkbox" name="enable_override" value="" id="enable_override">
-          <label for="enable_override">Prefix Title with Card #</label>
+          <input type="checkbox" name="prefix_title_with_card_number" value="" id="prefix_title_with_card_number" disabled>
+          <label for="prefix_title_with_card_number">Prefix Title with Card #</label>
           <br/>
         </fieldset>
       </div>

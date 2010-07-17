@@ -10,12 +10,12 @@
 		<div class="dashboard_tasklist">
 		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "My Unstarted Tasks", :tasks => current_user.unstarted_tasks} %>
 		</div>
-	</div
+	</div>
 	<%= image_tag "horizontal_arrow_right.gif", :class => "unfinished_finish_arrow" %>
 	<div class="finished_column">
 		<div class="dashboard_tasklist">
 		<%= render :partial => 'tasks/dashboard_tasklist', :locals => {:title => "My Finished Tasks", :tasks => current_user.finished_tasks} %>
 		</div>
-	</div
+	</div>
 </div>
 
