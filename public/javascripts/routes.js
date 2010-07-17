@@ -79,3 +79,7 @@ function project_board_reset_card_positions_url(project_id, board_name) {
 function admin_remove_user_from_project_url(project_id, user_id) { 
   return "http://" + DOMAIN_AND_PORT + "/admin/projects/" + project_id + "/remove_user/" + user_id
 }
+
+function is_landing_page() {
+ return window.location.pathname == "/";
+}
