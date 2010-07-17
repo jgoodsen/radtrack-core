@@ -515,17 +515,17 @@
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-      <source from="config/database.yml" />
-    </requirement>
-    <requirement>
-      <requirement>
         <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" lib="sqlite3" git="false" />
       </requirement>
       <source from="config/environments/development.rb" />
       <source from="config/environments/test.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+      <source from="config/database.yml" />
     </requirement>
     <requirement>
       <requirement>
