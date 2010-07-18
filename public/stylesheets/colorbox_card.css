@@ -238,7 +238,7 @@
 #colorbox_card .editInPlace-active input, #colorbox_card .editInPlace-active textarea {
   color: #AAA;
   width: 99%;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 #colorbox_card .description {
