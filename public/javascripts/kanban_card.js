@@ -205,7 +205,7 @@ $(function() {
     var colorbox_attributes = {
       opacity: 0.3,
       onComplete: function(){
-        document.getElementById('cboxLoadedContent').css("overflow", "visible")
+        $('#cboxLoadedContent').css("overflow", "visible")
       }
     }
     
