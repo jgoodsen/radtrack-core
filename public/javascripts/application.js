@@ -55,6 +55,6 @@ function browser_warning() {
 var colorbox_attributes = {
   opacity: 0.3,
   onComplete: function(){
-    $('#cboxLoadedContent').css("overflow", "visible")
+    document.getElementById('cboxLoadedContent').css("overflow", "visible")
   }
 }

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="fb5aa7b5-d538-40de-8723-02b3f263e988" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/_mytasks.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/_mytasks.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/kanban/_backlog.html.erb" afterPath="$PROJECT_DIR$/app/views/kanban/_backlog.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/_mytasks.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/_mytasks.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cards/_colorbox_card.html.erb" afterPath="$PROJECT_DIR$/app/views/cards/_colorbox_card.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/application.js" afterPath="$PROJECT_DIR$/public/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/kanban_card.js" afterPath="$PROJECT_DIR$/public/javascripts/kanban_card.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/_dashboard_tasklist.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/_dashboard_tasklist.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/application.css" afterPath="$PROJECT_DIR$/public/stylesheets/application.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_show.html.erb" />
@@ -38,16 +37,34 @@
       <file leaf-file-name="_mytasks.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/projects/_mytasks.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="1026" selection-end="1111" vertical-scroll-proportion="-13.8">
+            <state line="25" column="6" selection-start="1118" selection-end="1118" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_dashboard_tasklist.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="kanban_card.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/kanban_card.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="197" column="1" selection-start="6131" selection-end="6131" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="24" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.67346936">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_dashboard_tasklist.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tasks/_dashboard_tasklist.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="152" selection-start="450" selection-end="450" vertical-scroll-proportion="0.27210885">
+            <state line="16" column="71" selection-start="532" selection-end="532" vertical-scroll-proportion="-9.6">
               <folding />
             </state>
           </provider>
@@ -85,14 +102,14 @@
         <option value="$PROJECT_DIR$/public/stylesheets/colorbox_card.css" />
         <option value="$PROJECT_DIR$/public/javascripts/backlog.js" />
         <option value="$PROJECT_DIR$/app/views/projects/index.html.erb" />
-        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/kanban_card.js" />
         <option value="$PROJECT_DIR$/app/views/kanban/_backlog.html.erb" />
         <option value="$PROJECT_DIR$/app/views/cards/_colorbox_card.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/cards_controller.rb" />
         <option value="$PROJECT_DIR$/public/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/app/views/projects/_mytasks.html.erb" />
         <option value="$PROJECT_DIR$/app/views/tasks/_dashboard_tasklist.html.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/kanban_card.js" />
+        <option value="$PROJECT_DIR$/app/views/projects/_mytasks.html.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
       </list>
     </option>
   </component>
@@ -797,23 +814,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="35" selection-start="848" selection-end="848" vertical-scroll-proportion="0.13216957">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="43" selection-start="1058" selection-end="1058" vertical-scroll-proportion="-3.85">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/kanban_card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="3" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -867,16 +870,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/projects/_mytasks.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_dashboard_tasklist.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="1026" selection-end="1111" vertical-scroll-proportion="-13.8">
+        <state line="16" column="71" selection-start="532" selection-end="532" vertical-scroll-proportion="-9.6">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/_dashboard_tasklist.html.erb">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/kanban_card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="152" selection-start="450" selection-end="450" vertical-scroll-proportion="0.27210885">
+        <state line="197" column="1" selection-start="6131" selection-end="6131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/_mytasks.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="6" selection-start="1118" selection-end="1118" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="24" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.67346936">
           <folding />
         </state>
       </provider>
