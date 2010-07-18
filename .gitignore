@@ -17,3 +17,4 @@ db/schema.rb
 typescript
 tmp
 .rvmrc
+config/environments/production.rb
