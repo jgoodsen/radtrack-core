@@ -200,6 +200,15 @@ $(function() {
 		var base = '#' + make_card_id(options.card.id, options.id_prefix);
 		$(base + ' img.delete_card', this).click(delete_card.curry(options.id_prefix));
 		$(base + ' img.remove_from_kanban', this).click(remove_from_kanban);
+
+    // TODO:These are duplicated in several places - but when packaged into packages, didn't work in production
+    var colorbox_attributes = {
+      opacity: 0.3,
+      onComplete: function(){
+        document.getElementById('cboxLoadedContent').css("overflow", "visible")
+      }
+    }
+    
 		$(base + ' a.card_type_icon', this).colorbox(colorbox_attributes);
 		$(base + ' a.popup_card_link', this).colorbox(colorbox_attributes);
 		CardOwnerWidget.setup_events(this);

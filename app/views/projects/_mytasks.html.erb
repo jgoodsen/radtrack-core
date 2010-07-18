@@ -23,6 +23,13 @@
 <script type="text/javascript" charset="utf-8">
 	var card_json = <%= @card.to_json %>
 	var users_json = <%= @project.users.to_json %>
-      
+
+  // TODO:These are duplicated in several places - but when packaged into packages, didn't work in production
+  var colorbox_attributes = {
+    opacity: 0.3,
+    onComplete: function(){
+      document.getElementById('cboxLoadedContent').css("overflow", "visible")
+    }
+  }
 	$('#mytasks .popup_card_link').colorbox(colorbox_attributes);
 </script>
