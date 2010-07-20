@@ -19,3 +19,4 @@ tmp
 .rvmrc
 config/environments/production.rb
 public/stylesheets/base_packaged.css
+.idea

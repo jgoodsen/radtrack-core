@@ -26,15 +26,25 @@
     </div>
   </div>
 </div>
-
-<% content_for :tail_javascript do %>
   <div id="new_project_colorbox" style="float: left; display: none;">
     <%= render :partial => 'projects/new' %>
   </div>
+<% content_for :tail_javascript do %>
+
   <script type="text/javascript">
     $(function() {
       $('#project-tabs').tabs().fadeIn("slow");
-      $('#new_project_button').colorbox({inline:true, href:"#new_project_colorbox", opacity:0.3});
+      $('#new_project_button').colorbox({
+        inline:true,
+        href:"#new_project_colorbox",
+        opacity:0.3,
+        onOpen: function() {
+          $('#new_project_colorbox').show()
+        },
+        onClosed: function() {
+          $('#new_project_colorbox').hide()
+        }
+      });
     });
   </script>
 <% end %>
