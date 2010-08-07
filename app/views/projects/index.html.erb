@@ -1,15 +1,7 @@
 <div id="project-tabs" style="float: left; width: 100%; height: 800px; display: none;">
   <ul>
-    <li><a href="#myprojects"><span>My Projects</span></a></li>
-    <!--<li><a href="#mytasks"><span>My Tasks</span></a></li>-->
+    <li><a href="#myprojects"><span>Dashboard</span></a></li>
   </ul>
-  <!--<div id="mytasks">-->
-    <!--<% current_user.tasks.each do |task| %>-->
-      <!--<div class="task">-->
-        <!--<h1><%= link_to task.name, project_card_task_path(task.card.project.id, task.card.id, task.id) %></h1>-->
-      <!--</div>-->
-    <!--<% end %>-->
-  <!--</div>-->
   <div id="myprojects">
     <% current_user.projects.each do |project| %>
       <div class="project">
@@ -25,10 +17,12 @@
       </button>
     </div>
   </div>
+  <%= render :partial => 'projects/mytasks' %>
 </div>
-  <div id="new_project_colorbox" style="float: left; display: none;">
-    <%= render :partial => 'projects/new' %>
-  </div>
+<div id="new_project_colorbox" style="float: left; display: none;">
+  <%= render :partial => 'projects/new' %>
+</div>
+
 <% content_for :tail_javascript do %>
 
   <script type="text/javascript">
