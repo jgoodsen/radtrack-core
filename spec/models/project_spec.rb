@@ -84,15 +84,20 @@ describe Project do
     end
 
     it "should destroy the CardState model for the project" do
+      CardState.all.should_not be_empty
       @project.destroy
       CardState.all.should be_empty
     end
     
     it "should destroy all cards" do
-      @project.cards.create
+      card = @project.cards.create
+      card.tasks.create :name => 'Task One'
+      card.tasks.create :name => 'Task Two'
       Card.all.should_not be_empty
+      Task.all.size.should == 2
       @project.destroy
       Card.all.should be_empty
+      Task.all.should be_empty
     end
     
   end

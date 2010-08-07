@@ -12,5 +12,9 @@ class AdminController < AuthenticatedController
       redirect_back_or_default root_url
     end
   end
+
+  def test
+    render :view => 'test', :layout => false
+  end
   
 end

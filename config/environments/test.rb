@@ -16,6 +16,8 @@ config.action_controller.perform_caching             = false
 # Disable request forgery protection in test environment
 config.action_controller.allow_forgery_protection    = false
 
+config.gem "factory_girl" 
+config.gem "database_cleaner"
 config.gem "sqlite3-ruby", :lib => 'sqlite3'
 config.gem 'rspec',        :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
 config.gem 'rspec-rails',  :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))

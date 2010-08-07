@@ -24,5 +24,6 @@ Then /^the account for "([^\"]*)" is associated with the project "([^\"]*)"$/ do
 end
 
 Then /^I see an entry for "([^\"]*)" in the Team Member list$/ do |email|
+  @browser.link(:id, "members_tab").click
   raise "Expected to see team member entry for #{email}" unless @browser.text =~ /email/
 end

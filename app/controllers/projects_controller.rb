@@ -11,6 +11,7 @@ class ProjectsController < AuthenticatedController
     @show_tab = params[:show_tab]
     @show_tab ||= 1
     @backlog_card_positions = @project.board(:backlog).card_positions_json
+#    render :action => 'test', :layout => false
   end
   
   def mytasks_tab
@@ -96,7 +97,7 @@ class ProjectsController < AuthenticatedController
     @board.card_positions_json = "[]"
     @board.save!
   end
-  
+
   protected
     def get_project_by_id
       @project = @current_user.projects.find(params[:id])

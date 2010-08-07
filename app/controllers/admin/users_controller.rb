@@ -35,5 +35,6 @@ class Admin::UsersController < AdminController
   def edit
     @user = User.find(params[:id])
   end
+
   
 end

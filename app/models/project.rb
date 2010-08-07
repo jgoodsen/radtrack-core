@@ -14,7 +14,7 @@ class Project < ActiveRecord::Base
   has_many :project_assignments
   has_many :users, :through => :project_assignments
   has_many :boards
-  has_many :cards, :dependent => :delete_all, :order => 'position'
+  has_many :cards, :dependent => :destroy, :order => 'position'
   has_many :task_states
   has_many :card_states, :dependent => :delete_all, :order => 'position'
   
