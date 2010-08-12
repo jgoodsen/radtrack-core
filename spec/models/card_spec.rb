@@ -7,11 +7,9 @@ describe Card do
   end
 
   describe "after creation" do
-
     before(:each) do
       @card =  @project.cards.create!(:title => "my card")
     end
-
   end
   
   describe 'card invariant' do
@@ -21,8 +19,7 @@ describe Card do
       @card.project = nil
       @card.save.should == false
       @card.errors[:project] == "A Card must always belong to a project"
-    end   
-    
+    end       
   end
   
   describe 'deleting a card' do
