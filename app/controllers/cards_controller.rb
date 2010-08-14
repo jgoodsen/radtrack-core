@@ -67,7 +67,7 @@ class CardsController < AuthenticatedController
       format.html {render :partial => 'cards/colorbox_card'}
     end
   end
-  
+      
   def update
     @card ||= @project.cards.find(params[:id])
     params[:card][:user_id] = nil if params[:card][:user_id] == "unknown"

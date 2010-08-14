@@ -18,11 +18,12 @@
     </div>
   </div>
 </div>
+
 <div id="new_project_colorbox" style="float: left; display: none;">
   <%= render :partial => 'projects/new' %>
 </div>
-<% content_for :tail_javascript do %>
 
+<% content_for :tail_javascript do %>
   <script type="text/javascript">
     $(function() {
       $('#project-tabs').tabs().fadeIn("slow");

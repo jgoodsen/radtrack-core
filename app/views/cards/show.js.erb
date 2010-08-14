@@ -1,6 +1,6 @@
 // TODO: This code is a dirty secret embarassment - convert this to a jQuery object via ScrewUnit pronto ! - it's my first round of javascript that ended up all ERB'd and global functionized, like Obama wrote the code
 var card_id = <%= @card.id %>;
-var card_json = <%= @card.to_json %>
+var card_json = <%= @card.to_json %>;
 var tasks = <%= @card.tasks.to_json %>;
 
 function task_owner_select(task) {

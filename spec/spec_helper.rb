@@ -2,36 +2,14 @@
 # from the project root directory.
 ENV["RAILS_ENV"] ||= 'test'
 require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_ROOT)
-#require File.dirname(__FILE__) + "/factories"
 require 'spec/rails'
-
-##
-## Fixjour - see git://github.com/nakajima/fixjour.git
-##
-## TODO: This was a weird hack: Seems like spec_helper.rb was getting loaded multiple times?
-##
-unless (defined?(Fixjour)) 
-  require 'fixjour'
-  Fixjour do
-    define_builder(Project) do |klass, overrides|
-      klass.new(:name => 'A project')
-    end
-    define_builder(User) do |klass, overrides|
-      klass.new(:login => 'joe@test.com', :email => 'joe@test.com', :password => 'password', :password_confirmation => 'password')
-    end
-    define_builder(Board) do |klass, overrides|
-      klass.new(:project_id => create_project().id)
-    end
-  end
-  include Fixjour
-end
-
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 Spec::Runner.configure do |config|
+
   # If you're not using ActiveRecord you should remove these
   # lines, delete config/database.yml and disable :active_record
   # in your config/boot.rb
