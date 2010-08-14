@@ -132,7 +132,6 @@ $(function() {
 		html += '<div class="title">'
     html += card.title + '</div>'
 
-//		html += '<div class="label">Description / Narrative</div>'
 		html += '<div class="description">' + card_description(card) + '</div>'
 
 		html += '<div class="tasks" style="overflow:auto;">'
@@ -149,11 +148,6 @@ $(function() {
 		html += '</form></span>'
 		html += '</td>'
     html += '</tr>'
-
-//		html += '<tr>'
-//    html += '<td><span class="colorbox_tasklist_title">Task List</span></td>'
-//    html += '<td class="label name">Name</td><td class="label">State</td><td></td>'
-//    html += '</tr>'
 
     html += '</thead>'
 
@@ -183,9 +177,6 @@ $(function() {
 			success: card_attribute_updated.curry("description")
 		})
 
-		// $(this).find('.title').titleEditor({
-		// 	
-		// })
 		$(this).find('.title').editInPlace({
 			url: project_card_update_attribute_url(project_id, card.id),
 			params: "_method=put&attribute=title",
