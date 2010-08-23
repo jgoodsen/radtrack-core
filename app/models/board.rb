@@ -1,7 +1,12 @@
 class Board < ActiveRecord::Base
     
-    def card_positions
+    def initialize(attributes)
+      super(attributes)
       self.card_positions_json ||= "[]"
+      @card_positions ||= []
+    end
+    
+    def card_positions
       @card_positions = ActiveSupport::JSON.decode(self.card_positions_json)
     end
     
