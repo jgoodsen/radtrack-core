@@ -25,6 +25,11 @@ describe "class Board" do
       ActiveSupport::JSON.decode(@board.card_positions_json).should == expected_card_positions
     end
 
+    it "should return an empty array when nil" do
+      @board = Board.new(:card_positions_json => nil)
+      @board.card_positions.should == []
+    end
+    
   end
   
   it "should always have unique board names within a project"

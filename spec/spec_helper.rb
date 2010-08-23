@@ -49,3 +49,11 @@ Spec::Runner.configure do |config|
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 end
+
+def create_project() 
+  Factory.create(:project)
+end
+
+def new_user(attributes)
+  Factory.create(:user, attributes)
+end
