@@ -1,5 +1,9 @@
 class Board < ActiveRecord::Base
     
+    belongs_to :project
+    
+    before_save :ensure_no_duplicate_names
+    
     def initialize(attributes)
       super(attributes)
       self.card_positions_json ||= "[]"
@@ -29,6 +33,10 @@ class Board < ActiveRecord::Base
     
     def make_position_entry(id, position)
       return {:id => id.to_s, :position => position}
+    end
+    
+    def ensure_no_duplicate_names
+      raise "Duplicate Board Name Error" if self.project.boards.find_by_name(self.name)
     end
     
 end

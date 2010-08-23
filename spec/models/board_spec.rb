@@ -32,6 +32,16 @@ describe "class Board" do
     
   end
   
-  it "should always have unique board names within a project"
+  it "should always have unique board names within a project" do
+    @project = Factory.create(:project)
+    @board1 = @project.boards.create(:name => 'Board One')
+    lambda { @project.boards.create(:name => 'Board One')}.should raise_error
+  end
+
+  it "should allow the same board name across different projects" do
+    Factory.create(:project).boards.create(:name => "Testing Same Board Names")
+    Factory.create(:project).boards.create(:name => "Testing Same Board Names")
+    Board.all.size.should == 2
+  end
   
 end
