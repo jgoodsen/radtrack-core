@@ -2,7 +2,11 @@ class Board < ActiveRecord::Base
     
     belongs_to :project
     
-    before_save :ensure_no_duplicate_names
+    named_scope :for_project, lambda { |project|
+          { :conditions => { :project_id => project.id } }
+    }
+          
+    before_create :ensure_no_duplicate_names
     
     def initialize(attributes)
       super(attributes)
@@ -15,6 +19,7 @@ class Board < ActiveRecord::Base
     end
     
     def update_card_position(id, position)
+      self.card_positions_json ||= "[]"
       @card_positions = ActiveSupport::JSON.decode(self.card_positions_json)
       replace_position_for(id, position)
       self.card_positions_json = @card_positions.to_json
@@ -36,7 +41,7 @@ class Board < ActiveRecord::Base
     end
     
     def ensure_no_duplicate_names
-      raise "Duplicate Board Name Error" if self.project.boards.find_by_name(self.name)
+      raise "Duplicate Board Name Error" if Board.for_project(self.project).boards.find_by_name(self.name)
     end
     
 end

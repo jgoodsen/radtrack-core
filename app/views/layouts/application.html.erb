@@ -66,6 +66,7 @@ $(function() {
   CurrentProject = new Project(project_id)
   CurrentProject.init();
   CurrentProject.setUsers(<%= @project.users.to_json %>)
+  //CurrentProject.setBoards(<%= @project.boards.to_json(:only => 'name') %>)
 });
 var card_states = <%= @project.card_states.to_json %>
 var task_states = <%= @project.task_states.to_json %>
