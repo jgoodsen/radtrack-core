@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .idea
 .DS_Store
+config/smtp_config.rb
