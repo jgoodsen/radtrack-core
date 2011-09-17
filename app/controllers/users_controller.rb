@@ -56,7 +56,7 @@ class UsersController < AuthenticatedController
     def require_user_edit_access
       @user = current_user if params[:id] == "current"
       @user ||= User.find_by_id(params[:id])
-      unless @user == current_user || current_user.admin?
+      unless current_user || ((@user == current_user) || (current_user.admin?))
         flash[:error] = "#{current_user.login} does not have the privileges to edit #{@user.login}"
         redirect_to root_url
       end 

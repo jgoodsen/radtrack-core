@@ -41,7 +41,7 @@ $(function() {
       success: function(json){
         // TOOD: Could optimize by only loading the tab panel that we're looking at
         $('#kanban', ui.panel).kanban({cards:json});
-        $('#backlog', ui.panel).backlog({cards:json, card_positions: <%= @backlog_card_positions || '[]' %> });
+        $('#backlog', ui.panel).backlog({cards:json});
         $('.spinner', ui.tab).hide();
         $(ui.panel).fadeIn(1000);
       }
