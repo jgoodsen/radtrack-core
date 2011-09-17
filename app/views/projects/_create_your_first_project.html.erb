@@ -1,7 +1,7 @@
 You are not currently associated to any projects - enter the form below to create your first project.
 
 <% @project = current_user.projects.build %>
-<% form_for @project, :url => projects_path, :method => :post do |f| %>
+<%= form_for @project, :url => projects_path, :method => :post do |f| %>
 	Project Name: <%= f.text_field :name %>
 	<%= f.submit 'Create' %>
 <% end %>

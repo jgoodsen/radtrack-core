@@ -2,7 +2,7 @@
 
   <%= link_to image_tag('graffle/radtrack_logo.png', :border => '0'), root_url %><br/>
 
-  <% form_for @user_session do |f| %>
+  <%= form_for @user_session do |f| %>
     <%= f.error_messages %>
     <div>
       <%= f.label :login, 'Enter your email address' %><br />

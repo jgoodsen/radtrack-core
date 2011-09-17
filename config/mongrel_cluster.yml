@@ -1,8 +1,0 @@
---- 
-cwd: /var/www/apps/radtrack/current
-log_file: log/mongrel.log
-port: "5000"
-environment: production
-address: 209.20.80.89
-pid_file: tmp/pids/mongrel.pid
-servers: 3

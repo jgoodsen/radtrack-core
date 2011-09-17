@@ -3,7 +3,7 @@ class CardsController < AuthenticatedController
   helper :all
 
   include ActionView::Helpers::UrlHelper  
-  include ActionController::UrlWriter
+  include Rails.application.routes.url_helpers
 
   include ApplicationHelper
 
@@ -18,9 +18,10 @@ class CardsController < AuthenticatedController
     if params[:card]
       @card ||= @project.cards.new(params[:card])
       if @card.save
+
         flash.now[:success] = "Card was saved successfully."
         @cards ||= @project.cards
-        redirect_to (project_path(@project.id) + "?show_tab=0")
+        redirect_to "/projects/#{@project.id}?show_tab=0"
       else
         flash.now[:error] << "Card creation failed."
         render :action => 'new'
@@ -67,7 +68,7 @@ class CardsController < AuthenticatedController
       format.html {render :partial => 'cards/colorbox_card'}
     end
   end
-      
+  
   def update
     @card ||= @project.cards.find(params[:id])
     params[:card][:user_id] = nil if params[:card][:user_id] == "unknown"
@@ -75,7 +76,7 @@ class CardsController < AuthenticatedController
     respond_to do |format|
       format.html { render :action => 'show' }
       format.js { render :action => 'show'}
-      format.json { render :json => @card.to_json }
+      format.json { render :json => @card.as_json }
     end
   end
   

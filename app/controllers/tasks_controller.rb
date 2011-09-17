@@ -57,7 +57,7 @@ class TasksController < AuthenticatedController
   
     def task_as_json(task)
       task.attributes.merge(:task_state => task.task_state.name)
-      task.to_json(:only => [:id, :name], :include => {:card, {:only => [:id]}})
+      task.to_json(:only => [:id, :name], :include => {:card => {:only => [:id]}})
     end
     
 end

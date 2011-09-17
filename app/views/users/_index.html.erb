@@ -11,7 +11,7 @@
 </div>
 
 <div id="invite_user_dialog" style="display: none;">
-	<% form_for :user, :url => project_invite_user_url(@project), :id=>'invite_user_form' do |f| -%>
+	<%= form_for :user, :url => project_invite_user_url(@project), :id=>'invite_user_form' do |f| -%>
 		<p>Enter their email address:</p>
 		<%= f.text_field :email %>
 		<p><input id="invite_user_submit" type="submit" value="Send Invite &rarr;"/></p>

@@ -6,7 +6,7 @@
 
   <% @user.password = @user.password_confirmation = nil if @user %>
 	
-	<% form_for @user do |f| -%>
+	<%= form_for @user do |f| -%>
 	
 		<p><label for="email">Email Address</label><br/>
 		<%= f.text_field :email %></p>
@@ -24,7 +24,7 @@
 <div id="user_change_password">
 	<h1>Change Password</h1>
 
-	<% form_for @user do |f| -%>
+	<%= form_for @user do |f| -%>
 	
 	<p><label for="password">New Password (optional)</label><br/>
 	<%= f.password_field :password %></p>

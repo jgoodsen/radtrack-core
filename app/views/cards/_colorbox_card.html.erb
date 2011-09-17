@@ -2,5 +2,7 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-	$('#colorbox_card').colorbox_card({card: <%= @card.to_json %>});
+	var card_json = <%= raw @card.to_json %>
+	var users_json = <%= raw @project.users.to_json %>
+	$('#colorbox_card').colorbox_card({card: card_json});
 </script>

@@ -2,7 +2,7 @@
 <div id="signup_form">
 
   <% @user.password = @user.password_confirmation = nil if @user %>
-	<% form_for @user do |f| -%>
+	<%= form_for @user do |f| -%>
 
   <div class="registration_section registration_code">    
 <%= link_to image_tag('graffle/radtrack_logo_signup.png', :border => '0'), root_url %>

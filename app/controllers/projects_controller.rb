@@ -10,8 +10,7 @@ class ProjectsController < AuthenticatedController
   def show
     @show_tab = params[:show_tab]
     @show_tab ||= 1
-    # @backlog_card_positions = @project.board(:backlog).card_positions_json
-#    render :action => 'test', :layout => false
+    @backlog_card_positions = @project.board(:backlog).card_positions_json
   end
   
   def mytasks_tab
@@ -81,13 +80,13 @@ class ProjectsController < AuthenticatedController
     if @user=User.find_by_email(email)
       @project.users << @user
       @user.save
-      @user.deliver_added_to_project_notification(@project, current_user) #if RAILS_ENV=='production'
+      @user.deliver_added_to_project_notification(@project, current_user) #if Rails.env=='production'
     else
       password = generate_random_password
       @user = User.create!(:email => email, :login => email, :password => password, :password_confirmation => password )
       @project.users << @user
       @user.save!
-      @user.deliver_project_invitation(@project, current_user) #if RAILS_ENV=='production'
+      @user.deliver_project_invitation(@project, current_user) #if Rails.env=='production'
     end
     render :json => @user, :success => true
   end
@@ -97,7 +96,7 @@ class ProjectsController < AuthenticatedController
     @board.card_positions_json = "[]"
     @board.save!
   end
-
+  
   protected
     def get_project_by_id
       @project = @current_user.projects.find(params[:id])

@@ -26,11 +26,11 @@ class Card < ActiveRecord::Base
   belongs_to :card_type
   belongs_to :card_state
   
-  has_many :tasks, :order => 'position', :dependent => :destroy
+  has_many :tasks, :order => 'position', :dependent => :delete_all
     
   validates_presence_of :project, :message => 'A Card must always belong to a project'
 
-  named_scope :by_project, lambda { |project| { :conditions => {:project_id => project.id} } } do
+  scope :by_project, lambda { |project| { :conditions => {:project_id => project.id} } } do
     def tasks
       map!{|card| card.tasks}.flatten!
     end
@@ -50,7 +50,8 @@ class Card < ActiveRecord::Base
     self.card_state = new_state
   end
   
-  def to_json(options = {}) 
+  def as_json(options = {})
+    options ||= {}
     super(options.merge(:include => [:tasks, :owner]))
   end
 

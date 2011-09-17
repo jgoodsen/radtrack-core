@@ -1,59 +1,54 @@
-<div id="project_detail_tabs" style="float: left; width: 100%; display: none;">
 
+<div id="project_detail_tabs" style="float: left; width: 100%; display: none;">
+  
   <ul>
-    <li><a href="<%= project_backlog_tab_path(@project) %>" class="backlog_tab"><span><%= spinner %>&nbsp;Backlog / Horizon Planning</span></a>
-    </li>
-    <li>
-      <a href="<%= project_kanban_tab_path(@project) %>" class="kanban_tab"><span><%= spinner %>&nbsp;Project Kanban</span></a>
-    </li>
+    <li><a href="<%= project_backlog_tab_path(@project)%>" class="backlog_tab"><span><%= spinner %>&nbsp;Backlog / Horizon Planning</span></a></li>
+    <li><a href="<%= project_kanban_tab_path(@project) %>" class="kanban_tab"><span><%= spinner %>&nbsp;Project Kanban</span></a></li>
     <li><a href="<%= project_mytasks_tab_path(@project) %>"><span><%= spinner %>&nbsp;My Tasks</span></a></li>
     <li><a id="members_tab" href="#members"><span>Team Members</span></a></li>
-    <li><a href="project_defects"><span>Defects</span></a></li>
-    <li><a href="project_defects"><span>Active Cards</span></a></li>
-    <li><a href="project_defects"><span>Archived Cards</span></a></li>
   </ul>
 
   <div id="members" class="tab_content">
+    <%= render :partial => 'users/index', :locals => {:users => @project.users} %>
   </div>
 
 </div>
 
 <% content_for :tail_javascript do %>
-  <script type="text/javascript">
+<script type="text/javascript">
 
-    <%= "var show_tab = " + (@show_tab.nil? ? "0" : "#{@show_tab}")  %>
+<%= "var show_tab = " + (@show_tab.nil? ? "0" : "#{@show_tab}")  %>
 
-    $(function() {
+$(function() {
 
-      $('#project-tools-tabs').UserTabs();
+  $('#project-tools-tabs').UserTabs();
 
-      $('#project_detail_tabs').tabs({
-        load: reload_cards,
-        selected: show_tab,
-        spinner: '',
-        ajaxOptions: {success: function() {
-        }}
-      }).fadeIn(1000);
+  $('#project_detail_tabs').tabs({
+    load: reload_cards,
+	selected: show_tab,
+    spinner: '',
+    ajaxOptions: {success: function() {}}
+  }).fadeIn(1000);
 
-      function reload_cards(event, ui) {
-        $(ui.panel).hide();
-        $('.spinner', ui.tab).show();
-        $.ajax({
-          type: "GET",
-          url: "<%= project_cards_path(@project) %>",
-          dataType: "json",
-          cache: false,
-          success: function(json) {
-            // TOOD: Could optimize by only loading the tab panel that we're looking at
-            $('#kanban', ui.panel).kanban({cards:json});
-            $('#backlog', ui.panel).backlog({cards:json, card_positions: <%= @backlog_card_positions || '[]' %> });
-            $('.spinner', ui.tab).hide();
-            $(ui.panel).fadeIn(1000);
-          }
-        });
+  function reload_cards(event, ui) {
+    $(ui.panel).hide();
+    $('.spinner', ui.tab).show();
+    $.ajax({
+      type: "GET",
+      url: "<%= project_cards_path(@project) %>",
+      dataType: "json",
+      cache: false,
+      success: function(json){
+        // TOOD: Could optimize by only loading the tab panel that we're looking at
+        $('#kanban', ui.panel).kanban({cards:json});
+        $('#backlog', ui.panel).backlog({cards:json, card_positions: <%= @backlog_card_positions || '[]' %> });
+        $('.spinner', ui.tab).hide();
+        $(ui.panel).fadeIn(1000);
       }
-
     });
-  </script>
+  }
+
+});
+</script>
 
 <% end %>

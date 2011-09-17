@@ -56,7 +56,7 @@
 
 <script type="text/javascript" charset="utf-8">
 
-var CURRENT_USER = <%= current_user.to_json %>;
+var CURRENT_USER = <%= raw current_user.to_json %>;
 
 
 <% #noinspection RubyResolve
@@ -65,17 +65,16 @@ var CurrentProject;
 $(function() {
   CurrentProject = new Project(project_id)
   CurrentProject.init();
-  CurrentProject.setUsers(<%= @project.users.to_json %>)
-  //CurrentProject.setBoards(<%= @project.boards.to_json(:only => 'name') %>)
+  CurrentProject.setUsers(<%= raw @project.users.to_json %>)
 });
-var card_states = <%= @project.card_states.to_json %>
-var task_states = <%= @project.task_states.to_json %>
-var project_id = <%= @project.id %>
+var card_states = <%= raw @project.card_states.to_json %>
+var task_states = <%= raw @project.task_states.to_json %>
+var project_id = <%= raw @project.id %>
 <% end %>	
 
 </script>
 
-<%= javascript_include_merged :tail %>
+<%= raw javascript_include_merged :tail %>
 <%= render :partial => 'shared/uservoice' %>
 <%= render :partial => 'shared/google_analytics' %>
 

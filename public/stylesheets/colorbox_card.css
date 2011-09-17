@@ -203,9 +203,9 @@
 */
 
 #colorbox_card {
-  width: 570px;
+  width: 740px;
   height: 400px;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 #colorbox_card img.radtrack_logo {
@@ -231,6 +231,10 @@
 #colorbox_card td.label {
 }
 
+#colorbox_card td.task_owner {
+  min-width: 100px;
+}
+
 #colorbox_card .editInPlace-active input, #colorbox_card .editInPlace-active textarea {
   color: #AAA;
   width: 99%;
@@ -252,6 +256,7 @@
 }
 #colorbox_card .tasks {
   color: #555;
+  min-height: 120px;
   background: #CCC;
   width: 100%;
   overflow: auto;
@@ -293,7 +298,7 @@
 }
 
 #colorbox_card form.create_new_task input {
-  width: 420px;
+  width: 500px;
   font-size: 1.3em;
   color:#999;
 }

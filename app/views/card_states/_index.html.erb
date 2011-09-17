@@ -3,7 +3,7 @@
 	<br/>
 
 	<div id="new_card_state_dialog" title="Define a New Activity">
-		<% form_for :card_state, :url => project_card_states_url(@project.id), :method => :post, :html => {:id => "new_card_state"} do |f| %>
+		<%= form_for :card_state, :url => project_card_states_url(@project.id), :method => :post, :html => {:id => "new_card_state"} do |f| %>
 		<%= f.label :name, "Enter Activity Name"%>
 		<br/>
 		<%= f.text_field :name %>

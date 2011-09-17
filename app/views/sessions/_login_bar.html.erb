@@ -3,7 +3,7 @@
 	<% if current_user -%>
 
 	<%= content_tag(:li, link_to("Dashboard", projects_url)) %>
-	<%= content_tag(:li, link_to("Project Settings", project_settings_path(@project))) if @project %>
+	<%= content_tag(:li, link_to("Project Settings", project_settings_path(@project.id))) if @project %>
 		
 		<li><%= link_to "Account Settings", edit_user_path(:current) %></li>
 		<% if current_user.admin? %>

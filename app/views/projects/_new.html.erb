@@ -1,4 +1,4 @@
-<% form_for :project, :url => projects_path, :method => :post, :html => {:class => 'new_project'} do |f| %>
+<%= form_for :project, :url => projects_path, :method => :post, :html => {:class => 'new_project'} do |f| %>
     <%= f.label :name, 'Enter the name of your new project' %>:
     <%= f.text_field :name %><br />
 	<%= submit_tag 'Create'%>

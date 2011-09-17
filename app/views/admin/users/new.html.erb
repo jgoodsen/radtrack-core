@@ -3,7 +3,7 @@
 
   <% @user.password = @user.password_confirmation = nil %>
 	<%= error_messages_for :user %>
-	<% form_for :user, :url => admin_users_path do |f| -%>
+	<%= form_for :user, :url => admin_users_path do |f| -%>
 	
 	<p><label for="name">Username/Login</label><br/>
 	<%= f.text_field :login %></p>
