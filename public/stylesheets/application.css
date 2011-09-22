@@ -948,6 +948,15 @@ font-weight:bold;
 	font-weight: normal;
 }
 
+#project_detail_tabs .tab_label  {
+    float:left;
+    margin-left: 20px;
+}
+
+#project_detail_tabs .spinner  {
+    float:left;
+}
+
 #project_detail_tabs .ui-tabs-panel {
   border:1px solid #999999;
   float:left;

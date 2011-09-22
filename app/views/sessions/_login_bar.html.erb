@@ -1,20 +1,20 @@
+<div class="menubar">
+  <ul class="nav">
+    <% if current_user -%>
 
-<ul id="login_bar">
-	<% if current_user -%>
+        <%= content_tag(:li, link_to("Dashboard", projects_url)) %>
+        <%= content_tag(:li, link_to("Project Settings", project_settings_path(@project.id))) if @project %>
 
-	<%= content_tag(:li, link_to("Dashboard", projects_url)) %>
-	<%= content_tag(:li, link_to("Project Settings", project_settings_path(@project.id))) if @project %>
-		
-		<li><%= link_to "Account Settings", edit_user_path(:current) %></li>
-		<% if current_user.admin? %>
-	  	  <li><%= link_to 'Administrators Console', '/admin' %></li>
-	    <% end %>
-		<li class="username">&nbsp;<%= current_user.login %> </li>
-		<li><%= link_to "Logout", logout_path %></li>
-	<% else -%>
-	<li><%= link_to "Register for a Free Beta Account", new_user_path %></li>
-  	
-	  <li><%= link_to "Log in",  login_path,  { :title => "Log in" } %> </li>
-	<% end -%>
-</ul>
-	
+        <li><%= link_to "Account Settings", edit_user_path(:current) %></li>
+        <% if current_user.admin? %>
+            <li><%= link_to 'Administrators Console', '/admin' %></li>
+        <% end %>
+        <li class="username">&nbsp;<%= current_user.login %> </li>
+        <li><%= link_to "Logout", logout_path %></li>
+    <% else -%>
+        <li><%= link_to "Register for a Free Beta Account", new_user_path %></li>
+
+        <li><%= link_to "Log in", login_path, {:title => "Log in"} %> </li>
+    <% end -%>
+  </ul>
+</div>

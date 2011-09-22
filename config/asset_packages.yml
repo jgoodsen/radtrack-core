@@ -1,16 +1,14 @@
 --- 
 javascripts: 
 - base: 
-  - jquery-ui-1.8.2.custom/js/jquery-1.4.2.min
-  - jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min
+  - jquery-ui-1.8.16.custom/js/jquery-1.6.2.min
+  - jquery-ui-1.8.16.custom/js/jquery-ui-1.8.16.custom.min
   - jquery.livequery
   - jquery.wresize
   - jquery.jeditable
   - jquery.editinplace
   - jquery.form
   - jquery.colorbox
-  - JSLINQ/IEnumerable
-  - JSLINQ/JSLINQ
   - application
   - radtrack.livesearch
   - routes
@@ -28,9 +26,10 @@ javascripts:
 stylesheets: 
 - base: 
   - application
+  - menubar
   - projects
   - yui
   - default
   - buttons
   - colorbox_card
-  - ../javascripts/jquery-ui-1.8.2.custom/css/ui-lightness/jquery-ui-1.8.2.custom
+  - /javascripts/jquery-ui-1.8.16.custom/css/ui-lightness/jquery-ui-1.8.16.custom.css

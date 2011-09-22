@@ -9,6 +9,8 @@ gem 'rails', '3.1'
 #gem 'sqlite3'
 gem 'mysql2'
 
+#gem 'sauce'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -2,10 +2,10 @@
 <div id="project_detail_tabs" style="float: left; width: 100%; display: none;">
   
   <ul>
-    <li><a href="<%= project_backlog_tab_path(@project)%>" class="backlog_tab"><span><%= spinner %>&nbsp;Backlog / Horizon Planning</span></a></li>
-    <li><a href="<%= project_kanban_tab_path(@project) %>" class="kanban_tab"><span><%= spinner %>&nbsp;Project Kanban</span></a></li>
-    <li><a href="<%= project_mytasks_tab_path(@project) %>"><span><%= spinner %>&nbsp;My Tasks</span></a></li>
-    <li><a id="members_tab" href="#members"><span>Team Members</span></a></li>
+    <li><a href="<%= project_backlog_tab_path(@project)%>"><div class="tab_label"><%= spinner %> Backlog / Horizon Planning</div></a></li>
+    <li><a href="<%= project_kanban_tab_path(@project) %>"><%= spinner %><div class="tab_label">Project Kanban</div></a></li>
+    <li><a href="<%= project_mytasks_tab_path(@project) %>"><%= spinner %><div class="tab_label">My Tasks</div></a></li>
+    <li><a id="members_tab" href="#members">Team Members</a></li>
   </ul>
 
   <div id="members" class="tab_content">

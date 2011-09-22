@@ -1,0 +1,47 @@
+.menubar ul.nav {
+    -moz-border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: -moz-linear-gradient(270deg, #FCFCFC, #ECECEC) repeat scroll 0 0 transparent;
+    border-color: #E9E9E9 #E9E9E9 #F5F5F5;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 3px 8px 2px;
+    text-shadow: 1px 1px 0 white;
+}
+
+.menubar ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+.menubar ul.nav li {
+    background: url("/images/nav-rule.png") no-repeat scroll 0 50% transparent;
+    float: left;
+    line-height: 1.4em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 11px 0 13px;
+}
+
+.menubar a {
+    outline: medium none;
+    text-decoration: none;
+    color: #4183C4;
+    text-decoration: none;
+}
+
+.menubar .greeting {
+    float: right;
+    font-weight: lighter;
+    font-size: .9em;
+    margin-right: 20px;
+    margin-top: 36px;
+}
+
+.menubar ul.nav {
+    float: right;
+    margin-top: 18px;
+}
+
