@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     end
 
     def store_location
-      session[:return_to] = request.request_uri unless request.xhr?
+      session[:return_to] = request.env['REQUEST_URI'] unless request.xhr?
     end
 
   private
