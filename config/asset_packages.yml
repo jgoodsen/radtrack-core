@@ -32,4 +32,4 @@ stylesheets:
   - default
   - buttons
   - colorbox_card
-  - /javascripts/jquery-ui-1.8.16.custom/css/ui-lightness/jquery-ui-1.8.16.custom.css
+  - ../javascripts/jquery-ui-1.8.16.custom/css/ui-lightness/jquery-ui-1.8.16.custom
